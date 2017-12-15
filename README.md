@@ -36,7 +36,7 @@ first one that fails will result in the exception.
 You can ensure your arguments directly using the *argument-string* override or with the expression override. 
 You need to be aware that if performance is desired the *argument-string* override is the best.
 
-#Supported types
+# Supported types
 There are extensions for common types in .NET but not much else outside of that. We support:
  - IComparable
  - IEnumerable
