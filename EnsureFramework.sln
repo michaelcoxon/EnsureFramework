@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureFramework", "EnsureFramework\EnsureFramework.csproj", "{970639D4-6BA7-4BD8-9AE1-CC33EC780895}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureFramework.UnitTests", "EnsureFramework.UnitTests\EnsureFramework.UnitTests.csproj", "{C7A2F8D0-1960-45B5-8483-F0C20178307E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{970639D4-6BA7-4BD8-9AE1-CC33EC780895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970639D4-6BA7-4BD8-9AE1-CC33EC780895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970639D4-6BA7-4BD8-9AE1-CC33EC780895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970639D4-6BA7-4BD8-9AE1-CC33EC780895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A2F8D0-1960-45B5-8483-F0C20178307E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A2F8D0-1960-45B5-8483-F0C20178307E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A2F8D0-1960-45B5-8483-F0C20178307E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A2F8D0-1960-45B5-8483-F0C20178307E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F10C9DF8-3055-4275-8E0A-AD9EFF0746B9}
+	EndGlobalSection
+EndGlobal
