@@ -1,4 +1,5 @@
 ﻿using EnsureFramework.Assertions;
+using EnsureFramework.Resources;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -53,9 +54,11 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Arg<T>(Expression<Func<T>> argExpression)
         {
-            var body = argExpression.Body as MemberExpression ?? throw new NotSupportedException($"Expression '{nameof(argExpression)}' must contain an argument");
-            var constant = body.Expression as ConstantExpression ?? throw new NotSupportedException($"Expression '{nameof(argExpression)}' must contain an argument");
-            var field = body.Member as FieldInfo ?? throw new NotSupportedException($"Expression '{nameof(argExpression)}' must contain an argument");
+            var exceptionMessage = string.Format(Strings.ExpressionMustContainAnArgument_Format, nameof(argExpression));
+
+            var body = argExpression.Body as MemberExpression ?? throw new NotSupportedException(exceptionMessage);
+            var constant = body.Expression as ConstantExpression ?? throw new NotSupportedException(exceptionMessage);
+            var field = body.Member as FieldInfo ?? throw new NotSupportedException(exceptionMessage);
 
             var argument = (T)field.GetValue(constant.Value);
             var argumentName = field.Name;

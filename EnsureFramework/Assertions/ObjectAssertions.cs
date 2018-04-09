@@ -12,6 +12,26 @@ namespace EnsureFramework
     /// </summary>
     public static class ObjectAssertions
     {
+
+        /// <summary>
+        /// Asserts that the assertion is true.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="assertion">The assertion</param>
+        /// <param name="message">The message.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentException"></exception>
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder Assert(this IArgumentAssertionBuilder @this, bool assertion, string message = null)
+        {
+            if (!assertion)
+            {
+                throw new ArgumentException(message, @this.ArgumentName);
+            }
+
+            return @this;
+        }
+
         /// <summary>
         /// Ensures the argument is not <c>null</c>
         /// </summary>

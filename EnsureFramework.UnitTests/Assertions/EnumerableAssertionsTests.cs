@@ -25,7 +25,7 @@ namespace EnsureFramework.Tests
         [Fact]
         public void IsNotNullOrEmpty_Null_Test()
         {
-            Assert.Throws<ArgumentException>(() => Ensure.Arg<int[]>(null, "value").IsNotNullOrEmpty());
+            Assert.Throws<ArgumentNullException>(() => Ensure.Arg<int[]>(null, "value").IsNotNullOrEmpty());
         }
     }
 }
