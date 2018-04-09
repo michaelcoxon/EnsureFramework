@@ -10,6 +10,11 @@ namespace EnsureFramework
 {
     public static class Int32Assertions
     {
+        /// <summary>
+        /// Asserts that the int is not negative.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<int> IsNotNegative(this IArgumentAssertionBuilder<int> @this)
         {
@@ -20,6 +25,11 @@ namespace EnsureFramework
             return @this;
         }
 
+        /// <summary>
+        /// Asserts that the int is not zero.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<int> IsNotZero(this IArgumentAssertionBuilder<int> @this)
         {
