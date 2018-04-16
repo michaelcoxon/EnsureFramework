@@ -43,6 +43,7 @@ There are extensions for common types in .NET but not much else outside of that.
  - Guid
  - Object
  - String
+ - Int32/int
 
 # Well Mike, my type isn't supported...
 That's cool friend, just create your own by adding extension methods to your project. 

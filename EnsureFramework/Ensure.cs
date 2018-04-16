@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace EnsureFramework
 {
     /// <summary>
-    /// A simple helper for validation
+    /// The core assertion entry point
     /// </summary>
     [DebuggerNonUserCode]
     public sealed class Ensure

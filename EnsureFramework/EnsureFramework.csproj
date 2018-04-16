@@ -12,7 +12,7 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
     <Copyright>Copyright 2018</Copyright>
     <PackageLicenseUrl>https://github.com/michaelcoxon/EnsureFramework/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/michaelcoxon/EnsureFramework</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/michaelcoxon/EnsureFramework/blob/master/README.md</RepositoryUrl>
+    <RepositoryUrl>https://github.com/michaelcoxon/EnsureFramework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>runtime-contracts,ensure,contracts</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
