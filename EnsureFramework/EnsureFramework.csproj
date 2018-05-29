@@ -16,7 +16,12 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
     <RepositoryType>git</RepositoryType>
     <PackageTags>runtime-contracts,ensure,contracts</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
+    <Version>1.1.0</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="docfx.console" Version="2.36.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources\Strings.Designer.cs">
