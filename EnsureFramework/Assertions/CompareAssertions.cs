@@ -96,6 +96,15 @@ namespace EnsureFramework
             return @this;
         }
 
+        /// <summary>
+        /// Determines whether the argument is between (not including) the lower bound and upper bound.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="this">The this.</param>
+        /// <param name="lowerBound">The lower bound.</param>
+        /// <param name="upperBound">The upper bound.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsWithinRange<T>(this IArgumentAssertionBuilder<T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
@@ -107,6 +116,15 @@ namespace EnsureFramework
             return @this;
         }
 
+        /// <summary>
+        /// Determines whether the argument is between and including the lower bound and upper bound.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="this">The this.</param>
+        /// <param name="lowerBound">The lower bound.</param>
+        /// <param name="upperBound">The upper bound.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsWithinAndIncludingRange<T>(this IArgumentAssertionBuilder<T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
