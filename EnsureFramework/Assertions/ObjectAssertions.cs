@@ -50,6 +50,23 @@ namespace EnsureFramework
         }
 
         /// <summary>
+        /// Ensures the argument is not <c>null</c>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="this">The this.</param>
+        /// <exception cref="System.ArgumentNullException"></exception>
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<T> IsNotNull<T>(this IArgumentAssertionBuilder<T?> @this)
+            where T : struct
+        {
+            if (!@this.Argument.HasValue)
+            {
+                throw new ArgumentNullException(@this.ArgumentName);
+            }
+            return Ensure.Arg(@this.Argument.Value, @this.ArgumentName);
+        }
+
+        /// <summary>
         /// Ensures the argument is the exact type of <paramref name="type" />.
         /// </summary>
         /// <typeparam name="T"></typeparam>

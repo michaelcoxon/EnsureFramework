@@ -45,5 +45,12 @@ namespace EnsureFramework.Tests
         {
             Ensure.Arg(-1, "value").IsNotZero();
         }
+
+        [Fact]
+        public void IsNotNull_NullableIntBecomesInt_Test()
+        {
+            int? value = -1;
+            Ensure.Arg(value, "value").IsNotNull().IsNotZero();
+        }
     }
 }
