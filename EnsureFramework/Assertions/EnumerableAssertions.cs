@@ -31,5 +31,35 @@ namespace EnsureFramework
             }
             return @this;
         }
+
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<IEnumerable<T>> Contains<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this, T item)
+        {
+            if (!@this.Argument.Contains(item))
+            {
+                throw new ArgumentException("Item is not in eumerable.", @this.ArgumentName);
+            }
+            return @this;
+        }
+
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<IEnumerable<T>> Any<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this)
+        {
+            if (!@this.Argument.Any())
+            {
+                throw new ArgumentException("No items", @this.ArgumentName);
+            }
+            return @this;
+        }
+
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<IEnumerable<T>> Any<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this, Func<T, bool> predicate = null)
+        {
+            if (!@this.Argument.Any(predicate))
+            {
+                throw new ArgumentException("No items match the predicate", @this.ArgumentName);
+            }
+            return @this;
+        }
     }
 }

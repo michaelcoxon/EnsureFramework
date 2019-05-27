@@ -43,8 +43,9 @@ namespace EnsureFramework.UnitTests.Assertions
             };
 
             Ensure.Arg(dictionary, "dictionary")
+                .IsNotNull()
                 .WithKey("key")
-                .IsNotNull();
+                   .IsNotNull();
         }
 
         [Fact]
@@ -59,7 +60,7 @@ namespace EnsureFramework.UnitTests.Assertions
             {
                 Ensure.Arg(dictionary, "dictionary")
                     .WithKey("key")
-                    .IsNotNull();
+                        .IsNotNull();
             });
         }
     }

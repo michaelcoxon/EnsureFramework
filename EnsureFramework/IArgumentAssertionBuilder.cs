@@ -31,4 +31,23 @@ namespace EnsureFramework.Assertions
         string ArgumentName { get; }
     }
 
+    /// <summary>
+    /// Interface that allows the extension of the <see cref="Ensure"/> class.
+    /// </summary>
+    public interface INestedArgumentAssertionBuilder<TParentAssertion, out T> : INestedArgumentAssertionBuilder<TParentAssertion>, IArgumentAssertionBuilder<T>
+        where TParentAssertion: IArgumentAssertionBuilder
+    {
+    }
+
+    /// <summary>
+    /// Interface that allows the extension of the <see cref="Ensure"/> class.
+    /// </summary>
+    public interface INestedArgumentAssertionBuilder<TParentAssertion> : IArgumentAssertionBuilder
+         where TParentAssertion : IArgumentAssertionBuilder
+    {
+        /// <summary>
+        /// Pop the context back to the parent assertion
+        /// </summary>
+        TParentAssertion Pop();
+    }
 }

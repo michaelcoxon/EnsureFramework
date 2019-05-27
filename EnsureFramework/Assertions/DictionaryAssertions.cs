@@ -20,11 +20,11 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IDictionary<TKey,TValue>> HasKey<TKey, TValue>(this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
+        public static IArgumentAssertionBuilder<IDictionary<TKey, TValue>> HasKey<TKey, TValue>(this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
         {
             if (!@this.Argument.ContainsKey(key))
             {
-                throw new ArgumentException($"{@this.ArgumentName}[\"{key}\"] is not in the dictionary",@this.ArgumentName);
+                throw new ArgumentException($"{@this.ArgumentName}[\"{key}\"] is not in the dictionary", @this.ArgumentName);
             }
             return @this;
         }
@@ -39,9 +39,9 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<TValue> WithKey<TKey, TValue>(this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
+        public static INestedArgumentAssertionBuilder<IArgumentAssertionBuilder<IDictionary<TKey, TValue>>, TValue> WithKey<TKey, TValue>(this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
         {
-            return Ensure.Arg(@this.Argument[key], $"{@this.ArgumentName}[\"{key}\"]");
+            return Ensure.Arg(@this, @this.Argument[key], $"{@this.ArgumentName}[\"{key}\"]");
         }
     }
 }
