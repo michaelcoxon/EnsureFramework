@@ -16,7 +16,7 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
     <RepositoryType>git</RepositoryType>
     <PackageTags>runtime-contracts,ensure,contracts</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.0|AnyCPU'">

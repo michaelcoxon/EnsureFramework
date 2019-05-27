@@ -109,9 +109,9 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsWithinRange<T>(this IArgumentAssertionBuilder<T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
-            if (@this.Argument.CompareTo(lowerBound) < 0 || @this.Argument.CompareTo(upperBound) > 0)
+            if (@this.Argument.CompareTo(lowerBound) <= 0 || @this.Argument.CompareTo(upperBound) >= 0)
             {
-                throw new ArgumentException($"The argument '{@this.ArgumentName}' is not within the range '{lowerBound}-{upperBound}'", @this.ArgumentName);
+                throw new ArgumentException($"The argument '{@this.ArgumentName}' is not within and including the range '{lowerBound}-{upperBound}'", @this.ArgumentName);
             }
             return @this;
         }
@@ -129,9 +129,9 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsWithinAndIncludingRange<T>(this IArgumentAssertionBuilder<T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
-            if (@this.Argument.CompareTo(lowerBound) <= 0 || @this.Argument.CompareTo(upperBound) >= 0)
+            if (@this.Argument.CompareTo(lowerBound) < 0 || @this.Argument.CompareTo(upperBound) > 0)
             {
-                throw new ArgumentException($"The argument '{@this.ArgumentName}' is not within and including the range '{lowerBound}-{upperBound}'", @this.ArgumentName);
+                throw new ArgumentException($"The argument '{@this.ArgumentName}' is not within the range '{lowerBound}-{upperBound}'", @this.ArgumentName);
             }
             return @this;
         }
