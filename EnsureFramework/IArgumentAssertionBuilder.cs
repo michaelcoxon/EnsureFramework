@@ -34,7 +34,7 @@ namespace EnsureFramework.Assertions
     /// <summary>
     /// Interface that allows the extension of the <see cref="Ensure"/> class.
     /// </summary>
-    public interface INestedArgumentAssertionBuilder<TParentAssertion, out T> : INestedArgumentAssertionBuilder<TParentAssertion>, IArgumentAssertionBuilder<T>
+    public interface INestedArgumentAssertionBuilder<out TParentAssertion, out T> : INestedArgumentAssertionBuilder<TParentAssertion>, IArgumentAssertionBuilder<T>
         where TParentAssertion: IArgumentAssertionBuilder
     {
     }
@@ -42,7 +42,7 @@ namespace EnsureFramework.Assertions
     /// <summary>
     /// Interface that allows the extension of the <see cref="Ensure"/> class.
     /// </summary>
-    public interface INestedArgumentAssertionBuilder<TParentAssertion> : IArgumentAssertionBuilder
+    public interface INestedArgumentAssertionBuilder<out TParentAssertion> : IArgumentAssertionBuilder
          where TParentAssertion : IArgumentAssertionBuilder
     {
         /// <summary>

@@ -18,8 +18,9 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsGreaterThanOrEqualTo<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static TNestedArgumentAssertionBuilder IsGreaterThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
             where T : IComparable<T>
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
         {
             if (@this.Argument.CompareTo(value) < 0)
             {
@@ -35,8 +36,9 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsLessThanOrEqualTo<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static TNestedArgumentAssertionBuilder IsLessThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
             where T : IComparable<T>
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
         {
             if (@this.Argument.CompareTo(value) > 0)
             {
@@ -52,8 +54,9 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsLessThan<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static TNestedArgumentAssertionBuilder IsLessThan<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
             where T : IComparable<T>
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
         {
             if (@this.Argument.CompareTo(value) != -1)
             {
@@ -69,8 +72,9 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsGreaterThan<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static TNestedArgumentAssertionBuilder IsGreaterThan<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
             where T : IComparable<T>
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
         {
             if (@this.Argument.CompareTo(value) != 1)
             {
@@ -86,8 +90,9 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsEqualTo<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static TNestedArgumentAssertionBuilder IsEqualTo<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
             where T : IComparable<T>
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
         {
             if (@this.Argument.CompareTo(value) != 0)
             {
@@ -106,8 +111,9 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsWithinRange<T>(this IArgumentAssertionBuilder<T> @this, T lowerBound, T upperBound)
+        public static TNestedArgumentAssertionBuilder IsWithinRange<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T lowerBound, T upperBound)
             where T : IComparable<T>
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
         {
             if (@this.Argument.CompareTo(lowerBound) <= 0 || @this.Argument.CompareTo(upperBound) >= 0)
             {
@@ -126,8 +132,9 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsWithinAndIncludingRange<T>(this IArgumentAssertionBuilder<T> @this, T lowerBound, T upperBound)
+        public static TNestedArgumentAssertionBuilder IsWithinAndIncludingRange<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T lowerBound, T upperBound)
             where T : IComparable<T>
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
         {
             if (@this.Argument.CompareTo(lowerBound) < 0 || @this.Argument.CompareTo(upperBound) > 0)
             {

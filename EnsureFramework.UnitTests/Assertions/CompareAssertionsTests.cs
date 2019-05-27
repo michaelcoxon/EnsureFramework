@@ -22,6 +22,25 @@ namespace EnsureFramework.Tests
         }
 
         [Fact]
+        public void IsGreaterThanOrEqualTo_Nested_Test()
+        {
+            var subject = new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 2,
+                [3] = 3,
+                [4] = 4,
+            };
+
+            Ensure.Arg(subject, "value").WithKey(3).IsGreaterThanOrEqualTo(2).Pop();
+            Ensure.Arg(subject, "value").WithKey(3).IsGreaterThanOrEqualTo(3).Pop();
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsGreaterThanOrEqualTo(4).Pop();
+            });
+        }
+
+        [Fact]
         public void IsLessThanOrEqualToTest()
         {
             Ensure.Arg(3, "value").IsLessThanOrEqualTo(4);
@@ -29,6 +48,25 @@ namespace EnsureFramework.Tests
             Assert.Throws<ArgumentException>(() =>
             {
                 Ensure.Arg(3, "value").IsLessThanOrEqualTo(2);
+            });
+        }
+
+        [Fact]
+        public void IsLessThanOrEqualTo_Nested_Test()
+        {
+            var subject = new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 2,
+                [3] = 3,
+                [4] = 4,
+            };
+
+            Ensure.Arg(subject, "value").WithKey(3).IsLessThanOrEqualTo(4).Pop();
+            Ensure.Arg(subject, "value").WithKey(3).IsLessThanOrEqualTo(3).Pop();
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsLessThanOrEqualTo(2).Pop();
             });
         }
 
@@ -43,6 +81,25 @@ namespace EnsureFramework.Tests
         }
 
         [Fact]
+        public void IsLessThan_Nested_Test()
+        {
+            var subject = new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 2,
+                [3] = 3,
+                [4] = 4,
+            };
+
+            Ensure.Arg(subject, "value").WithKey(3).IsLessThan(4).Pop();
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsLessThan(3).Pop();
+            });
+        }
+
+
+        [Fact]
         public void IsGreaterThanTest()
         {
             Ensure.Arg(3, "value").IsGreaterThan(2);
@@ -53,12 +110,48 @@ namespace EnsureFramework.Tests
         }
 
         [Fact]
+        public void IsGreaterThan_Nested_Test()
+        {
+            var subject = new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 2,
+                [3] = 3,
+                [4] = 4,
+            };
+
+            Ensure.Arg(subject, "value").WithKey(3).IsGreaterThan(2).Pop();
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsGreaterThan(3).Pop();
+            });
+        }
+
+        [Fact]
         public void IsEqualToTest()
         {
             Ensure.Arg(3, "value").IsEqualTo(3);
             Assert.Throws<ArgumentException>(() =>
             {
                 Ensure.Arg(3, "value").IsEqualTo(2);
+            });
+        }
+
+        [Fact]
+        public void IsEqualTo_Nested_Test()
+        {
+            var subject = new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 2,
+                [3] = 3,
+                [4] = 4,
+            };
+
+            Ensure.Arg(subject, "value").WithKey(3).IsEqualTo(3).Pop();
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsEqualTo(2).Pop();
             });
         }
 
@@ -84,6 +177,35 @@ namespace EnsureFramework.Tests
         }
 
         [Fact]
+        public void IsWithinRange_Nested_Test()
+        {
+            var subject = new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 2,
+                [3] = 3,
+                [4] = 4,
+            };
+
+            Ensure.Arg(subject, "value").WithKey(3).IsWithinRange(2, 4).Pop();
+            Ensure.Arg(subject, "value").WithKey(3).IsWithinRange(-3, 100).Pop();
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsWithinRange(4, 4).Pop();
+            });
+
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsWithinRange(3, 4).Pop();
+            });
+
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsWithinRange(2, 3).Pop();
+            });
+        }
+
+        [Fact]
         public void IsWithinAndIncludingRangeTest()
         {
             Ensure.Arg(3, "value").IsWithinAndIncludingRange(2, 4);
@@ -95,6 +217,28 @@ namespace EnsureFramework.Tests
             Assert.Throws<ArgumentException>(() =>
             {
                 Ensure.Arg(3, "value").IsWithinAndIncludingRange(4, 4);
+            });
+        }
+
+        [Fact]
+        public void IsWithinAndIncludingRange_Nested_Test()
+        {
+            var subject = new Dictionary<int, int>
+            {
+                [1] = 1,
+                [2] = 2,
+                [3] = 3,
+                [4] = 4,
+            };
+            Ensure.Arg(subject, "value").WithKey(3).IsWithinAndIncludingRange(2, 4).Pop();
+            Ensure.Arg(subject, "value").WithKey(3).IsWithinAndIncludingRange(-3, 100).Pop();
+
+            Ensure.Arg(subject, "value").WithKey(3).IsWithinAndIncludingRange(3, 4).Pop();
+            Ensure.Arg(subject, "value").WithKey(3).IsWithinAndIncludingRange(2, 3).Pop();
+
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.Arg(subject, "value").WithKey(3).IsWithinAndIncludingRange(4, 4).Pop();
             });
         }
     }

@@ -10,9 +10,8 @@
 
 namespace EnsureFramework.Resources {
     using System;
-    using System.Reflection;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -20,7 +19,7 @@ namespace EnsureFramework.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Strings {
@@ -40,7 +39,7 @@ namespace EnsureFramework.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EnsureFramework.Resources.Strings", typeof(Strings).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EnsureFramework.Resources.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -62,11 +61,47 @@ namespace EnsureFramework.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expression &apos;{0}&apos; must contain an argument.
+        ///   Looks up a localized string similar to All items do not match the predicate..
+        /// </summary>
+        internal static string All_items_do_not_match_the_predicate {
+            get {
+                return ResourceManager.GetString("All_items_do_not_match_the_predicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expression &apos;{0}&apos; must contain an argument..
         /// </summary>
         internal static string ExpressionMustContainAnArgument_Format {
             get {
                 return ResourceManager.GetString("ExpressionMustContainAnArgument_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item is not in enumerable..
+        /// </summary>
+        internal static string Item_is_not_in_eumerable {
+            get {
+                return ResourceManager.GetString("Item_is_not_in_eumerable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No items..
+        /// </summary>
+        internal static string No_items {
+            get {
+                return ResourceManager.GetString("No_items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No items match the predicate..
+        /// </summary>
+        internal static string No_items_match_the_predicate {
+            get {
+                return ResourceManager.GetString("No_items_match_the_predicate", resourceCulture);
             }
         }
     }

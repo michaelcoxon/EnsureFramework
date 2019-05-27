@@ -1,5 +1,6 @@
 ﻿using EnsureFramework.Assertions;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -15,17 +16,18 @@ namespace EnsureFramework
         /// <summary>
         /// Ensures the enumerable argument is not <c>null</c> or empty.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TNestedArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IEnumerable<T>> IsNotNullOrEmpty<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this)
+        public static TNestedArgumentAssertionBuilder IsNotNullOrEmpty<TNestedArgumentAssertionBuilder>(this TNestedArgumentAssertionBuilder @this)
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable>
         {
             if (@this.Argument == null)
             {
                 throw new ArgumentNullException(@this.ArgumentName);
             }
-            if (!@this.Argument.Any())
+            if (!@this.Argument.Cast<dynamic>().Any())
             {
                 throw new ArgumentException(null, @this.ArgumentName);
             }
@@ -33,7 +35,8 @@ namespace EnsureFramework
         }
 
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IEnumerable<T>> Contains<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this, T item)
+        public static TNestedArgumentAssertionBuilder Contains<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T item)
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable<T>>
         {
             if (!@this.Argument.Contains(item))
             {
@@ -43,17 +46,20 @@ namespace EnsureFramework
         }
 
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IEnumerable<T>> Any<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this)
+        public static TNestedArgumentAssertionBuilder Any<TNestedArgumentAssertionBuilder>(this TNestedArgumentAssertionBuilder @this)
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable>
         {
-            if (!@this.Argument.Any())
+            if (!@this.Argument.Cast<dynamic>().Any())
             {
                 throw new ArgumentException(Resources.Strings.No_items, @this.ArgumentName);
             }
             return @this;
         }
 
+        
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IEnumerable<T>> Any<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this, Func<T, bool> predicate = null)
+        public static TNestedArgumentAssertionBuilder Any<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, Func<T, bool> predicate = null)
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable<T>>
         {
             if (!@this.Argument.Any(predicate))
             {
@@ -61,15 +67,16 @@ namespace EnsureFramework
             }
             return @this;
         }
-
+        
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IEnumerable<T>> All<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this, Func<T, bool> predicate = null)
+        public static TNestedArgumentAssertionBuilder All<TNestedArgumentAssertionBuilder,T>(this TNestedArgumentAssertionBuilder @this, Func<T, bool> predicate = null)
+            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable<T>>
         {
             if (!@this.Argument.All(predicate))
             {
                 throw new ArgumentException(Resources.Strings.All_items_do_not_match_the_predicate, @this.ArgumentName);
             }
             return @this;
-        }
+        }        
     }
 }

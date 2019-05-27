@@ -122,7 +122,6 @@
   </data>
   <data name="ExpressionMustContainAnArgument_Format" xml:space="preserve">
     <value>Expression '{0}' must contain an argument.</value>
-    <comment>{0} is the name of argExpression</comment>
   </data>
   <data name="Item_is_not_in_eumerable" xml:space="preserve">
     <value>Item is not in enumerable.</value>
