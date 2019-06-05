@@ -5,6 +5,8 @@ uid: home
 # EnsureFramework 
 >*A simple framework to ensure variables and parameters*
 
+[![](https://img.shields.io/nuget/dt/EnsureFramework.svg)](https://www.nuget.org/packages/EnsureFramework/)
+
 ## Hello
 
 EnsureFramework is designed to take the pain out of null checking and making sure (ensuring) your methods are being used the way they were intended and throwing exceptions when unsupported values are passed to them.
@@ -15,7 +17,7 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
 
 ## Get it!
 
-EnsureFramework is available on NuGet. Just run the required command below:
+EnsureFramework is available on [NuGet](https://www.nuget.org/packages/EnsureFramework/). Just run the required command below:
 
 # [Visual Studio Package Manager](#tab/Visual-Studio-Package-Manager)
 
@@ -23,7 +25,7 @@ EnsureFramework is available on NuGet. Just run the required command below:
 PM> Install-Package EnsureFramework -Version 1.3.0
 ```
 
-# [.NET CLI](#tab/Visual-Studio-Package-Manager)
+# [.NET CLI](#tab/NET-CLI)
 
 ```powershell
 > dotnet add package EnsureFramework --version 1.3.0
