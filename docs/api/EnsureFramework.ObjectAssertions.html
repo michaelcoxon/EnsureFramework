@@ -1,0 +1,998 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ObjectAssertions
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ObjectAssertions
+   ">
+    <meta name="generator" content="docfx 2.42.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="EnsureFramework.ObjectAssertions">
+  
+  
+  <h1 id="EnsureFramework_ObjectAssertions" data-uid="EnsureFramework.ObjectAssertions" class="text-break">Class ObjectAssertions
+  </h1>
+  <div class="markdown level0 summary"><p>Extensions for <a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder.html">IArgumentAssertionBuilder</a> that provide assertions in the <a class="xref" href="EnsureFramework.Ensure.html#EnsureFramework_Ensure_Arg__1_System_Linq_Expressions_Expression_System_Func___0___">Arg&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;)</a> and <a class="xref" href="EnsureFramework.Ensure.html#EnsureFramework_Ensure_Arg__1___0_System_String_">Arg&lt;T&gt;(T, String)</a> helpers</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ObjectAssertions</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="EnsureFramework.html">EnsureFramework</a></h6>
+  <h6><strong>Assembly</strong>: EnsureFramework.dll</h6>
+  <h5 id="EnsureFramework_ObjectAssertions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ObjectAssertions</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_Assert__1___0_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.Assert%60%601(%60%600%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/ObjectAssertions.cs/#L24">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_Assert_" data-uid="EnsureFramework.ObjectAssertions.Assert*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_Assert__1___0_System_Boolean_System_String_" data-uid="EnsureFramework.ObjectAssertions.Assert``1(``0,System.Boolean,System.String)">Assert&lt;TArgumentAssertionBuilder&gt;(TArgumentAssertionBuilder, Boolean, String)</h4>
+  <div class="markdown level1 summary"><p>Asserts that the assertion is true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TArgumentAssertionBuilder Assert&lt;TArgumentAssertionBuilder&gt;(this TArgumentAssertionBuilder this, bool assertion, string message = null)
+    where TArgumentAssertionBuilder : IArgumentAssertionBuilder</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TArgumentAssertionBuilder</span></td>
+        <td><span class="parametername">this</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">assertion</span></td>
+        <td><p>The assertion</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TArgumentAssertionBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TArgumentAssertionBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_IsNotNull__1___0_.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.IsNotNull%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/ObjectAssertions.cs/#L41">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_IsNotNull_" data-uid="EnsureFramework.ObjectAssertions.IsNotNull*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_IsNotNull__1___0_" data-uid="EnsureFramework.ObjectAssertions.IsNotNull``1(``0)">IsNotNull&lt;TArgumentAssertionBuilder&gt;(TArgumentAssertionBuilder)</h4>
+  <div class="markdown level1 summary"><p>Ensures the argument is not <code>null</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TArgumentAssertionBuilder IsNotNull&lt;TArgumentAssertionBuilder&gt;(this TArgumentAssertionBuilder this)
+    where TArgumentAssertionBuilder : IArgumentAssertionBuilder</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TArgumentAssertionBuilder</span></td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The this.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TArgumentAssertionBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TArgumentAssertionBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_IsNotNull__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Nullable___0___.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.IsNotNull%60%601(EnsureFramework.Assertions.IArgumentAssertionBuilder%7BSystem.Nullable%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/ObjectAssertions.cs/#L58">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_IsNotNull_" data-uid="EnsureFramework.ObjectAssertions.IsNotNull*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_IsNotNull__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Nullable___0___" data-uid="EnsureFramework.ObjectAssertions.IsNotNull``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Nullable{``0}})">IsNotNull&lt;T&gt;(IArgumentAssertionBuilder&lt;Nullable&lt;T&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Ensures the argument is not <code>null</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IArgumentAssertionBuilder&lt;T&gt; IsNotNull&lt;T&gt;(this IArgumentAssertionBuilder&lt;T? &gt; this)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;<span class="xref">System.Nullable</span>&lt;T&gt;&gt;</td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The this.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_IsNotNull__2_EnsureFramework_Assertions_INestedArgumentAssertionBuilder___0_System_Nullable___1___.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.IsNotNull%60%602(EnsureFramework.Assertions.INestedArgumentAssertionBuilder%7B%60%600%2CSystem.Nullable%7B%60%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/Nested/ObjectAssertions.cs/#L22">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_IsNotNull_" data-uid="EnsureFramework.ObjectAssertions.IsNotNull*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_IsNotNull__2_EnsureFramework_Assertions_INestedArgumentAssertionBuilder___0_System_Nullable___1___" data-uid="EnsureFramework.ObjectAssertions.IsNotNull``2(EnsureFramework.Assertions.INestedArgumentAssertionBuilder{``0,System.Nullable{``1}})">IsNotNull&lt;TParentArgumentAssertionBuilder, T&gt;(INestedArgumentAssertionBuilder&lt;TParentArgumentAssertionBuilder, Nullable&lt;T&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Ensures the argument is not <code>null</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static INestedArgumentAssertionBuilder&lt;TParentArgumentAssertionBuilder, T&gt; IsNotNull&lt;TParentArgumentAssertionBuilder, T&gt;(this INestedArgumentAssertionBuilder&lt;TParentArgumentAssertionBuilder, T? &gt; this)
+    where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.INestedArgumentAssertionBuilder-2.html">INestedArgumentAssertionBuilder</a>&lt;TParentArgumentAssertionBuilder, <span class="xref">System.Nullable</span>&lt;T&gt;&gt;</td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The this.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.INestedArgumentAssertionBuilder-2.html">INestedArgumentAssertionBuilder</a>&lt;TParentArgumentAssertionBuilder, T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TParentArgumentAssertionBuilder</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_IsOneOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0___.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.IsOneOf%60%601(EnsureFramework.Assertions.IArgumentAssertionBuilder%7B%60%600%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/ObjectAssertions.cs/#L139">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_IsOneOf_" data-uid="EnsureFramework.ObjectAssertions.IsOneOf*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_IsOneOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0___" data-uid="EnsureFramework.ObjectAssertions.IsOneOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0[])">IsOneOf&lt;T&gt;(IArgumentAssertionBuilder&lt;T&gt;, T[])</h4>
+  <div class="markdown level1 summary"><p>Determines whether the argument is one of the specified options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IArgumentAssertionBuilder&lt;T&gt; IsOneOf&lt;T&gt;(this IArgumentAssertionBuilder&lt;T&gt; this, params T[] options)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The this.</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_IsTypeOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.IsTypeOf%60%601(EnsureFramework.Assertions.IArgumentAssertionBuilder%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/ObjectAssertions.cs/#L92">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_IsTypeOf_" data-uid="EnsureFramework.ObjectAssertions.IsTypeOf*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_IsTypeOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__" data-uid="EnsureFramework.ObjectAssertions.IsTypeOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0})">IsTypeOf&lt;T&gt;(IArgumentAssertionBuilder&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Ensures the argument is of the type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IArgumentAssertionBuilder&lt;T&gt; IsTypeOf&lt;T&gt;(this IArgumentAssertionBuilder&lt;T&gt; this)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The this.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_IsTypeOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Type_.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.IsTypeOf%60%601(EnsureFramework.Assertions.IArgumentAssertionBuilder%7B%60%600%7D%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/ObjectAssertions.cs/#L76">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_IsTypeOf_" data-uid="EnsureFramework.ObjectAssertions.IsTypeOf*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_IsTypeOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Type_" data-uid="EnsureFramework.ObjectAssertions.IsTypeOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Type)">IsTypeOf&lt;T&gt;(IArgumentAssertionBuilder&lt;T&gt;, Type)</h4>
+  <div class="markdown level1 summary"><p>Ensures the argument is the exact type of <code data-dev-comment-type="paramref" class="paramref">type</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IArgumentAssertionBuilder&lt;T&gt; IsTypeOf&lt;T&gt;(this IArgumentAssertionBuilder&lt;T&gt; this, Type type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The this.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_IsTypeOf__2_EnsureFramework_Assertions_INestedArgumentAssertionBuilder___0___1__System_Type_.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.IsTypeOf%60%602(EnsureFramework.Assertions.INestedArgumentAssertionBuilder%7B%60%600%2C%60%601%7D%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/Nested/ObjectAssertions.cs/#L41">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_IsTypeOf_" data-uid="EnsureFramework.ObjectAssertions.IsTypeOf*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_IsTypeOf__2_EnsureFramework_Assertions_INestedArgumentAssertionBuilder___0___1__System_Type_" data-uid="EnsureFramework.ObjectAssertions.IsTypeOf``2(EnsureFramework.Assertions.INestedArgumentAssertionBuilder{``0,``1},System.Type)">IsTypeOf&lt;TParentArgumentAssertionBuilder, T&gt;(INestedArgumentAssertionBuilder&lt;TParentArgumentAssertionBuilder, T&gt;, Type)</h4>
+  <div class="markdown level1 summary"><p>Ensures the argument is the exact type of <code data-dev-comment-type="paramref" class="paramref">type</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static INestedArgumentAssertionBuilder&lt;TParentArgumentAssertionBuilder, T&gt; IsTypeOf&lt;TParentArgumentAssertionBuilder, T&gt;(this INestedArgumentAssertionBuilder&lt;TParentArgumentAssertionBuilder, T&gt; this, Type type)
+    where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.INestedArgumentAssertionBuilder-2.html">INestedArgumentAssertionBuilder</a>&lt;TParentArgumentAssertionBuilder, T&gt;</td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The this.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.INestedArgumentAssertionBuilder-2.html">INestedArgumentAssertionBuilder</a>&lt;TParentArgumentAssertionBuilder, T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TParentArgumentAssertionBuilder</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_Matches__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Func___0_System_Boolean__System_String_.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.Matches%60%601(EnsureFramework.Assertions.IArgumentAssertionBuilder%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Boolean%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/ObjectAssertions.cs/#L111">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_Matches_" data-uid="EnsureFramework.ObjectAssertions.Matches*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_Matches__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Func___0_System_Boolean__System_String_" data-uid="EnsureFramework.ObjectAssertions.Matches``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Func{``0,System.Boolean},System.String)">Matches&lt;T&gt;(IArgumentAssertionBuilder&lt;T&gt;, Func&lt;T, Boolean&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Asserts on the value of <code data-dev-comment-type="paramref" class="paramref">predicate</code> to whether the assertion is valid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IArgumentAssertionBuilder&lt;T&gt; Matches&lt;T&gt;(this IArgumentAssertionBuilder&lt;T&gt; this, Func&lt;T, bool&gt; predicate, string message = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The this.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The predicate to test to see if the assertion is valid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to use if the assertion is invalid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions_WithProperty__2_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Linq_Expressions_Expression_System_Func___0___1___.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions.WithProperty%60%602(EnsureFramework.Assertions.IArgumentAssertionBuilder%7B%60%600%7D%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2C%60%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/Nested/ObjectAssertions.cs/#L60">View Source</a>
+  </span>
+  <a id="EnsureFramework_ObjectAssertions_WithProperty_" data-uid="EnsureFramework.ObjectAssertions.WithProperty*"></a>
+  <h4 id="EnsureFramework_ObjectAssertions_WithProperty__2_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Linq_Expressions_Expression_System_Func___0___1___" data-uid="EnsureFramework.ObjectAssertions.WithProperty``2(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">WithProperty&lt;T, TProperty&gt;(IArgumentAssertionBuilder&lt;T&gt;, Expression&lt;Func&lt;T, TProperty&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Makes assertions against the property of an object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static INestedArgumentAssertionBuilder&lt;IArgumentAssertionBuilder&lt;T&gt;, TProperty&gt; WithProperty&lt;T, TProperty&gt;(this IArgumentAssertionBuilder&lt;T&gt; this, Expression&lt;Func&lt;T, TProperty&gt;&gt; propertySelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;</td>
+        <td><span class="parametername">this</span></td>
+        <td><p>The object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;T, TProperty&gt;&gt;</td>
+        <td><span class="parametername">propertySelector</span></td>
+        <td><p>The property selector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EnsureFramework.Assertions.INestedArgumentAssertionBuilder-2.html">INestedArgumentAssertionBuilder</a>&lt;<a class="xref" href="EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html">IArgumentAssertionBuilder</a>&lt;T&gt;, TProperty&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>the object type</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TProperty</span></td>
+        <td><p>The type of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/michaelcoxon/EnsureFramework/new/master/apiSpec/new?filename=EnsureFramework_ObjectAssertions.md&amp;value=---%0Auid%3A%20EnsureFramework.ObjectAssertions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/michaelcoxon/EnsureFramework/blob/master/EnsureFramework/Assertions/ObjectAssertions.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

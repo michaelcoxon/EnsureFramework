@@ -1,2 +1,2 @@
-docfx build
-xcopy /e _site ..\..\docs
+docfx --build
+xcopy /e /y _site ..\..\docs

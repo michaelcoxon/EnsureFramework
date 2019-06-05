@@ -4,6 +4,216 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.Assertions.IArgumentAssertionBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html",
+          "hash": "j4FrpC0VGkptR6kdqbaQ9Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.Assertions.IArgumentAssertionBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.Assertions.IArgumentAssertionBuilder.html",
+          "hash": "+pFq5KprIQ7lzXYkbMnh1g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.Assertions.INestedArgumentAssertionBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.Assertions.INestedArgumentAssertionBuilder-1.html",
+          "hash": "l4TtLTNRcBEZSUnOpLNESg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.Assertions.INestedArgumentAssertionBuilder-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.Assertions.INestedArgumentAssertionBuilder-2.html",
+          "hash": "ExBSE4aPa64DI6QhGXqmmw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.Assertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.Assertions.html",
+          "hash": "s/SP89A9exXdzI7N5P7ciQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.CompareAssertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.CompareAssertions.html",
+          "hash": "1/t8AcucmRWG3qqvZdcf7A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.DictionaryAssertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.DictionaryAssertions.html",
+          "hash": "tTmCvu2N27cVV8Tg9AKAoA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.Ensure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.Ensure.html",
+          "hash": "VG5oj0OA+k9euBz+FVDuew=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.EnumerableAssertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.EnumerableAssertions.html",
+          "hash": "gq4sWhAXkqsEuRWHHnFUYA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.GuidAssertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.GuidAssertions.html",
+          "hash": "zQmrVaImcCBoi+DIDlp7Rw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.Int32Assertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.Int32Assertions.html",
+          "hash": "59Wrat2d6a7HKnooovDj/w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.ObjectAssertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.ObjectAssertions.html",
+          "hash": "0MxHsvj7NNaJbxwRnqe3vw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.StringAssertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.StringAssertions.html",
+          "hash": "QKFJXfimvE9j47Prm/5GkA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.TypeAssertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.TypeAssertions.html",
+          "hash": "ohTJTdeUhzxu1RH9zlSL4w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "ReferencedXrefPropertyNotString"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/EnsureFramework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EnsureFramework.html",
+          "hash": "xBngAN8D1UtQ/y3YiOohUg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
@@ -12,7 +222,7 @@
           "hash": "jnk0C7SBwpQPk1jedeCM1w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -21,7 +231,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "eWl/m2iB2mgjZPbLc4xDqw=="
+          "hash": "F2f8QP8QUdOA3g0z/t3+GA=="
         }
       },
       "is_incremental": false,
@@ -36,7 +246,7 @@
           "hash": "J1LLB8X6EXPw9wplqIsw+A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -60,7 +270,7 @@
           "hash": "FlCtMvkQkOh0DNwjLE1EQw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -79,12 +289,10 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "skipped_file_count": 0
       },
       "processors": {
         "TocDocumentProcessor": {
@@ -94,18 +302,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 15,
+          "skipped_file_count": 15
+        },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 0
+          "skipped_file_count": 3
         }
       }
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

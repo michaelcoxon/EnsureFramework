@@ -1,3 +1,835 @@
 ### YamlMime:XRefMap
 sorted: true
-references: []
+references:
+- uid: EnsureFramework
+  name: EnsureFramework
+  href: api/EnsureFramework.html
+  commentId: N:EnsureFramework
+  fullName: EnsureFramework
+  nameWithType: EnsureFramework
+- uid: EnsureFramework.Assertions
+  name: EnsureFramework.Assertions
+  href: api/EnsureFramework.Assertions.html
+  commentId: N:EnsureFramework.Assertions
+  fullName: EnsureFramework.Assertions
+  nameWithType: EnsureFramework.Assertions
+- uid: EnsureFramework.Assertions.IArgumentAssertionBuilder
+  name: IArgumentAssertionBuilder
+  href: api/EnsureFramework.Assertions.IArgumentAssertionBuilder.html
+  commentId: T:EnsureFramework.Assertions.IArgumentAssertionBuilder
+  fullName: EnsureFramework.Assertions.IArgumentAssertionBuilder
+  nameWithType: IArgumentAssertionBuilder
+- uid: EnsureFramework.Assertions.IArgumentAssertionBuilder.Argument
+  name: Argument
+  href: api/EnsureFramework.Assertions.IArgumentAssertionBuilder.html#EnsureFramework_Assertions_IArgumentAssertionBuilder_Argument
+  commentId: P:EnsureFramework.Assertions.IArgumentAssertionBuilder.Argument
+  fullName: EnsureFramework.Assertions.IArgumentAssertionBuilder.Argument
+  nameWithType: IArgumentAssertionBuilder.Argument
+- uid: EnsureFramework.Assertions.IArgumentAssertionBuilder.Argument*
+  name: Argument
+  href: api/EnsureFramework.Assertions.IArgumentAssertionBuilder.html#EnsureFramework_Assertions_IArgumentAssertionBuilder_Argument_
+  commentId: Overload:EnsureFramework.Assertions.IArgumentAssertionBuilder.Argument
+  isSpec: "True"
+  fullName: EnsureFramework.Assertions.IArgumentAssertionBuilder.Argument
+  nameWithType: IArgumentAssertionBuilder.Argument
+- uid: EnsureFramework.Assertions.IArgumentAssertionBuilder.ArgumentName
+  name: ArgumentName
+  href: api/EnsureFramework.Assertions.IArgumentAssertionBuilder.html#EnsureFramework_Assertions_IArgumentAssertionBuilder_ArgumentName
+  commentId: P:EnsureFramework.Assertions.IArgumentAssertionBuilder.ArgumentName
+  fullName: EnsureFramework.Assertions.IArgumentAssertionBuilder.ArgumentName
+  nameWithType: IArgumentAssertionBuilder.ArgumentName
+- uid: EnsureFramework.Assertions.IArgumentAssertionBuilder.ArgumentName*
+  name: ArgumentName
+  href: api/EnsureFramework.Assertions.IArgumentAssertionBuilder.html#EnsureFramework_Assertions_IArgumentAssertionBuilder_ArgumentName_
+  commentId: Overload:EnsureFramework.Assertions.IArgumentAssertionBuilder.ArgumentName
+  isSpec: "True"
+  fullName: EnsureFramework.Assertions.IArgumentAssertionBuilder.ArgumentName
+  nameWithType: IArgumentAssertionBuilder.ArgumentName
+- uid: EnsureFramework.Assertions.IArgumentAssertionBuilder`1
+  name: IArgumentAssertionBuilder<T>
+  href: api/EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html
+  commentId: T:EnsureFramework.Assertions.IArgumentAssertionBuilder`1
+  name.vb: IArgumentAssertionBuilder(Of T)
+  fullName: EnsureFramework.Assertions.IArgumentAssertionBuilder<T>
+  fullName.vb: EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T)
+  nameWithType: IArgumentAssertionBuilder<T>
+  nameWithType.vb: IArgumentAssertionBuilder(Of T)
+- uid: EnsureFramework.Assertions.IArgumentAssertionBuilder`1.Argument
+  name: Argument
+  href: api/EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html#EnsureFramework_Assertions_IArgumentAssertionBuilder_1_Argument
+  commentId: P:EnsureFramework.Assertions.IArgumentAssertionBuilder`1.Argument
+  fullName: EnsureFramework.Assertions.IArgumentAssertionBuilder<T>.Argument
+  fullName.vb: EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T).Argument
+  nameWithType: IArgumentAssertionBuilder<T>.Argument
+  nameWithType.vb: IArgumentAssertionBuilder(Of T).Argument
+- uid: EnsureFramework.Assertions.IArgumentAssertionBuilder`1.Argument*
+  name: Argument
+  href: api/EnsureFramework.Assertions.IArgumentAssertionBuilder-1.html#EnsureFramework_Assertions_IArgumentAssertionBuilder_1_Argument_
+  commentId: Overload:EnsureFramework.Assertions.IArgumentAssertionBuilder`1.Argument
+  isSpec: "True"
+  fullName: EnsureFramework.Assertions.IArgumentAssertionBuilder<T>.Argument
+  fullName.vb: EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T).Argument
+  nameWithType: IArgumentAssertionBuilder<T>.Argument
+  nameWithType.vb: IArgumentAssertionBuilder(Of T).Argument
+- uid: EnsureFramework.Assertions.INestedArgumentAssertionBuilder`1
+  name: INestedArgumentAssertionBuilder<TParentAssertion>
+  href: api/EnsureFramework.Assertions.INestedArgumentAssertionBuilder-1.html
+  commentId: T:EnsureFramework.Assertions.INestedArgumentAssertionBuilder`1
+  name.vb: INestedArgumentAssertionBuilder(Of TParentAssertion)
+  fullName: EnsureFramework.Assertions.INestedArgumentAssertionBuilder<TParentAssertion>
+  fullName.vb: EnsureFramework.Assertions.INestedArgumentAssertionBuilder(Of TParentAssertion)
+  nameWithType: INestedArgumentAssertionBuilder<TParentAssertion>
+  nameWithType.vb: INestedArgumentAssertionBuilder(Of TParentAssertion)
+- uid: EnsureFramework.Assertions.INestedArgumentAssertionBuilder`1.Pop
+  name: Pop()
+  href: api/EnsureFramework.Assertions.INestedArgumentAssertionBuilder-1.html#EnsureFramework_Assertions_INestedArgumentAssertionBuilder_1_Pop
+  commentId: M:EnsureFramework.Assertions.INestedArgumentAssertionBuilder`1.Pop
+  fullName: EnsureFramework.Assertions.INestedArgumentAssertionBuilder<TParentAssertion>.Pop()
+  fullName.vb: EnsureFramework.Assertions.INestedArgumentAssertionBuilder(Of TParentAssertion).Pop()
+  nameWithType: INestedArgumentAssertionBuilder<TParentAssertion>.Pop()
+  nameWithType.vb: INestedArgumentAssertionBuilder(Of TParentAssertion).Pop()
+- uid: EnsureFramework.Assertions.INestedArgumentAssertionBuilder`1.Pop*
+  name: Pop
+  href: api/EnsureFramework.Assertions.INestedArgumentAssertionBuilder-1.html#EnsureFramework_Assertions_INestedArgumentAssertionBuilder_1_Pop_
+  commentId: Overload:EnsureFramework.Assertions.INestedArgumentAssertionBuilder`1.Pop
+  isSpec: "True"
+  fullName: EnsureFramework.Assertions.INestedArgumentAssertionBuilder<TParentAssertion>.Pop
+  fullName.vb: EnsureFramework.Assertions.INestedArgumentAssertionBuilder(Of TParentAssertion).Pop
+  nameWithType: INestedArgumentAssertionBuilder<TParentAssertion>.Pop
+  nameWithType.vb: INestedArgumentAssertionBuilder(Of TParentAssertion).Pop
+- uid: EnsureFramework.Assertions.INestedArgumentAssertionBuilder`2
+  name: INestedArgumentAssertionBuilder<TParentAssertion, T>
+  href: api/EnsureFramework.Assertions.INestedArgumentAssertionBuilder-2.html
+  commentId: T:EnsureFramework.Assertions.INestedArgumentAssertionBuilder`2
+  name.vb: INestedArgumentAssertionBuilder(Of TParentAssertion, T)
+  fullName: EnsureFramework.Assertions.INestedArgumentAssertionBuilder<TParentAssertion, T>
+  fullName.vb: EnsureFramework.Assertions.INestedArgumentAssertionBuilder(Of TParentAssertion, T)
+  nameWithType: INestedArgumentAssertionBuilder<TParentAssertion, T>
+  nameWithType.vb: INestedArgumentAssertionBuilder(Of TParentAssertion, T)
+- uid: EnsureFramework.CompareAssertions
+  name: CompareAssertions
+  href: api/EnsureFramework.CompareAssertions.html
+  commentId: T:EnsureFramework.CompareAssertions
+  fullName: EnsureFramework.CompareAssertions
+  nameWithType: CompareAssertions
+- uid: EnsureFramework.CompareAssertions.IsEqualTo*
+  name: IsEqualTo
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsEqualTo_
+  commentId: Overload:EnsureFramework.CompareAssertions.IsEqualTo
+  isSpec: "True"
+  fullName: EnsureFramework.CompareAssertions.IsEqualTo
+  nameWithType: CompareAssertions.IsEqualTo
+- uid: EnsureFramework.CompareAssertions.IsEqualTo``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name: IsEqualTo<T>(IArgumentAssertionBuilder<T>, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsEqualTo__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0_
+  commentId: M:EnsureFramework.CompareAssertions.IsEqualTo``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name.vb: IsEqualTo(Of T)(IArgumentAssertionBuilder(Of T), T)
+  fullName: EnsureFramework.CompareAssertions.IsEqualTo<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsEqualTo(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), T)
+  nameWithType: CompareAssertions.IsEqualTo<T>(IArgumentAssertionBuilder<T>, T)
+  nameWithType.vb: CompareAssertions.IsEqualTo(Of T)(IArgumentAssertionBuilder(Of T), T)
+- uid: EnsureFramework.CompareAssertions.IsEqualTo``2(``0,``1)
+  name: IsEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsEqualTo__2___0___1_
+  commentId: M:EnsureFramework.CompareAssertions.IsEqualTo``2(``0,``1)
+  name.vb: IsEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  fullName: EnsureFramework.CompareAssertions.IsEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  nameWithType: CompareAssertions.IsEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  nameWithType.vb: CompareAssertions.IsEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+- uid: EnsureFramework.CompareAssertions.IsGreaterThan*
+  name: IsGreaterThan
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsGreaterThan_
+  commentId: Overload:EnsureFramework.CompareAssertions.IsGreaterThan
+  isSpec: "True"
+  fullName: EnsureFramework.CompareAssertions.IsGreaterThan
+  nameWithType: CompareAssertions.IsGreaterThan
+- uid: EnsureFramework.CompareAssertions.IsGreaterThan``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name: IsGreaterThan<T>(IArgumentAssertionBuilder<T>, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsGreaterThan__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0_
+  commentId: M:EnsureFramework.CompareAssertions.IsGreaterThan``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name.vb: IsGreaterThan(Of T)(IArgumentAssertionBuilder(Of T), T)
+  fullName: EnsureFramework.CompareAssertions.IsGreaterThan<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsGreaterThan(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), T)
+  nameWithType: CompareAssertions.IsGreaterThan<T>(IArgumentAssertionBuilder<T>, T)
+  nameWithType.vb: CompareAssertions.IsGreaterThan(Of T)(IArgumentAssertionBuilder(Of T), T)
+- uid: EnsureFramework.CompareAssertions.IsGreaterThan``2(``0,``1)
+  name: IsGreaterThan<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsGreaterThan__2___0___1_
+  commentId: M:EnsureFramework.CompareAssertions.IsGreaterThan``2(``0,``1)
+  name.vb: IsGreaterThan(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  fullName: EnsureFramework.CompareAssertions.IsGreaterThan<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsGreaterThan(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  nameWithType: CompareAssertions.IsGreaterThan<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  nameWithType.vb: CompareAssertions.IsGreaterThan(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+- uid: EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo*
+  name: IsGreaterThanOrEqualTo
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsGreaterThanOrEqualTo_
+  commentId: Overload:EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo
+  isSpec: "True"
+  fullName: EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo
+  nameWithType: CompareAssertions.IsGreaterThanOrEqualTo
+- uid: EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name: IsGreaterThanOrEqualTo<T>(IArgumentAssertionBuilder<T>, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsGreaterThanOrEqualTo__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0_
+  commentId: M:EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name.vb: IsGreaterThanOrEqualTo(Of T)(IArgumentAssertionBuilder(Of T), T)
+  fullName: EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), T)
+  nameWithType: CompareAssertions.IsGreaterThanOrEqualTo<T>(IArgumentAssertionBuilder<T>, T)
+  nameWithType.vb: CompareAssertions.IsGreaterThanOrEqualTo(Of T)(IArgumentAssertionBuilder(Of T), T)
+- uid: EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo``2(``0,``1)
+  name: IsGreaterThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsGreaterThanOrEqualTo__2___0___1_
+  commentId: M:EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo``2(``0,``1)
+  name.vb: IsGreaterThanOrEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  fullName: EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsGreaterThanOrEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  nameWithType: CompareAssertions.IsGreaterThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  nameWithType.vb: CompareAssertions.IsGreaterThanOrEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+- uid: EnsureFramework.CompareAssertions.IsLessThan*
+  name: IsLessThan
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsLessThan_
+  commentId: Overload:EnsureFramework.CompareAssertions.IsLessThan
+  isSpec: "True"
+  fullName: EnsureFramework.CompareAssertions.IsLessThan
+  nameWithType: CompareAssertions.IsLessThan
+- uid: EnsureFramework.CompareAssertions.IsLessThan``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name: IsLessThan<T>(IArgumentAssertionBuilder<T>, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsLessThan__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0_
+  commentId: M:EnsureFramework.CompareAssertions.IsLessThan``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name.vb: IsLessThan(Of T)(IArgumentAssertionBuilder(Of T), T)
+  fullName: EnsureFramework.CompareAssertions.IsLessThan<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsLessThan(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), T)
+  nameWithType: CompareAssertions.IsLessThan<T>(IArgumentAssertionBuilder<T>, T)
+  nameWithType.vb: CompareAssertions.IsLessThan(Of T)(IArgumentAssertionBuilder(Of T), T)
+- uid: EnsureFramework.CompareAssertions.IsLessThan``2(``0,``1)
+  name: IsLessThan<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsLessThan__2___0___1_
+  commentId: M:EnsureFramework.CompareAssertions.IsLessThan``2(``0,``1)
+  name.vb: IsLessThan(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  fullName: EnsureFramework.CompareAssertions.IsLessThan<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsLessThan(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  nameWithType: CompareAssertions.IsLessThan<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  nameWithType.vb: CompareAssertions.IsLessThan(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+- uid: EnsureFramework.CompareAssertions.IsLessThanOrEqualTo*
+  name: IsLessThanOrEqualTo
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsLessThanOrEqualTo_
+  commentId: Overload:EnsureFramework.CompareAssertions.IsLessThanOrEqualTo
+  isSpec: "True"
+  fullName: EnsureFramework.CompareAssertions.IsLessThanOrEqualTo
+  nameWithType: CompareAssertions.IsLessThanOrEqualTo
+- uid: EnsureFramework.CompareAssertions.IsLessThanOrEqualTo``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name: IsLessThanOrEqualTo<T>(IArgumentAssertionBuilder<T>, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsLessThanOrEqualTo__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0_
+  commentId: M:EnsureFramework.CompareAssertions.IsLessThanOrEqualTo``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0)
+  name.vb: IsLessThanOrEqualTo(Of T)(IArgumentAssertionBuilder(Of T), T)
+  fullName: EnsureFramework.CompareAssertions.IsLessThanOrEqualTo<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsLessThanOrEqualTo(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), T)
+  nameWithType: CompareAssertions.IsLessThanOrEqualTo<T>(IArgumentAssertionBuilder<T>, T)
+  nameWithType.vb: CompareAssertions.IsLessThanOrEqualTo(Of T)(IArgumentAssertionBuilder(Of T), T)
+- uid: EnsureFramework.CompareAssertions.IsLessThanOrEqualTo``2(``0,``1)
+  name: IsLessThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsLessThanOrEqualTo__2___0___1_
+  commentId: M:EnsureFramework.CompareAssertions.IsLessThanOrEqualTo``2(``0,``1)
+  name.vb: IsLessThanOrEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  fullName: EnsureFramework.CompareAssertions.IsLessThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsLessThanOrEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  nameWithType: CompareAssertions.IsLessThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  nameWithType.vb: CompareAssertions.IsLessThanOrEqualTo(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+- uid: EnsureFramework.CompareAssertions.IsWithinAndIncludingRange*
+  name: IsWithinAndIncludingRange
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsWithinAndIncludingRange_
+  commentId: Overload:EnsureFramework.CompareAssertions.IsWithinAndIncludingRange
+  isSpec: "True"
+  fullName: EnsureFramework.CompareAssertions.IsWithinAndIncludingRange
+  nameWithType: CompareAssertions.IsWithinAndIncludingRange
+- uid: EnsureFramework.CompareAssertions.IsWithinAndIncludingRange``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0,``0)
+  name: IsWithinAndIncludingRange<T>(IArgumentAssertionBuilder<T>, T, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsWithinAndIncludingRange__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0___0_
+  commentId: M:EnsureFramework.CompareAssertions.IsWithinAndIncludingRange``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0,``0)
+  name.vb: IsWithinAndIncludingRange(Of T)(IArgumentAssertionBuilder(Of T), T, T)
+  fullName: EnsureFramework.CompareAssertions.IsWithinAndIncludingRange<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, T, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsWithinAndIncludingRange(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), T, T)
+  nameWithType: CompareAssertions.IsWithinAndIncludingRange<T>(IArgumentAssertionBuilder<T>, T, T)
+  nameWithType.vb: CompareAssertions.IsWithinAndIncludingRange(Of T)(IArgumentAssertionBuilder(Of T), T, T)
+- uid: EnsureFramework.CompareAssertions.IsWithinAndIncludingRange``2(``0,``1,``1)
+  name: IsWithinAndIncludingRange<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsWithinAndIncludingRange__2___0___1___1_
+  commentId: M:EnsureFramework.CompareAssertions.IsWithinAndIncludingRange``2(``0,``1,``1)
+  name.vb: IsWithinAndIncludingRange(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T, T)
+  fullName: EnsureFramework.CompareAssertions.IsWithinAndIncludingRange<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsWithinAndIncludingRange(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T, T)
+  nameWithType: CompareAssertions.IsWithinAndIncludingRange<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T, T)
+  nameWithType.vb: CompareAssertions.IsWithinAndIncludingRange(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T, T)
+- uid: EnsureFramework.CompareAssertions.IsWithinRange*
+  name: IsWithinRange
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsWithinRange_
+  commentId: Overload:EnsureFramework.CompareAssertions.IsWithinRange
+  isSpec: "True"
+  fullName: EnsureFramework.CompareAssertions.IsWithinRange
+  nameWithType: CompareAssertions.IsWithinRange
+- uid: EnsureFramework.CompareAssertions.IsWithinRange``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0,``0)
+  name: IsWithinRange<T>(IArgumentAssertionBuilder<T>, T, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsWithinRange__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0___0_
+  commentId: M:EnsureFramework.CompareAssertions.IsWithinRange``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0,``0)
+  name.vb: IsWithinRange(Of T)(IArgumentAssertionBuilder(Of T), T, T)
+  fullName: EnsureFramework.CompareAssertions.IsWithinRange<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, T, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsWithinRange(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), T, T)
+  nameWithType: CompareAssertions.IsWithinRange<T>(IArgumentAssertionBuilder<T>, T, T)
+  nameWithType.vb: CompareAssertions.IsWithinRange(Of T)(IArgumentAssertionBuilder(Of T), T, T)
+- uid: EnsureFramework.CompareAssertions.IsWithinRange``2(``0,``1,``1)
+  name: IsWithinRange<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T, T)
+  href: api/EnsureFramework.CompareAssertions.html#EnsureFramework_CompareAssertions_IsWithinRange__2___0___1___1_
+  commentId: M:EnsureFramework.CompareAssertions.IsWithinRange``2(``0,``1,``1)
+  name.vb: IsWithinRange(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T, T)
+  fullName: EnsureFramework.CompareAssertions.IsWithinRange<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T, T)
+  fullName.vb: EnsureFramework.CompareAssertions.IsWithinRange(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T, T)
+  nameWithType: CompareAssertions.IsWithinRange<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T, T)
+  nameWithType.vb: CompareAssertions.IsWithinRange(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T, T)
+- uid: EnsureFramework.DictionaryAssertions
+  name: DictionaryAssertions
+  href: api/EnsureFramework.DictionaryAssertions.html
+  commentId: T:EnsureFramework.DictionaryAssertions
+  fullName: EnsureFramework.DictionaryAssertions
+  nameWithType: DictionaryAssertions
+- uid: EnsureFramework.DictionaryAssertions.HasKey*
+  name: HasKey
+  href: api/EnsureFramework.DictionaryAssertions.html#EnsureFramework_DictionaryAssertions_HasKey_
+  commentId: Overload:EnsureFramework.DictionaryAssertions.HasKey
+  isSpec: "True"
+  fullName: EnsureFramework.DictionaryAssertions.HasKey
+  nameWithType: DictionaryAssertions.HasKey
+- uid: EnsureFramework.DictionaryAssertions.HasKey``2(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IDictionary{``0,``1}},``0)
+  name: HasKey<TKey, TValue>(IArgumentAssertionBuilder<IDictionary<TKey, TValue>>, TKey)
+  href: api/EnsureFramework.DictionaryAssertions.html#EnsureFramework_DictionaryAssertions_HasKey__2_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Collections_Generic_IDictionary___0___1_____0_
+  commentId: M:EnsureFramework.DictionaryAssertions.HasKey``2(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IDictionary{``0,``1}},``0)
+  name.vb: HasKey(Of TKey, TValue)(IArgumentAssertionBuilder(Of IDictionary(Of TKey, TValue)), TKey)
+  fullName: EnsureFramework.DictionaryAssertions.HasKey<TKey, TValue>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Collections.Generic.IDictionary<TKey, TValue>>, TKey)
+  fullName.vb: EnsureFramework.DictionaryAssertions.HasKey(Of TKey, TValue)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Collections.Generic.IDictionary(Of TKey, TValue)), TKey)
+  nameWithType: DictionaryAssertions.HasKey<TKey, TValue>(IArgumentAssertionBuilder<IDictionary<TKey, TValue>>, TKey)
+  nameWithType.vb: DictionaryAssertions.HasKey(Of TKey, TValue)(IArgumentAssertionBuilder(Of IDictionary(Of TKey, TValue)), TKey)
+- uid: EnsureFramework.DictionaryAssertions.WithKey*
+  name: WithKey
+  href: api/EnsureFramework.DictionaryAssertions.html#EnsureFramework_DictionaryAssertions_WithKey_
+  commentId: Overload:EnsureFramework.DictionaryAssertions.WithKey
+  isSpec: "True"
+  fullName: EnsureFramework.DictionaryAssertions.WithKey
+  nameWithType: DictionaryAssertions.WithKey
+- uid: EnsureFramework.DictionaryAssertions.WithKey``2(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IDictionary{``0,``1}},``0)
+  name: WithKey<TKey, TValue>(IArgumentAssertionBuilder<IDictionary<TKey, TValue>>, TKey)
+  href: api/EnsureFramework.DictionaryAssertions.html#EnsureFramework_DictionaryAssertions_WithKey__2_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Collections_Generic_IDictionary___0___1_____0_
+  commentId: M:EnsureFramework.DictionaryAssertions.WithKey``2(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IDictionary{``0,``1}},``0)
+  name.vb: WithKey(Of TKey, TValue)(IArgumentAssertionBuilder(Of IDictionary(Of TKey, TValue)), TKey)
+  fullName: EnsureFramework.DictionaryAssertions.WithKey<TKey, TValue>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Collections.Generic.IDictionary<TKey, TValue>>, TKey)
+  fullName.vb: EnsureFramework.DictionaryAssertions.WithKey(Of TKey, TValue)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Collections.Generic.IDictionary(Of TKey, TValue)), TKey)
+  nameWithType: DictionaryAssertions.WithKey<TKey, TValue>(IArgumentAssertionBuilder<IDictionary<TKey, TValue>>, TKey)
+  nameWithType.vb: DictionaryAssertions.WithKey(Of TKey, TValue)(IArgumentAssertionBuilder(Of IDictionary(Of TKey, TValue)), TKey)
+- uid: EnsureFramework.Ensure
+  name: Ensure
+  href: api/EnsureFramework.Ensure.html
+  commentId: T:EnsureFramework.Ensure
+  fullName: EnsureFramework.Ensure
+  nameWithType: Ensure
+- uid: EnsureFramework.Ensure.Arg*
+  name: Arg
+  href: api/EnsureFramework.Ensure.html#EnsureFramework_Ensure_Arg_
+  commentId: Overload:EnsureFramework.Ensure.Arg
+  isSpec: "True"
+  fullName: EnsureFramework.Ensure.Arg
+  nameWithType: Ensure.Arg
+- uid: EnsureFramework.Ensure.Arg``1(``0,System.String)
+  name: Arg<T>(T, String)
+  href: api/EnsureFramework.Ensure.html#EnsureFramework_Ensure_Arg__1___0_System_String_
+  commentId: M:EnsureFramework.Ensure.Arg``1(``0,System.String)
+  name.vb: Arg(Of T)(T, String)
+  fullName: EnsureFramework.Ensure.Arg<T>(T, System.String)
+  fullName.vb: EnsureFramework.Ensure.Arg(Of T)(T, System.String)
+  nameWithType: Ensure.Arg<T>(T, String)
+  nameWithType.vb: Ensure.Arg(Of T)(T, String)
+- uid: EnsureFramework.Ensure.Arg``1(System.Linq.Expressions.Expression{System.Func{``0}})
+  name: Arg<T>(Expression<Func<T>>)
+  href: api/EnsureFramework.Ensure.html#EnsureFramework_Ensure_Arg__1_System_Linq_Expressions_Expression_System_Func___0___
+  commentId: M:EnsureFramework.Ensure.Arg``1(System.Linq.Expressions.Expression{System.Func{``0}})
+  name.vb: Arg(Of T)(Expression(Of Func(Of T)))
+  fullName: EnsureFramework.Ensure.Arg<T>(System.Linq.Expressions.Expression<System.Func<T>>)
+  fullName.vb: EnsureFramework.Ensure.Arg(Of T)(System.Linq.Expressions.Expression(Of System.Func(Of T)))
+  nameWithType: Ensure.Arg<T>(Expression<Func<T>>)
+  nameWithType.vb: Ensure.Arg(Of T)(Expression(Of Func(Of T)))
+- uid: EnsureFramework.Ensure.Arg``2(``0,``1,System.String)
+  name: Arg<TParentAssertion, T>(TParentAssertion, T, String)
+  href: api/EnsureFramework.Ensure.html#EnsureFramework_Ensure_Arg__2___0___1_System_String_
+  commentId: M:EnsureFramework.Ensure.Arg``2(``0,``1,System.String)
+  name.vb: Arg(Of TParentAssertion, T)(TParentAssertion, T, String)
+  fullName: EnsureFramework.Ensure.Arg<TParentAssertion, T>(TParentAssertion, T, System.String)
+  fullName.vb: EnsureFramework.Ensure.Arg(Of TParentAssertion, T)(TParentAssertion, T, System.String)
+  nameWithType: Ensure.Arg<TParentAssertion, T>(TParentAssertion, T, String)
+  nameWithType.vb: Ensure.Arg(Of TParentAssertion, T)(TParentAssertion, T, String)
+- uid: EnsureFramework.Ensure.Arg``2(``0,System.Linq.Expressions.Expression{System.Func{``1}})
+  name: Arg<TParentAssertion, T>(TParentAssertion, Expression<Func<T>>)
+  href: api/EnsureFramework.Ensure.html#EnsureFramework_Ensure_Arg__2___0_System_Linq_Expressions_Expression_System_Func___1___
+  commentId: M:EnsureFramework.Ensure.Arg``2(``0,System.Linq.Expressions.Expression{System.Func{``1}})
+  name.vb: Arg(Of TParentAssertion, T)(TParentAssertion, Expression(Of Func(Of T)))
+  fullName: EnsureFramework.Ensure.Arg<TParentAssertion, T>(TParentAssertion, System.Linq.Expressions.Expression<System.Func<T>>)
+  fullName.vb: EnsureFramework.Ensure.Arg(Of TParentAssertion, T)(TParentAssertion, System.Linq.Expressions.Expression(Of System.Func(Of T)))
+  nameWithType: Ensure.Arg<TParentAssertion, T>(TParentAssertion, Expression<Func<T>>)
+  nameWithType.vb: Ensure.Arg(Of TParentAssertion, T)(TParentAssertion, Expression(Of Func(Of T)))
+- uid: EnsureFramework.EnumerableAssertions
+  name: EnumerableAssertions
+  href: api/EnsureFramework.EnumerableAssertions.html
+  commentId: T:EnsureFramework.EnumerableAssertions
+  fullName: EnsureFramework.EnumerableAssertions
+  nameWithType: EnumerableAssertions
+- uid: EnsureFramework.EnumerableAssertions.All*
+  name: All
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_All_
+  commentId: Overload:EnsureFramework.EnumerableAssertions.All
+  isSpec: "True"
+  fullName: EnsureFramework.EnumerableAssertions.All
+  nameWithType: EnumerableAssertions.All
+- uid: EnsureFramework.EnumerableAssertions.All``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}},System.Func{``0,System.Boolean})
+  name: All<T>(IArgumentAssertionBuilder<IEnumerable<T>>, Func<T, Boolean>)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_All__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__
+  commentId: M:EnsureFramework.EnumerableAssertions.All``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}},System.Func{``0,System.Boolean})
+  name.vb: All(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)), Func(Of T, Boolean))
+  fullName: EnsureFramework.EnumerableAssertions.All<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Collections.Generic.IEnumerable<T>>, System.Func<T, System.Boolean>)
+  fullName.vb: EnsureFramework.EnumerableAssertions.All(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Collections.Generic.IEnumerable(Of T)), System.Func(Of T, System.Boolean))
+  nameWithType: EnumerableAssertions.All<T>(IArgumentAssertionBuilder<IEnumerable<T>>, Func<T, Boolean>)
+  nameWithType.vb: EnumerableAssertions.All(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)), Func(Of T, Boolean))
+- uid: EnsureFramework.EnumerableAssertions.All``2(``0,System.Func{``1,System.Boolean})
+  name: All<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, Func<T, Boolean>)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_All__2___0_System_Func___1_System_Boolean__
+  commentId: M:EnsureFramework.EnumerableAssertions.All``2(``0,System.Func{``1,System.Boolean})
+  name.vb: All(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, Func(Of T, Boolean))
+  fullName: EnsureFramework.EnumerableAssertions.All<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, System.Func<T, System.Boolean>)
+  fullName.vb: EnsureFramework.EnumerableAssertions.All(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, System.Func(Of T, System.Boolean))
+  nameWithType: EnumerableAssertions.All<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, Func<T, Boolean>)
+  nameWithType.vb: EnumerableAssertions.All(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, Func(Of T, Boolean))
+- uid: EnsureFramework.EnumerableAssertions.Any*
+  name: Any
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_Any_
+  commentId: Overload:EnsureFramework.EnumerableAssertions.Any
+  isSpec: "True"
+  fullName: EnsureFramework.EnumerableAssertions.Any
+  nameWithType: EnumerableAssertions.Any
+- uid: EnsureFramework.EnumerableAssertions.Any``1(``0)
+  name: Any<TNestedArgumentAssertionBuilder>(TNestedArgumentAssertionBuilder)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_Any__1___0_
+  commentId: M:EnsureFramework.EnumerableAssertions.Any``1(``0)
+  name.vb: Any(Of TNestedArgumentAssertionBuilder)(TNestedArgumentAssertionBuilder)
+  fullName: EnsureFramework.EnumerableAssertions.Any<TNestedArgumentAssertionBuilder>(TNestedArgumentAssertionBuilder)
+  fullName.vb: EnsureFramework.EnumerableAssertions.Any(Of TNestedArgumentAssertionBuilder)(TNestedArgumentAssertionBuilder)
+  nameWithType: EnumerableAssertions.Any<TNestedArgumentAssertionBuilder>(TNestedArgumentAssertionBuilder)
+  nameWithType.vb: EnumerableAssertions.Any(Of TNestedArgumentAssertionBuilder)(TNestedArgumentAssertionBuilder)
+- uid: EnsureFramework.EnumerableAssertions.Any``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}})
+  name: Any<T>(IArgumentAssertionBuilder<IEnumerable<T>>)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_Any__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Collections_Generic_IEnumerable___0___
+  commentId: M:EnsureFramework.EnumerableAssertions.Any``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}})
+  name.vb: Any(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)))
+  fullName: EnsureFramework.EnumerableAssertions.Any<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Collections.Generic.IEnumerable<T>>)
+  fullName.vb: EnsureFramework.EnumerableAssertions.Any(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Collections.Generic.IEnumerable(Of T)))
+  nameWithType: EnumerableAssertions.Any<T>(IArgumentAssertionBuilder<IEnumerable<T>>)
+  nameWithType.vb: EnumerableAssertions.Any(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)))
+- uid: EnsureFramework.EnumerableAssertions.Any``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}},System.Func{``0,System.Boolean})
+  name: Any<T>(IArgumentAssertionBuilder<IEnumerable<T>>, Func<T, Boolean>)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_Any__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__
+  commentId: M:EnsureFramework.EnumerableAssertions.Any``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}},System.Func{``0,System.Boolean})
+  name.vb: Any(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)), Func(Of T, Boolean))
+  fullName: EnsureFramework.EnumerableAssertions.Any<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Collections.Generic.IEnumerable<T>>, System.Func<T, System.Boolean>)
+  fullName.vb: EnsureFramework.EnumerableAssertions.Any(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Collections.Generic.IEnumerable(Of T)), System.Func(Of T, System.Boolean))
+  nameWithType: EnumerableAssertions.Any<T>(IArgumentAssertionBuilder<IEnumerable<T>>, Func<T, Boolean>)
+  nameWithType.vb: EnumerableAssertions.Any(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)), Func(Of T, Boolean))
+- uid: EnsureFramework.EnumerableAssertions.Any``2(``0,System.Func{``1,System.Boolean})
+  name: Any<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, Func<T, Boolean>)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_Any__2___0_System_Func___1_System_Boolean__
+  commentId: M:EnsureFramework.EnumerableAssertions.Any``2(``0,System.Func{``1,System.Boolean})
+  name.vb: Any(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, Func(Of T, Boolean))
+  fullName: EnsureFramework.EnumerableAssertions.Any<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, System.Func<T, System.Boolean>)
+  fullName.vb: EnsureFramework.EnumerableAssertions.Any(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, System.Func(Of T, System.Boolean))
+  nameWithType: EnumerableAssertions.Any<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, Func<T, Boolean>)
+  nameWithType.vb: EnumerableAssertions.Any(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, Func(Of T, Boolean))
+- uid: EnsureFramework.EnumerableAssertions.Contains*
+  name: Contains
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_Contains_
+  commentId: Overload:EnsureFramework.EnumerableAssertions.Contains
+  isSpec: "True"
+  fullName: EnsureFramework.EnumerableAssertions.Contains
+  nameWithType: EnumerableAssertions.Contains
+- uid: EnsureFramework.EnumerableAssertions.Contains``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}},``0)
+  name: Contains<T>(IArgumentAssertionBuilder<IEnumerable<T>>, T)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_Contains__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Collections_Generic_IEnumerable___0_____0_
+  commentId: M:EnsureFramework.EnumerableAssertions.Contains``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}},``0)
+  name.vb: Contains(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)), T)
+  fullName: EnsureFramework.EnumerableAssertions.Contains<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Collections.Generic.IEnumerable<T>>, T)
+  fullName.vb: EnsureFramework.EnumerableAssertions.Contains(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Collections.Generic.IEnumerable(Of T)), T)
+  nameWithType: EnumerableAssertions.Contains<T>(IArgumentAssertionBuilder<IEnumerable<T>>, T)
+  nameWithType.vb: EnumerableAssertions.Contains(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)), T)
+- uid: EnsureFramework.EnumerableAssertions.Contains``2(``0,``1)
+  name: Contains<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_Contains__2___0___1_
+  commentId: M:EnsureFramework.EnumerableAssertions.Contains``2(``0,``1)
+  name.vb: Contains(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  fullName: EnsureFramework.EnumerableAssertions.Contains<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  fullName.vb: EnsureFramework.EnumerableAssertions.Contains(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+  nameWithType: EnumerableAssertions.Contains<TNestedArgumentAssertionBuilder, T>(TNestedArgumentAssertionBuilder, T)
+  nameWithType.vb: EnumerableAssertions.Contains(Of TNestedArgumentAssertionBuilder, T)(TNestedArgumentAssertionBuilder, T)
+- uid: EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty*
+  name: IsNotNullOrEmpty
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_IsNotNullOrEmpty_
+  commentId: Overload:EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty
+  isSpec: "True"
+  fullName: EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty
+  nameWithType: EnumerableAssertions.IsNotNullOrEmpty
+- uid: EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty``1(``0)
+  name: IsNotNullOrEmpty<TNestedArgumentAssertionBuilder>(TNestedArgumentAssertionBuilder)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_IsNotNullOrEmpty__1___0_
+  commentId: M:EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty``1(``0)
+  name.vb: IsNotNullOrEmpty(Of TNestedArgumentAssertionBuilder)(TNestedArgumentAssertionBuilder)
+  fullName: EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty<TNestedArgumentAssertionBuilder>(TNestedArgumentAssertionBuilder)
+  fullName.vb: EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty(Of TNestedArgumentAssertionBuilder)(TNestedArgumentAssertionBuilder)
+  nameWithType: EnumerableAssertions.IsNotNullOrEmpty<TNestedArgumentAssertionBuilder>(TNestedArgumentAssertionBuilder)
+  nameWithType.vb: EnumerableAssertions.IsNotNullOrEmpty(Of TNestedArgumentAssertionBuilder)(TNestedArgumentAssertionBuilder)
+- uid: EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}})
+  name: IsNotNullOrEmpty<T>(IArgumentAssertionBuilder<IEnumerable<T>>)
+  href: api/EnsureFramework.EnumerableAssertions.html#EnsureFramework_EnumerableAssertions_IsNotNullOrEmpty__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Collections_Generic_IEnumerable___0___
+  commentId: M:EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Collections.Generic.IEnumerable{``0}})
+  name.vb: IsNotNullOrEmpty(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)))
+  fullName: EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Collections.Generic.IEnumerable<T>>)
+  fullName.vb: EnsureFramework.EnumerableAssertions.IsNotNullOrEmpty(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Collections.Generic.IEnumerable(Of T)))
+  nameWithType: EnumerableAssertions.IsNotNullOrEmpty<T>(IArgumentAssertionBuilder<IEnumerable<T>>)
+  nameWithType.vb: EnumerableAssertions.IsNotNullOrEmpty(Of T)(IArgumentAssertionBuilder(Of IEnumerable(Of T)))
+- uid: EnsureFramework.GuidAssertions
+  name: GuidAssertions
+  href: api/EnsureFramework.GuidAssertions.html
+  commentId: T:EnsureFramework.GuidAssertions
+  fullName: EnsureFramework.GuidAssertions
+  nameWithType: GuidAssertions
+- uid: EnsureFramework.GuidAssertions.IsValidGuid(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Guid})
+  name: IsValidGuid(IArgumentAssertionBuilder<Guid>)
+  href: api/EnsureFramework.GuidAssertions.html#EnsureFramework_GuidAssertions_IsValidGuid_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Guid__
+  commentId: M:EnsureFramework.GuidAssertions.IsValidGuid(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Guid})
+  name.vb: IsValidGuid(IArgumentAssertionBuilder(Of Guid))
+  fullName: EnsureFramework.GuidAssertions.IsValidGuid(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Guid>)
+  fullName.vb: EnsureFramework.GuidAssertions.IsValidGuid(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Guid))
+  nameWithType: GuidAssertions.IsValidGuid(IArgumentAssertionBuilder<Guid>)
+  nameWithType.vb: GuidAssertions.IsValidGuid(IArgumentAssertionBuilder(Of Guid))
+- uid: EnsureFramework.GuidAssertions.IsValidGuid(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Nullable{System.Guid}})
+  name: IsValidGuid(IArgumentAssertionBuilder<Nullable<Guid>>)
+  href: api/EnsureFramework.GuidAssertions.html#EnsureFramework_GuidAssertions_IsValidGuid_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Nullable_System_Guid___
+  commentId: M:EnsureFramework.GuidAssertions.IsValidGuid(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Nullable{System.Guid}})
+  name.vb: IsValidGuid(IArgumentAssertionBuilder(Of Nullable(Of Guid)))
+  fullName: EnsureFramework.GuidAssertions.IsValidGuid(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Nullable<System.Guid>>)
+  fullName.vb: EnsureFramework.GuidAssertions.IsValidGuid(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Nullable(Of System.Guid)))
+  nameWithType: GuidAssertions.IsValidGuid(IArgumentAssertionBuilder<Nullable<Guid>>)
+  nameWithType.vb: GuidAssertions.IsValidGuid(IArgumentAssertionBuilder(Of Nullable(Of Guid)))
+- uid: EnsureFramework.GuidAssertions.IsValidGuid*
+  name: IsValidGuid
+  href: api/EnsureFramework.GuidAssertions.html#EnsureFramework_GuidAssertions_IsValidGuid_
+  commentId: Overload:EnsureFramework.GuidAssertions.IsValidGuid
+  isSpec: "True"
+  fullName: EnsureFramework.GuidAssertions.IsValidGuid
+  nameWithType: GuidAssertions.IsValidGuid
+- uid: EnsureFramework.Int32Assertions
+  name: Int32Assertions
+  href: api/EnsureFramework.Int32Assertions.html
+  commentId: T:EnsureFramework.Int32Assertions
+  fullName: EnsureFramework.Int32Assertions
+  nameWithType: Int32Assertions
+- uid: EnsureFramework.Int32Assertions.IsNotNegative(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Int32})
+  name: IsNotNegative(IArgumentAssertionBuilder<Int32>)
+  href: api/EnsureFramework.Int32Assertions.html#EnsureFramework_Int32Assertions_IsNotNegative_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Int32__
+  commentId: M:EnsureFramework.Int32Assertions.IsNotNegative(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Int32})
+  name.vb: IsNotNegative(IArgumentAssertionBuilder(Of Int32))
+  fullName: EnsureFramework.Int32Assertions.IsNotNegative(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Int32>)
+  fullName.vb: EnsureFramework.Int32Assertions.IsNotNegative(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Int32))
+  nameWithType: Int32Assertions.IsNotNegative(IArgumentAssertionBuilder<Int32>)
+  nameWithType.vb: Int32Assertions.IsNotNegative(IArgumentAssertionBuilder(Of Int32))
+- uid: EnsureFramework.Int32Assertions.IsNotNegative*
+  name: IsNotNegative
+  href: api/EnsureFramework.Int32Assertions.html#EnsureFramework_Int32Assertions_IsNotNegative_
+  commentId: Overload:EnsureFramework.Int32Assertions.IsNotNegative
+  isSpec: "True"
+  fullName: EnsureFramework.Int32Assertions.IsNotNegative
+  nameWithType: Int32Assertions.IsNotNegative
+- uid: EnsureFramework.Int32Assertions.IsNotZero(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Int32})
+  name: IsNotZero(IArgumentAssertionBuilder<Int32>)
+  href: api/EnsureFramework.Int32Assertions.html#EnsureFramework_Int32Assertions_IsNotZero_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Int32__
+  commentId: M:EnsureFramework.Int32Assertions.IsNotZero(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Int32})
+  name.vb: IsNotZero(IArgumentAssertionBuilder(Of Int32))
+  fullName: EnsureFramework.Int32Assertions.IsNotZero(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Int32>)
+  fullName.vb: EnsureFramework.Int32Assertions.IsNotZero(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Int32))
+  nameWithType: Int32Assertions.IsNotZero(IArgumentAssertionBuilder<Int32>)
+  nameWithType.vb: Int32Assertions.IsNotZero(IArgumentAssertionBuilder(Of Int32))
+- uid: EnsureFramework.Int32Assertions.IsNotZero*
+  name: IsNotZero
+  href: api/EnsureFramework.Int32Assertions.html#EnsureFramework_Int32Assertions_IsNotZero_
+  commentId: Overload:EnsureFramework.Int32Assertions.IsNotZero
+  isSpec: "True"
+  fullName: EnsureFramework.Int32Assertions.IsNotZero
+  nameWithType: Int32Assertions.IsNotZero
+- uid: EnsureFramework.ObjectAssertions
+  name: ObjectAssertions
+  href: api/EnsureFramework.ObjectAssertions.html
+  commentId: T:EnsureFramework.ObjectAssertions
+  fullName: EnsureFramework.ObjectAssertions
+  nameWithType: ObjectAssertions
+- uid: EnsureFramework.ObjectAssertions.Assert*
+  name: Assert
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_Assert_
+  commentId: Overload:EnsureFramework.ObjectAssertions.Assert
+  isSpec: "True"
+  fullName: EnsureFramework.ObjectAssertions.Assert
+  nameWithType: ObjectAssertions.Assert
+- uid: EnsureFramework.ObjectAssertions.Assert``1(``0,System.Boolean,System.String)
+  name: Assert<TArgumentAssertionBuilder>(TArgumentAssertionBuilder, Boolean, String)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_Assert__1___0_System_Boolean_System_String_
+  commentId: M:EnsureFramework.ObjectAssertions.Assert``1(``0,System.Boolean,System.String)
+  name.vb: Assert(Of TArgumentAssertionBuilder)(TArgumentAssertionBuilder, Boolean, String)
+  fullName: EnsureFramework.ObjectAssertions.Assert<TArgumentAssertionBuilder>(TArgumentAssertionBuilder, System.Boolean, System.String)
+  fullName.vb: EnsureFramework.ObjectAssertions.Assert(Of TArgumentAssertionBuilder)(TArgumentAssertionBuilder, System.Boolean, System.String)
+  nameWithType: ObjectAssertions.Assert<TArgumentAssertionBuilder>(TArgumentAssertionBuilder, Boolean, String)
+  nameWithType.vb: ObjectAssertions.Assert(Of TArgumentAssertionBuilder)(TArgumentAssertionBuilder, Boolean, String)
+- uid: EnsureFramework.ObjectAssertions.IsNotNull*
+  name: IsNotNull
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsNotNull_
+  commentId: Overload:EnsureFramework.ObjectAssertions.IsNotNull
+  isSpec: "True"
+  fullName: EnsureFramework.ObjectAssertions.IsNotNull
+  nameWithType: ObjectAssertions.IsNotNull
+- uid: EnsureFramework.ObjectAssertions.IsNotNull``1(``0)
+  name: IsNotNull<TArgumentAssertionBuilder>(TArgumentAssertionBuilder)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsNotNull__1___0_
+  commentId: M:EnsureFramework.ObjectAssertions.IsNotNull``1(``0)
+  name.vb: IsNotNull(Of TArgumentAssertionBuilder)(TArgumentAssertionBuilder)
+  fullName: EnsureFramework.ObjectAssertions.IsNotNull<TArgumentAssertionBuilder>(TArgumentAssertionBuilder)
+  fullName.vb: EnsureFramework.ObjectAssertions.IsNotNull(Of TArgumentAssertionBuilder)(TArgumentAssertionBuilder)
+  nameWithType: ObjectAssertions.IsNotNull<TArgumentAssertionBuilder>(TArgumentAssertionBuilder)
+  nameWithType.vb: ObjectAssertions.IsNotNull(Of TArgumentAssertionBuilder)(TArgumentAssertionBuilder)
+- uid: EnsureFramework.ObjectAssertions.IsNotNull``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Nullable{``0}})
+  name: IsNotNull<T>(IArgumentAssertionBuilder<Nullable<T>>)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsNotNull__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Nullable___0___
+  commentId: M:EnsureFramework.ObjectAssertions.IsNotNull``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Nullable{``0}})
+  name.vb: IsNotNull(Of T)(IArgumentAssertionBuilder(Of Nullable(Of T)))
+  fullName: EnsureFramework.ObjectAssertions.IsNotNull<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Nullable<T>>)
+  fullName.vb: EnsureFramework.ObjectAssertions.IsNotNull(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Nullable(Of T)))
+  nameWithType: ObjectAssertions.IsNotNull<T>(IArgumentAssertionBuilder<Nullable<T>>)
+  nameWithType.vb: ObjectAssertions.IsNotNull(Of T)(IArgumentAssertionBuilder(Of Nullable(Of T)))
+- uid: EnsureFramework.ObjectAssertions.IsNotNull``2(EnsureFramework.Assertions.INestedArgumentAssertionBuilder{``0,System.Nullable{``1}})
+  name: IsNotNull<TParentArgumentAssertionBuilder, T>(INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, Nullable<T>>)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsNotNull__2_EnsureFramework_Assertions_INestedArgumentAssertionBuilder___0_System_Nullable___1___
+  commentId: M:EnsureFramework.ObjectAssertions.IsNotNull``2(EnsureFramework.Assertions.INestedArgumentAssertionBuilder{``0,System.Nullable{``1}})
+  name.vb: IsNotNull(Of TParentArgumentAssertionBuilder, T)(INestedArgumentAssertionBuilder(Of TParentArgumentAssertionBuilder, Nullable(Of T)))
+  fullName: EnsureFramework.ObjectAssertions.IsNotNull<TParentArgumentAssertionBuilder, T>(EnsureFramework.Assertions.INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, System.Nullable<T>>)
+  fullName.vb: EnsureFramework.ObjectAssertions.IsNotNull(Of TParentArgumentAssertionBuilder, T)(EnsureFramework.Assertions.INestedArgumentAssertionBuilder(Of TParentArgumentAssertionBuilder, System.Nullable(Of T)))
+  nameWithType: ObjectAssertions.IsNotNull<TParentArgumentAssertionBuilder, T>(INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, Nullable<T>>)
+  nameWithType.vb: ObjectAssertions.IsNotNull(Of TParentArgumentAssertionBuilder, T)(INestedArgumentAssertionBuilder(Of TParentArgumentAssertionBuilder, Nullable(Of T)))
+- uid: EnsureFramework.ObjectAssertions.IsOneOf*
+  name: IsOneOf
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsOneOf_
+  commentId: Overload:EnsureFramework.ObjectAssertions.IsOneOf
+  isSpec: "True"
+  fullName: EnsureFramework.ObjectAssertions.IsOneOf
+  nameWithType: ObjectAssertions.IsOneOf
+- uid: EnsureFramework.ObjectAssertions.IsOneOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0[])
+  name: IsOneOf<T>(IArgumentAssertionBuilder<T>, T[])
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsOneOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0____0___
+  commentId: M:EnsureFramework.ObjectAssertions.IsOneOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},``0[])
+  name.vb: IsOneOf(Of T)(IArgumentAssertionBuilder(Of T), T())
+  fullName: EnsureFramework.ObjectAssertions.IsOneOf<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, T[])
+  fullName.vb: EnsureFramework.ObjectAssertions.IsOneOf(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), T())
+  nameWithType: ObjectAssertions.IsOneOf<T>(IArgumentAssertionBuilder<T>, T[])
+  nameWithType.vb: ObjectAssertions.IsOneOf(Of T)(IArgumentAssertionBuilder(Of T), T())
+- uid: EnsureFramework.ObjectAssertions.IsTypeOf*
+  name: IsTypeOf
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsTypeOf_
+  commentId: Overload:EnsureFramework.ObjectAssertions.IsTypeOf
+  isSpec: "True"
+  fullName: EnsureFramework.ObjectAssertions.IsTypeOf
+  nameWithType: ObjectAssertions.IsTypeOf
+- uid: EnsureFramework.ObjectAssertions.IsTypeOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0})
+  name: IsTypeOf<T>(IArgumentAssertionBuilder<T>)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsTypeOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__
+  commentId: M:EnsureFramework.ObjectAssertions.IsTypeOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0})
+  name.vb: IsTypeOf(Of T)(IArgumentAssertionBuilder(Of T))
+  fullName: EnsureFramework.ObjectAssertions.IsTypeOf<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>)
+  fullName.vb: EnsureFramework.ObjectAssertions.IsTypeOf(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T))
+  nameWithType: ObjectAssertions.IsTypeOf<T>(IArgumentAssertionBuilder<T>)
+  nameWithType.vb: ObjectAssertions.IsTypeOf(Of T)(IArgumentAssertionBuilder(Of T))
+- uid: EnsureFramework.ObjectAssertions.IsTypeOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Type)
+  name: IsTypeOf<T>(IArgumentAssertionBuilder<T>, Type)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsTypeOf__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Type_
+  commentId: M:EnsureFramework.ObjectAssertions.IsTypeOf``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Type)
+  name.vb: IsTypeOf(Of T)(IArgumentAssertionBuilder(Of T), Type)
+  fullName: EnsureFramework.ObjectAssertions.IsTypeOf<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, System.Type)
+  fullName.vb: EnsureFramework.ObjectAssertions.IsTypeOf(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), System.Type)
+  nameWithType: ObjectAssertions.IsTypeOf<T>(IArgumentAssertionBuilder<T>, Type)
+  nameWithType.vb: ObjectAssertions.IsTypeOf(Of T)(IArgumentAssertionBuilder(Of T), Type)
+- uid: EnsureFramework.ObjectAssertions.IsTypeOf``2(EnsureFramework.Assertions.INestedArgumentAssertionBuilder{``0,``1},System.Type)
+  name: IsTypeOf<TParentArgumentAssertionBuilder, T>(INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T>, Type)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_IsTypeOf__2_EnsureFramework_Assertions_INestedArgumentAssertionBuilder___0___1__System_Type_
+  commentId: M:EnsureFramework.ObjectAssertions.IsTypeOf``2(EnsureFramework.Assertions.INestedArgumentAssertionBuilder{``0,``1},System.Type)
+  name.vb: IsTypeOf(Of TParentArgumentAssertionBuilder, T)(INestedArgumentAssertionBuilder(Of TParentArgumentAssertionBuilder, T), Type)
+  fullName: EnsureFramework.ObjectAssertions.IsTypeOf<TParentArgumentAssertionBuilder, T>(EnsureFramework.Assertions.INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T>, System.Type)
+  fullName.vb: EnsureFramework.ObjectAssertions.IsTypeOf(Of TParentArgumentAssertionBuilder, T)(EnsureFramework.Assertions.INestedArgumentAssertionBuilder(Of TParentArgumentAssertionBuilder, T), System.Type)
+  nameWithType: ObjectAssertions.IsTypeOf<TParentArgumentAssertionBuilder, T>(INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T>, Type)
+  nameWithType.vb: ObjectAssertions.IsTypeOf(Of TParentArgumentAssertionBuilder, T)(INestedArgumentAssertionBuilder(Of TParentArgumentAssertionBuilder, T), Type)
+- uid: EnsureFramework.ObjectAssertions.Matches*
+  name: Matches
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_Matches_
+  commentId: Overload:EnsureFramework.ObjectAssertions.Matches
+  isSpec: "True"
+  fullName: EnsureFramework.ObjectAssertions.Matches
+  nameWithType: ObjectAssertions.Matches
+- uid: EnsureFramework.ObjectAssertions.Matches``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Func{``0,System.Boolean},System.String)
+  name: Matches<T>(IArgumentAssertionBuilder<T>, Func<T, Boolean>, String)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_Matches__1_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Func___0_System_Boolean__System_String_
+  commentId: M:EnsureFramework.ObjectAssertions.Matches``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Func{``0,System.Boolean},System.String)
+  name.vb: Matches(Of T)(IArgumentAssertionBuilder(Of T), Func(Of T, Boolean), String)
+  fullName: EnsureFramework.ObjectAssertions.Matches<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, System.Func<T, System.Boolean>, System.String)
+  fullName.vb: EnsureFramework.ObjectAssertions.Matches(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), System.Func(Of T, System.Boolean), System.String)
+  nameWithType: ObjectAssertions.Matches<T>(IArgumentAssertionBuilder<T>, Func<T, Boolean>, String)
+  nameWithType.vb: ObjectAssertions.Matches(Of T)(IArgumentAssertionBuilder(Of T), Func(Of T, Boolean), String)
+- uid: EnsureFramework.ObjectAssertions.WithProperty*
+  name: WithProperty
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_WithProperty_
+  commentId: Overload:EnsureFramework.ObjectAssertions.WithProperty
+  isSpec: "True"
+  fullName: EnsureFramework.ObjectAssertions.WithProperty
+  nameWithType: ObjectAssertions.WithProperty
+- uid: EnsureFramework.ObjectAssertions.WithProperty``2(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
+  name: WithProperty<T, TProperty>(IArgumentAssertionBuilder<T>, Expression<Func<T, TProperty>>)
+  href: api/EnsureFramework.ObjectAssertions.html#EnsureFramework_ObjectAssertions_WithProperty__2_EnsureFramework_Assertions_IArgumentAssertionBuilder___0__System_Linq_Expressions_Expression_System_Func___0___1___
+  commentId: M:EnsureFramework.ObjectAssertions.WithProperty``2(EnsureFramework.Assertions.IArgumentAssertionBuilder{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
+  name.vb: WithProperty(Of T, TProperty)(IArgumentAssertionBuilder(Of T), Expression(Of Func(Of T, TProperty)))
+  fullName: EnsureFramework.ObjectAssertions.WithProperty<T, TProperty>(EnsureFramework.Assertions.IArgumentAssertionBuilder<T>, System.Linq.Expressions.Expression<System.Func<T, TProperty>>)
+  fullName.vb: EnsureFramework.ObjectAssertions.WithProperty(Of T, TProperty)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)))
+  nameWithType: ObjectAssertions.WithProperty<T, TProperty>(IArgumentAssertionBuilder<T>, Expression<Func<T, TProperty>>)
+  nameWithType.vb: ObjectAssertions.WithProperty(Of T, TProperty)(IArgumentAssertionBuilder(Of T), Expression(Of Func(Of T, TProperty)))
+- uid: EnsureFramework.StringAssertions
+  name: StringAssertions
+  href: api/EnsureFramework.StringAssertions.html
+  commentId: T:EnsureFramework.StringAssertions
+  fullName: EnsureFramework.StringAssertions
+  nameWithType: StringAssertions
+- uid: EnsureFramework.StringAssertions.IsNotNullOrEmpty(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.String})
+  name: IsNotNullOrEmpty(IArgumentAssertionBuilder<String>)
+  href: api/EnsureFramework.StringAssertions.html#EnsureFramework_StringAssertions_IsNotNullOrEmpty_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_String__
+  commentId: M:EnsureFramework.StringAssertions.IsNotNullOrEmpty(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.String})
+  name.vb: IsNotNullOrEmpty(IArgumentAssertionBuilder(Of String))
+  fullName: EnsureFramework.StringAssertions.IsNotNullOrEmpty(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.String>)
+  fullName.vb: EnsureFramework.StringAssertions.IsNotNullOrEmpty(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.String))
+  nameWithType: StringAssertions.IsNotNullOrEmpty(IArgumentAssertionBuilder<String>)
+  nameWithType.vb: StringAssertions.IsNotNullOrEmpty(IArgumentAssertionBuilder(Of String))
+- uid: EnsureFramework.StringAssertions.IsNotNullOrEmpty*
+  name: IsNotNullOrEmpty
+  href: api/EnsureFramework.StringAssertions.html#EnsureFramework_StringAssertions_IsNotNullOrEmpty_
+  commentId: Overload:EnsureFramework.StringAssertions.IsNotNullOrEmpty
+  isSpec: "True"
+  fullName: EnsureFramework.StringAssertions.IsNotNullOrEmpty
+  nameWithType: StringAssertions.IsNotNullOrEmpty
+- uid: EnsureFramework.StringAssertions.Matches(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.String},System.String)
+  name: Matches(IArgumentAssertionBuilder<String>, String)
+  href: api/EnsureFramework.StringAssertions.html#EnsureFramework_StringAssertions_Matches_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_String__System_String_
+  commentId: M:EnsureFramework.StringAssertions.Matches(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.String},System.String)
+  name.vb: Matches(IArgumentAssertionBuilder(Of String), String)
+  fullName: EnsureFramework.StringAssertions.Matches(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.String>, System.String)
+  fullName.vb: EnsureFramework.StringAssertions.Matches(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.String), System.String)
+  nameWithType: StringAssertions.Matches(IArgumentAssertionBuilder<String>, String)
+  nameWithType.vb: StringAssertions.Matches(IArgumentAssertionBuilder(Of String), String)
+- uid: EnsureFramework.StringAssertions.Matches(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.String},System.String,System.Text.RegularExpressions.RegexOptions)
+  name: Matches(IArgumentAssertionBuilder<String>, String, RegexOptions)
+  href: api/EnsureFramework.StringAssertions.html#EnsureFramework_StringAssertions_Matches_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_String__System_String_System_Text_RegularExpressions_RegexOptions_
+  commentId: M:EnsureFramework.StringAssertions.Matches(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.String},System.String,System.Text.RegularExpressions.RegexOptions)
+  name.vb: Matches(IArgumentAssertionBuilder(Of String), String, RegexOptions)
+  fullName: EnsureFramework.StringAssertions.Matches(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.String>, System.String, System.Text.RegularExpressions.RegexOptions)
+  fullName.vb: EnsureFramework.StringAssertions.Matches(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.String), System.String, System.Text.RegularExpressions.RegexOptions)
+  nameWithType: StringAssertions.Matches(IArgumentAssertionBuilder<String>, String, RegexOptions)
+  nameWithType.vb: StringAssertions.Matches(IArgumentAssertionBuilder(Of String), String, RegexOptions)
+- uid: EnsureFramework.StringAssertions.Matches*
+  name: Matches
+  href: api/EnsureFramework.StringAssertions.html#EnsureFramework_StringAssertions_Matches_
+  commentId: Overload:EnsureFramework.StringAssertions.Matches
+  isSpec: "True"
+  fullName: EnsureFramework.StringAssertions.Matches
+  nameWithType: StringAssertions.Matches
+- uid: EnsureFramework.TypeAssertions
+  name: TypeAssertions
+  href: api/EnsureFramework.TypeAssertions.html
+  commentId: T:EnsureFramework.TypeAssertions
+  fullName: EnsureFramework.TypeAssertions
+  nameWithType: TypeAssertions
+- uid: EnsureFramework.TypeAssertions.Is(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type},System.Type)
+  name: Is(IArgumentAssertionBuilder<Type>, Type)
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_Is_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Type__System_Type_
+  commentId: M:EnsureFramework.TypeAssertions.Is(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type},System.Type)
+  name.vb: Is(IArgumentAssertionBuilder(Of Type), Type)
+  fullName: EnsureFramework.TypeAssertions.Is(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Type>, System.Type)
+  fullName.vb: EnsureFramework.TypeAssertions.Is(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Type), System.Type)
+  nameWithType: TypeAssertions.Is(IArgumentAssertionBuilder<Type>, Type)
+  nameWithType.vb: TypeAssertions.Is(IArgumentAssertionBuilder(Of Type), Type)
+- uid: EnsureFramework.TypeAssertions.Is*
+  name: Is
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_Is_
+  commentId: Overload:EnsureFramework.TypeAssertions.Is
+  isSpec: "True"
+  fullName: EnsureFramework.TypeAssertions.Is
+  nameWithType: TypeAssertions.Is
+- uid: EnsureFramework.TypeAssertions.Is``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type})
+  name: Is<T>(IArgumentAssertionBuilder<Type>)
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_Is__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Type__
+  commentId: M:EnsureFramework.TypeAssertions.Is``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type})
+  name.vb: Is(Of T)(IArgumentAssertionBuilder(Of Type))
+  fullName: EnsureFramework.TypeAssertions.Is<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Type>)
+  fullName.vb: EnsureFramework.TypeAssertions.Is(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Type))
+  nameWithType: TypeAssertions.Is<T>(IArgumentAssertionBuilder<Type>)
+  nameWithType.vb: TypeAssertions.Is(Of T)(IArgumentAssertionBuilder(Of Type))
+- uid: EnsureFramework.TypeAssertions.IsAssignableFrom(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type},System.Type)
+  name: IsAssignableFrom(IArgumentAssertionBuilder<Type>, Type)
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_IsAssignableFrom_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Type__System_Type_
+  commentId: M:EnsureFramework.TypeAssertions.IsAssignableFrom(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type},System.Type)
+  name.vb: IsAssignableFrom(IArgumentAssertionBuilder(Of Type), Type)
+  fullName: EnsureFramework.TypeAssertions.IsAssignableFrom(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Type>, System.Type)
+  fullName.vb: EnsureFramework.TypeAssertions.IsAssignableFrom(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Type), System.Type)
+  nameWithType: TypeAssertions.IsAssignableFrom(IArgumentAssertionBuilder<Type>, Type)
+  nameWithType.vb: TypeAssertions.IsAssignableFrom(IArgumentAssertionBuilder(Of Type), Type)
+- uid: EnsureFramework.TypeAssertions.IsAssignableFrom*
+  name: IsAssignableFrom
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_IsAssignableFrom_
+  commentId: Overload:EnsureFramework.TypeAssertions.IsAssignableFrom
+  isSpec: "True"
+  fullName: EnsureFramework.TypeAssertions.IsAssignableFrom
+  nameWithType: TypeAssertions.IsAssignableFrom
+- uid: EnsureFramework.TypeAssertions.IsAssignableFrom``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type})
+  name: IsAssignableFrom<T>(IArgumentAssertionBuilder<Type>)
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_IsAssignableFrom__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Type__
+  commentId: M:EnsureFramework.TypeAssertions.IsAssignableFrom``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type})
+  name.vb: IsAssignableFrom(Of T)(IArgumentAssertionBuilder(Of Type))
+  fullName: EnsureFramework.TypeAssertions.IsAssignableFrom<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Type>)
+  fullName.vb: EnsureFramework.TypeAssertions.IsAssignableFrom(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Type))
+  nameWithType: TypeAssertions.IsAssignableFrom<T>(IArgumentAssertionBuilder<Type>)
+  nameWithType.vb: TypeAssertions.IsAssignableFrom(Of T)(IArgumentAssertionBuilder(Of Type))
+- uid: EnsureFramework.TypeAssertions.IsAssignableTo(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type},System.Type)
+  name: IsAssignableTo(IArgumentAssertionBuilder<Type>, Type)
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_IsAssignableTo_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Type__System_Type_
+  commentId: M:EnsureFramework.TypeAssertions.IsAssignableTo(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type},System.Type)
+  name.vb: IsAssignableTo(IArgumentAssertionBuilder(Of Type), Type)
+  fullName: EnsureFramework.TypeAssertions.IsAssignableTo(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Type>, System.Type)
+  fullName.vb: EnsureFramework.TypeAssertions.IsAssignableTo(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Type), System.Type)
+  nameWithType: TypeAssertions.IsAssignableTo(IArgumentAssertionBuilder<Type>, Type)
+  nameWithType.vb: TypeAssertions.IsAssignableTo(IArgumentAssertionBuilder(Of Type), Type)
+- uid: EnsureFramework.TypeAssertions.IsAssignableTo*
+  name: IsAssignableTo
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_IsAssignableTo_
+  commentId: Overload:EnsureFramework.TypeAssertions.IsAssignableTo
+  isSpec: "True"
+  fullName: EnsureFramework.TypeAssertions.IsAssignableTo
+  nameWithType: TypeAssertions.IsAssignableTo
+- uid: EnsureFramework.TypeAssertions.IsAssignableTo``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type})
+  name: IsAssignableTo<T>(IArgumentAssertionBuilder<Type>)
+  href: api/EnsureFramework.TypeAssertions.html#EnsureFramework_TypeAssertions_IsAssignableTo__1_EnsureFramework_Assertions_IArgumentAssertionBuilder_System_Type__
+  commentId: M:EnsureFramework.TypeAssertions.IsAssignableTo``1(EnsureFramework.Assertions.IArgumentAssertionBuilder{System.Type})
+  name.vb: IsAssignableTo(Of T)(IArgumentAssertionBuilder(Of Type))
+  fullName: EnsureFramework.TypeAssertions.IsAssignableTo<T>(EnsureFramework.Assertions.IArgumentAssertionBuilder<System.Type>)
+  fullName.vb: EnsureFramework.TypeAssertions.IsAssignableTo(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Type))
+  nameWithType: TypeAssertions.IsAssignableTo<T>(IArgumentAssertionBuilder<Type>)
+  nameWithType.vb: TypeAssertions.IsAssignableTo(Of T)(IArgumentAssertionBuilder(Of Type))
