@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.0;netcoreapp1.1;net46;net47;netstandard2.0;netstandard1.6</TargetFrameworks>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Michael Coxon</Authors>
     <Description>EnsureFramework is designed to take the pain out of null checking and making sure (ensuring) your methods are being used the way they were intended and throwing exceptions when unsupported values are passed to them.
 
@@ -17,14 +17,7 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
     <PackageTags>runtime-contracts,ensure,contracts</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
     <Version>1.3.0</Version>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.0|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.0\EnsureFramework.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.0|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.0\EnsureFramework.xml</DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,6 +33,10 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="_docs\" />
   </ItemGroup>
 
 </Project>
