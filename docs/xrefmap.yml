@@ -833,3 +833,6 @@ references:
   fullName.vb: EnsureFramework.TypeAssertions.IsAssignableTo(Of T)(EnsureFramework.Assertions.IArgumentAssertionBuilder(Of System.Type))
   nameWithType: TypeAssertions.IsAssignableTo<T>(IArgumentAssertionBuilder<Type>)
   nameWithType.vb: TypeAssertions.IsAssignableTo(Of T)(IArgumentAssertionBuilder(Of Type))
+- uid: home
+  name: EnsureFramework
+  href: index.html
