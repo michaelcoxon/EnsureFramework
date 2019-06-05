@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Add your introductions here! </title>
+    <title>EnsureFramework </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Add your introductions here! ">
+    <meta name="title" content="EnsureFramework ">
     <meta name="generator" content="docfx 2.42.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,8 +67,67 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="add-your-introductions-here">Add your introductions here!</h1>
+<h1 id="ensureframework">EnsureFramework</h1>
 
+<p>EnsureFramework is designed to take the pain out of null checking and making sure (ensuring) your
+methods are being used the way they were intended and throwing exceptions when unsupported values
+are passed to them.</p>
+<p>You can make sure values are in a specific range or simply make sure that an argument is not null.</p>
+<p>It was designed to be readable and fluent based, meaning you can chain ensurables together and the
+first one that fails will result in the exception.</p>
+<h1 id="101">101</h1>
+<ol>
+<li>Add the namespace
+<pre><code class="lang-cs">namespace EnsureFramework;
+</code></pre>
+</li>
+<li>Ensure things!<br>
+<em>argument-string method</em>
+<pre><code class="lang-cs">public void MyMethod(string anArgument)
+{
+    Ensure.Arg(anArgument, nameof(anArgument)).IsNotNullOrEmpty();
+}
+</code></pre>
+... or you can use expressions...<br>
+<em>expression based method</em>
+<pre><code class="lang-cs">public void MyMethod(string anArgument)
+{
+    Ensure.Arg(() =&gt; anArgument).IsNotNullOrEmpty();
+}
+</code></pre>
+</li>
+</ol>
+<hr>
+<h1 id="other-things">Other things</h1>
+<p>You can ensure your arguments directly using the <em>argument-string</em> override or with the expression override.
+You need to be aware that if performance is desired the <em>argument-string</em> override is the best.</p>
+<h1 id="supported-types">Supported types</h1>
+<p>There are extensions for common types in .NET but not much else outside of that. We support:</p>
+<ul>
+<li>IComparable</li>
+<li>IEnumerable</li>
+<li>Guid</li>
+<li>Object</li>
+<li>String</li>
+<li>Int32/int</li>
+</ul>
+<h1 id="well-mike-my-type-isnt-supported">Well Mike, my type isn't supported...</h1>
+<p>That's cool friend, just create your own by adding extension methods to your project.
+Here is a simple one that should point you in the right direction:</p>
+<pre><code class="lang-cs">public static IArgumentAssertionBuilder&lt;string&gt; IsNotNullOrEmpty(this IArgumentAssertionBuilder&lt;string&gt; @this)
+{
+    if (@this.Argument == null)
+    {
+        throw new ArgumentNullException(@this.ArgumentName);
+    }
+    if (@this.Argument == string.Empty)
+    {
+        throw new ArgumentException(null, @this.ArgumentName);
+    }
+    return @this;
+}
+</code></pre>
+<p>Check out the code and tests (or lack-there-of) for a bit more info - the project is quite simple.</p>
 </article>
           </div>
           
