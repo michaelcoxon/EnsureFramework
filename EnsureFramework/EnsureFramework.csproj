@@ -35,8 +35,4 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="_docs\" />
-  </ItemGroup>
-
 </Project>
