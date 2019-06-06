@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace EnsureFramework.Tests
+namespace EnsureFramework.UnitTests
 {
     public class Int32AssertionsTests
     {
