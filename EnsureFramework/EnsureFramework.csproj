@@ -21,6 +21,15 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EnsureFramework.net46.v3.ncrunchproject" />
+    <None Remove="EnsureFramework.net47.v3.ncrunchproject" />
+    <None Remove="EnsureFramework.netcoreapp1.1.v3.ncrunchproject" />
+    <None Remove="EnsureFramework.netcoreapp2.0.v3.ncrunchproject" />
+    <None Remove="EnsureFramework.netstandard1.6.v3.ncrunchproject" />
+    <None Remove="EnsureFramework.netstandard2.0.v3.ncrunchproject" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Resources\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -16,12 +16,12 @@ namespace EnsureFramework
         /// <summary>
         /// Ensures the enumerable argument is not <c>null</c> or empty.
         /// </summary>
-        /// <typeparam name="TNestedArgumentAssertionBuilder"></typeparam>
+        /// <typeparam name="TArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder IsNotNullOrEmpty<TNestedArgumentAssertionBuilder>(this TNestedArgumentAssertionBuilder @this)
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable>
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable> IsNotNullOrEmpty<TArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable> @this)
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument == null)
             {
@@ -35,8 +35,23 @@ namespace EnsureFramework
         }
 
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder Contains<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T item)
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable<T>>
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable<T>> IsNotNullOrEmpty<TArgumentAssertionBuilder,T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable<T>> @this)
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
+        {
+            if (@this.Argument == null)
+            {
+                throw new ArgumentNullException(@this.ArgumentName);
+            }
+            if (!@this.Argument.Any())
+            {
+                throw new ArgumentException(null, @this.ArgumentName);
+            }
+            return @this;
+        }
+
+        [DebuggerNonUserCode]
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable<T>> Contains<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable<T>> @this, T item)
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (!@this.Argument.Contains(item))
             {
@@ -46,8 +61,8 @@ namespace EnsureFramework
         }
 
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder Any<TNestedArgumentAssertionBuilder>(this TNestedArgumentAssertionBuilder @this)
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable>
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable> Any<TArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable> @this)
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (!@this.Argument.Cast<dynamic>().Any())
             {
@@ -58,8 +73,8 @@ namespace EnsureFramework
 
         
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder Any<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, Func<T, bool> predicate = null)
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable<T>>
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable<T>> Any<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable<T>> @this, Func<T, bool> predicate = null)
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (!@this.Argument.Any(predicate))
             {
@@ -69,8 +84,8 @@ namespace EnsureFramework
         }
         
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder All<TNestedArgumentAssertionBuilder,T>(this TNestedArgumentAssertionBuilder @this, Func<T, bool> predicate = null)
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, IEnumerable<T>>
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable<T>> All<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, IEnumerable<T>> @this, Func<T, bool> predicate = null)
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (!@this.Argument.All(predicate))
             {

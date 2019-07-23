@@ -14,13 +14,15 @@ namespace EnsureFramework
         /// <summary>
         /// Ensures the argument is greater than or equal to the specified value.
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder IsGreaterThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> IsGreaterThanOrEqualTo<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> @this, T value)
             where T : IComparable<T>
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument.CompareTo(value) < 0)
             {
@@ -32,13 +34,15 @@ namespace EnsureFramework
         /// <summary>
         /// Ensures the argument is less than or equal to the specified value.
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder IsLessThanOrEqualTo<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> IsLessThanOrEqualTo<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> @this, T value)
             where T : IComparable<T>
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument.CompareTo(value) > 0)
             {
@@ -50,13 +54,15 @@ namespace EnsureFramework
         /// <summary>
         /// Ensures the argument is less than the specified value.
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder IsLessThan<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> IsLessThan<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> @this, T value)
             where T : IComparable<T>
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument.CompareTo(value) != -1)
             {
@@ -68,13 +74,15 @@ namespace EnsureFramework
         /// <summary>
         /// Ensures the argument is greater than the specified value.
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder IsGreaterThan<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> IsGreaterThan<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> @this, T value)
             where T : IComparable<T>
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument.CompareTo(value) != 1)
             {
@@ -86,13 +94,15 @@ namespace EnsureFramework
         /// <summary>
         /// Ensures the argument is equal to the specified value.
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder IsEqualTo<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T value)
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> IsEqualTo<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> @this, T value)
             where T : IComparable<T>
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument.CompareTo(value) != 0)
             {
@@ -105,15 +115,16 @@ namespace EnsureFramework
         /// Determines whether the argument is between (not including) the lower bound and upper bound.
         /// </summary>
         /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <param name="lowerBound">The lower bound.</param>
         /// <param name="upperBound">The upper bound.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder IsWithinRange<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T lowerBound, T upperBound)
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> IsWithinRange<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument.CompareTo(lowerBound) <= 0 || @this.Argument.CompareTo(upperBound) >= 0)
             {
@@ -126,15 +137,16 @@ namespace EnsureFramework
         /// Determines whether the argument is between and including the lower bound and upper bound.
         /// </summary>
         /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TArgumentAssertionBuilder"></typeparam>
         /// <param name="this">The this.</param>
         /// <param name="lowerBound">The lower bound.</param>
         /// <param name="upperBound">The upper bound.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static TNestedArgumentAssertionBuilder IsWithinAndIncludingRange<TNestedArgumentAssertionBuilder, T>(this TNestedArgumentAssertionBuilder @this, T lowerBound, T upperBound)
+        public static INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> IsWithinAndIncludingRange<TArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TArgumentAssertionBuilder, T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
-            where TNestedArgumentAssertionBuilder : INestedArgumentAssertionBuilder<IArgumentAssertionBuilder, T>
+            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument.CompareTo(lowerBound) < 0 || @this.Argument.CompareTo(upperBound) > 0)
             {

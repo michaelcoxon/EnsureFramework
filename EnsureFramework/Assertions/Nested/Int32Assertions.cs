@@ -16,7 +16,8 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<int> IsNotNegative(this IArgumentAssertionBuilder<int> @this)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, int> IsNotNegative<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, int> @this)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument < 0)
             {
@@ -31,7 +32,8 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<int> IsNotZero(this IArgumentAssertionBuilder<int> @this)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, int> IsNotZero<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, int> @this)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument == 0)
             {

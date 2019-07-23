@@ -90,7 +90,7 @@ namespace EnsureFramework
         /// <param name="argName">Name of the argument.</param>
         /// <returns></returns>
         [DebuggerNonUserCode]
-        public static INestedArgumentAssertionBuilder<TParentAssertion, T> Arg<TParentAssertion, T>(TParentAssertion parent, T arg, string argName)
+        public static INestedArgumentAssertionBuilder<TParentAssertion, T> Nested<TParentAssertion, T>(TParentAssertion parent, T arg, string argName)
             where TParentAssertion : IArgumentAssertionBuilder
         {
             return new NestedArgumentAssertionBuilder<TParentAssertion, T>(parent)
@@ -109,7 +109,7 @@ namespace EnsureFramework
         /// <exception cref="System.NotSupportedException">argExpression</exception>
         //[DebuggerNonUserCode]
         [DebuggerNonUserCode]
-        public static INestedArgumentAssertionBuilder<TParentAssertion, T> Arg<TParentAssertion, T>(TParentAssertion parent, Expression<Func<T>> argExpression)
+        public static INestedArgumentAssertionBuilder<TParentAssertion, T> Nested<TParentAssertion, T>(TParentAssertion parent, Expression<Func<T>> argExpression)
             where TParentAssertion : IArgumentAssertionBuilder
         {
             var exceptionMessage = string.Format(Strings.ExpressionMustContainAnArgument_Format, nameof(argExpression));
@@ -121,7 +121,7 @@ namespace EnsureFramework
             var argument = (T)field.GetValue(constant.Value);
             var argumentName = field.Name;
 
-            return Arg(parent, argument, argumentName);
+            return Nested(parent, argument, argumentName);
         }
     }
 }

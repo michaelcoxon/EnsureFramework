@@ -19,7 +19,8 @@ namespace EnsureFramework
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<string> IsNotNullOrEmpty(this IArgumentAssertionBuilder<string> @this)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> IsNotNullOrEmpty<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> @this)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument == null)
             {
@@ -40,7 +41,8 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<string> Matches(this IArgumentAssertionBuilder<string> @this, string regex)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> Matches<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> @this, string regex)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             bool result;
             Exception innerException = null;
@@ -69,7 +71,8 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<string> Matches(this IArgumentAssertionBuilder<string> @this, string regex, RegexOptions regexOptions)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> Matches<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> @this, string regex, RegexOptions regexOptions)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             bool result;
             Exception innerException = null;

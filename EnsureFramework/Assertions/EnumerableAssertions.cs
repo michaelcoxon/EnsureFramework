@@ -1,5 +1,6 @@
 ﻿using EnsureFramework.Assertions;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -12,6 +13,26 @@ namespace EnsureFramework
     /// </summary>
     public static partial class EnumerableAssertions
     {
+        /// <summary>
+        /// Ensures the enumerable argument is not <c>null</c> or empty.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="this">The this.</param>
+        /// <exception cref="System.ArgumentNullException"></exception>
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<IEnumerable> IsNotNullOrEmpty(this IArgumentAssertionBuilder<IEnumerable> @this)
+        {
+            if (@this.Argument == null)
+            {
+                throw new ArgumentNullException(@this.ArgumentName);
+            }
+            if (!@this.Argument.Cast<dynamic>().Any())
+            {
+                throw new ArgumentException(null, @this.ArgumentName);
+            }
+            return @this;
+        }
+
         /// <summary>
         /// Ensures the enumerable argument is not <c>null</c> or empty.
         /// </summary>
@@ -43,9 +64,9 @@ namespace EnsureFramework
         }
 
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IEnumerable<T>> Any<T>(this IArgumentAssertionBuilder<IEnumerable<T>> @this)
+        public static IArgumentAssertionBuilder<IEnumerable> Any(this IArgumentAssertionBuilder<IEnumerable> @this)
         {
-            if (!@this.Argument.Any())
+            if (!@this.Argument.Cast<dynamic>().Any())
             {
                 throw new ArgumentException(Resources.Strings.No_items, @this.ArgumentName);
             }

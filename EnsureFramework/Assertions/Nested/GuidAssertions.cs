@@ -18,7 +18,8 @@ namespace EnsureFramework
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<Guid> IsValidGuid(this IArgumentAssertionBuilder<Guid> @this)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, Guid> IsValidGuid<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, Guid> @this)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (@this.Argument == Guid.Empty)
             {
@@ -33,7 +34,8 @@ namespace EnsureFramework
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<Guid?> IsValidGuid(this IArgumentAssertionBuilder<Guid?> @this)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, Guid?> IsValidGuid<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, Guid?> @this)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (!@this.Argument.HasValue)
             {

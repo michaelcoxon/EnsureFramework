@@ -145,5 +145,33 @@ namespace EnsureFramework
             }
             return @this;
         }
+
+        /// <summary>
+        /// Makes assertions against the property of an object.
+        /// </summary>
+        /// <typeparam name="T">the object type</typeparam>
+        /// <typeparam name="TProperty">The type of the property.</typeparam>
+        /// <param name="this">The object.</param>
+        /// <param name="propertySelector">The property selector.</param>
+        /// <returns></returns>
+        [DebuggerNonUserCode]
+        public static INestedArgumentAssertionBuilder<IArgumentAssertionBuilder<T>, TProperty> WithProperty<T, TProperty>(this IArgumentAssertionBuilder<T> @this, Expression<Func<T, TProperty>> propertySelector)
+        {
+            return Ensure.Nested(@this, propertySelector.Compile().Invoke(@this.Argument), $"{@this.ArgumentName}.\"{(propertySelector.Body as MemberExpression).Member.Name}\"]");
+        }
+
+        /// <summary>
+        /// Makes assertions against the property of an object.
+        /// </summary>
+        /// <typeparam name="T">the object type</typeparam>
+        /// <typeparam name="TProperty">The type of the property.</typeparam>
+        /// <param name="this">The object.</param>
+        /// <param name="propertySelector">The property selector.</param>
+        /// <returns></returns>
+        [DebuggerNonUserCode]
+        public static INestedArgumentAssertionBuilder<IArgumentAssertionBuilder<T>, TProperty> WithCheckedProperty<T, TProperty>(this IArgumentAssertionBuilder<T> @this, Expression<Func<T, TProperty>> propertySelector)
+        {
+            return @this.WithProperty(propertySelector).IsNotNull();
+        }
     }
 }

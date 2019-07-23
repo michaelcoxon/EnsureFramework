@@ -20,7 +20,8 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IDictionary<TKey, TValue>> HasKey<TKey, TValue>(this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, IDictionary<TKey, TValue>> HasKey<TParentArgumentAssertionBuilder, TKey, TValue>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, IDictionary<TKey, TValue>> @this, TKey key)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             if (!@this.Argument.ContainsKey(key))
             {
@@ -39,7 +40,8 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static INestedArgumentAssertionBuilder<IArgumentAssertionBuilder<IDictionary<TKey, TValue>>, TValue> WithKey<TKey, TValue>(this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
+        public static INestedArgumentAssertionBuilder<INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, IDictionary<TKey, TValue>>, TValue> WithKey<TParentArgumentAssertionBuilder, TKey, TValue>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, IDictionary<TKey, TValue>> @this, TKey key)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             return Ensure.Nested(@this, @this.Argument[key], $"{@this.ArgumentName}[\"{key}\"]");
         }
@@ -54,7 +56,8 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static INestedArgumentAssertionBuilder<IArgumentAssertionBuilder<IDictionary<TKey, TValue>>, TValue> WithCheckedKey<TKey, TValue>(this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
+        public static INestedArgumentAssertionBuilder<INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, IDictionary<TKey, TValue>>, TValue> WithCheckedKey<TParentArgumentAssertionBuilder, TKey, TValue>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, IDictionary<TKey, TValue>> @this, TKey key)
+            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
             return Ensure.Nested(@this.HasKey(key), @this.Argument[key], $"{@this.ArgumentName}[\"{key}\"]");
         }
