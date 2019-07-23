@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.0;netcoreapp1.1;net46;net47;netstandard2.0;netstandard1.6</TargetFrameworks>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Michael Coxon</Authors>
     <Description>EnsureFramework is designed to take the pain out of null checking and making sure (ensuring) your methods are being used the way they were intended and throwing exceptions when unsupported values are passed to them.
 
