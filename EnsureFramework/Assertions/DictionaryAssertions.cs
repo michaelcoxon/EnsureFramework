@@ -1,13 +1,14 @@
 ﻿using EnsureFramework.Assertions;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EnsureFramework
 {
+    /// <summary>
+    /// <see cref="IArgumentAssertionBuilder"/> assertions for <see cref="IDictionary{TKey, TValue}"/>
+    /// </summary>
     public static partial class DictionaryAssertions
     {
         /// <summary>

@@ -1,9 +1,7 @@
 ﻿using EnsureFramework.Assertions;
+
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace EnsureFramework
@@ -19,13 +17,9 @@ namespace EnsureFramework
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> IsNotNullOrEmpty<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> @this)
+        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> IsNotEmpty<TParentArgumentAssertionBuilder>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, string> @this)
             where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
-            if (@this.Argument == null)
-            {
-                throw new ArgumentNullException(@this.ArgumentName);
-            }
             if (@this.Argument == string.Empty)
             {
                 throw new ArgumentException(null, @this.ArgumentName);

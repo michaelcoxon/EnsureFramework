@@ -1,10 +1,7 @@
 ﻿using EnsureFramework.Assertions;
+
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 
 namespace EnsureFramework
 {
@@ -15,25 +12,6 @@ namespace EnsureFramework
     /// </summary>
     public static partial class ObjectAssertions
     {
-        /// <summary>
-        /// Ensures the argument is not <c>null</c>
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="TParentArgumentAssertionBuilder"></typeparam>
-        /// <param name="this">The this.</param>
-        /// <exception cref="System.ArgumentNullException"></exception>
-        [DebuggerNonUserCode]
-        public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T> IsNotNull<TParentArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T?> @this)
-            where T : struct
-            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
-        {
-            if (!@this.Argument.HasValue)
-            {
-                throw new ArgumentNullException(@this.ArgumentName);
-            }
-            return Ensure.Nested(@this.Pop(), @this.Argument.Value, @this.ArgumentName);
-        }
-
         /// <summary>
         /// Ensures the argument is the exact type of <paramref name="type" />.
         /// </summary>
@@ -48,7 +26,7 @@ namespace EnsureFramework
         {
             if (typeof(T) != type)
             {
-                throw new ArgumentException($"The argument at '{@this.ArgumentName}' must be of type '{type}'", @this.ArgumentName);
+                throw new ArgumentException($"The argument at '{@this.ArgumentName}' must be of type '{type}' but it is actually '{@this.Argument.GetType()}'", @this.ArgumentName);
             }
             return @this;
         }
@@ -83,6 +61,11 @@ namespace EnsureFramework
         public static INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T> Matches<TParentArgumentAssertionBuilder, T>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T> @this, Func<T, bool> predicate, string message = null)
                  where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder
         {
+            if (predicate is null)
+            {
+                throw new ArgumentNullException(nameof(predicate));
+            }
+
             bool result;
             Exception innerException = null;
             try
@@ -101,7 +84,7 @@ namespace EnsureFramework
 
             return @this;
         }
-
+        /*
         /// <summary>
         /// Determines whether the argument is one of the specified options.
         /// </summary>
@@ -131,22 +114,12 @@ namespace EnsureFramework
         public static INestedArgumentAssertionBuilder<INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T>, TProperty> WithProperty<TParentArgumentAssertionBuilder, T, TProperty>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T> @this, Expression<Func<T, TProperty>> propertySelector)
             where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder<T>
         {
+            if (propertySelector is null)
+            {
+                throw new ArgumentNullException(nameof(propertySelector));
+            }
             return Ensure.Nested(@this, propertySelector.Compile().Invoke(@this.Argument), $"{@this.ArgumentName}.\"{(propertySelector.Body as MemberExpression).Member.Name}\"]");
         }
-
-        /// <summary>
-        /// Makes assertions against the property of an object.
-        /// </summary>
-        /// <typeparam name="T">the object type</typeparam>
-        /// <typeparam name="TProperty">The type of the property.</typeparam>
-        /// <param name="this">The object.</param>
-        /// <param name="propertySelector">The property selector.</param>
-        /// <returns></returns>
-        [DebuggerNonUserCode]
-        public static INestedArgumentAssertionBuilder<INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T>, TProperty> WithCheckedProperty<TParentArgumentAssertionBuilder, T, TProperty>(this INestedArgumentAssertionBuilder<TParentArgumentAssertionBuilder, T> @this, Expression<Func<T, TProperty>> propertySelector)
-            where TParentArgumentAssertionBuilder : IArgumentAssertionBuilder<T>
-        {
-            return @this.WithProperty(propertySelector).IsNotNull();
-        }
+        */
     }
 }

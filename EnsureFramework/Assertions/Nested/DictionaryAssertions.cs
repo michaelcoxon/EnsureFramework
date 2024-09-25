@@ -1,10 +1,8 @@
 ﻿using EnsureFramework.Assertions;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EnsureFramework
 {
@@ -30,6 +28,7 @@ namespace EnsureFramework
             return @this;
         }
 
+        /*
         /// <summary>
         /// Makes assertions against the value defined by the key. This does not check if the key exists. Use <see cref="HasKey{TKey, TValue}(IArgumentAssertionBuilder{IDictionary{TKey, TValue}}, TKey)"/> for that.
         /// </summary>
@@ -61,5 +60,6 @@ namespace EnsureFramework
         {
             return Ensure.Nested(@this.HasKey(key), @this.Argument[key], $"{@this.ArgumentName}[\"{key}\"]");
         }
+        */
     }
 }

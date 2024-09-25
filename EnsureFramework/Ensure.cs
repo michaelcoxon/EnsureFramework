@@ -1,13 +1,9 @@
-﻿using EnsureFramework.Assertions;
-using EnsureFramework.Resources;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using EnsureFramework.Assertions;
+using EnsureFramework.Resources;
 
 namespace EnsureFramework
 {
@@ -28,10 +24,16 @@ namespace EnsureFramework
         }
 
         [DebuggerNonUserCode]
-        private class NestedArgumentAssertionBuilder<TParentAssertion, T> : ArgumentAssertionBuilder<T>, INestedArgumentAssertionBuilder<TParentAssertion, T>
+        private class NestedArgumentAssertionBuilder<TParentAssertion, T> : INestedArgumentAssertionBuilder<TParentAssertion, T>
             where TParentAssertion : IArgumentAssertionBuilder
         {
             private readonly TParentAssertion _parent;
+
+            public T Argument { get; set; }
+
+            public string ArgumentName { get; set; }
+
+            object INestedArgumentAssertionBuilder<TParentAssertion>.Argument => this.Argument;
 
             public NestedArgumentAssertionBuilder(TParentAssertion parent)
             {
@@ -53,9 +55,36 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Arg<T>(T arg, string argName)
         {
+            if (arg is object obj && obj is null)
+            {
+                throw new ArgumentNullException(argName);
+            }
+
             return new ArgumentAssertionBuilder<T>
             {
                 Argument = arg,
+                ArgumentName = argName,
+            };
+        }
+
+        /// <summary>
+        /// Provides the helpers for validation
+        /// </summary>
+        /// <param name="arg">The argument.</param>
+        /// <param name="argName">Name of the argument.</param>
+        /// <returns></returns>
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<T> Arg<T>(T? arg, string argName)
+            where T : struct
+        {
+            if (!arg.HasValue)
+            {
+                throw new ArgumentNullException(argName);
+            }
+
+            return new ArgumentAssertionBuilder<T>
+            {
+                Argument = arg.Value,
                 ArgumentName = argName,
             };
         }
@@ -71,6 +100,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Arg<T>(Expression<Func<T>> argExpression)
         {
+            if (argExpression is null)
+            {
+                throw new ArgumentNullException(nameof(argExpression));
+            }
             var exceptionMessage = string.Format(Strings.ExpressionMustContainAnArgument_Format, nameof(argExpression));
 
             var body = argExpression.Body as MemberExpression ?? throw new NotSupportedException(exceptionMessage);
@@ -93,6 +126,11 @@ namespace EnsureFramework
         public static INestedArgumentAssertionBuilder<TParentAssertion, T> Nested<TParentAssertion, T>(TParentAssertion parent, T arg, string argName)
             where TParentAssertion : IArgumentAssertionBuilder
         {
+            if (arg is object obj && obj is null)
+            {
+                throw new ArgumentNullException(argName);
+            }
+
             return new NestedArgumentAssertionBuilder<TParentAssertion, T>(parent)
             {
                 Argument = arg,
@@ -112,6 +150,10 @@ namespace EnsureFramework
         public static INestedArgumentAssertionBuilder<TParentAssertion, T> Nested<TParentAssertion, T>(TParentAssertion parent, Expression<Func<T>> argExpression)
             where TParentAssertion : IArgumentAssertionBuilder
         {
+            if (argExpression is null)
+            {
+                throw new ArgumentNullException(nameof(argExpression));
+            }
             var exceptionMessage = string.Format(Strings.ExpressionMustContainAnArgument_Format, nameof(argExpression));
 
             var body = argExpression.Body as MemberExpression ?? throw new NotSupportedException(exceptionMessage);
@@ -123,5 +165,6 @@ namespace EnsureFramework
 
             return Nested(parent, argument, argumentName);
         }
+
     }
 }

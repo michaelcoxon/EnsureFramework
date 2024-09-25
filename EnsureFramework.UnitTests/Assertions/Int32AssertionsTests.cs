@@ -50,7 +50,7 @@ namespace EnsureFramework.UnitTests
         public void IsNotNull_NullableIntBecomesInt_Test()
         {
             int? value = -1;
-            Ensure.Arg(value, "value").IsNotNull().IsNotZero();
+            Ensure.Arg(value, "value").IsNotZero();
         }
     }
 }

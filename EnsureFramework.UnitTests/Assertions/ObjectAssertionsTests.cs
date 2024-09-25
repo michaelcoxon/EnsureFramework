@@ -127,20 +127,18 @@ namespace EnsureFramework.UnitTests.Assertions
 
             Ensure.Arg(anything, nameof(anything))
                 .WithProperty(o => o.foo)
-                .IsNotNull()
                 .IsEqualTo("bar");
         }
 
         [Fact]
         public void WithPropertyFailTest()
         {
-            var anything = new { foo = (string)null };
+            var anything = new { foo = (string?)null };
 
             Assert.Throws<ArgumentNullException>(() =>
             {
                 Ensure.Arg(anything, nameof(anything))
-                    .WithProperty(o => o.foo)
-                    .IsNotNull();
+                    .WithProperty(o => o.foo);
             });
         }
     }

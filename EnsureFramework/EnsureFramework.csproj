@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;netcoreapp1.1;net46;net47;netstandard2.0;netstandard1.6</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Michael Coxon</Authors>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
     <Description>EnsureFramework is designed to take the pain out of null checking and making sure (ensuring) your methods are being used the way they were intended and throwing exceptions when unsupported values are passed to them.
 
 You can make sure values are in a specific range or simply make sure that an argument is not null.
@@ -16,18 +18,10 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
     <RepositoryType>git</RepositoryType>
     <PackageTags>runtime-contracts,ensure,contracts</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>1.3.1</Version>
+    <Version>2.0.0-alpha</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <CodeAnalysisRuleSet>../EnsureFramework.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="EnsureFramework.net46.v3.ncrunchproject" />
-    <None Remove="EnsureFramework.net47.v3.ncrunchproject" />
-    <None Remove="EnsureFramework.netcoreapp1.1.v3.ncrunchproject" />
-    <None Remove="EnsureFramework.netcoreapp2.0.v3.ncrunchproject" />
-    <None Remove="EnsureFramework.netstandard1.6.v3.ncrunchproject" />
-    <None Remove="EnsureFramework.netstandard2.0.v3.ncrunchproject" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources\Strings.Designer.cs">

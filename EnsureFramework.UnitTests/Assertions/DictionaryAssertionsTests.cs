@@ -43,11 +43,8 @@ namespace EnsureFramework.UnitTests.Assertions
             };
 
             Ensure.Arg(dictionary, "dictionary")
-                .IsNotNull()
                 .WithKey("key")
-                   .IsNotNull()
-                   .Pop()
-                .IsNotNull();
+                   .Pop();
         }
 
         [Fact]
@@ -59,11 +56,8 @@ namespace EnsureFramework.UnitTests.Assertions
             };
 
             Ensure.Arg(dictionary, "dictionary")
-                .IsNotNull()
                 .WithKey("key")
-                   .IsNotNull()
-                   .Pop()
-                .IsNotNull();
+                   .Pop();
         }
 
         [Fact]
@@ -75,12 +69,9 @@ namespace EnsureFramework.UnitTests.Assertions
             };
 
             Ensure.Arg(dictionary, "dictionary")
-                .IsNotNull()
                 .WithKey("key")
-                   .IsNotNull()
                    .IsTypeOf(typeof(int))
-                   .Pop()
-                .IsNotNull();
+                   .Pop();
         }
 
         [Fact]
@@ -94,8 +85,7 @@ namespace EnsureFramework.UnitTests.Assertions
             Assert.Throws<ArgumentNullException>(() =>
             {
                 Ensure.Arg(dictionary, "dictionary")
-                    .WithKey("key")
-                        .IsNotNull();
+                    .WithKey("key");
             });
         }
     }

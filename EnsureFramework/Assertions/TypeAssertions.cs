@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EnsureFramework.Assertions;
+
+using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EnsureFramework.Assertions;
 using System.Reflection;
 
 namespace EnsureFramework

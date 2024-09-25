@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		CONTRIBUTING.md = CONTRIBUTING.md
+		EnsureFramework.ruleset = EnsureFramework.ruleset
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -35,7 +36,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_AutoCreateNewLanguageFiles = False
 		SolutionGuid = {F10C9DF8-3055-4275-8E0A-AD9EFF0746B9}
+		RESX_AutoCreateNewLanguageFiles = False
 	EndGlobalSection
 EndGlobal

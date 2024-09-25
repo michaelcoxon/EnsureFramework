@@ -1,8 +1,7 @@
 ﻿using EnsureFramework.Assertions;
+
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
 namespace EnsureFramework
 {
