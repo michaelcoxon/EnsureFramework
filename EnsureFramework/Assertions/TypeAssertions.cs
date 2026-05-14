@@ -67,7 +67,6 @@ namespace EnsureFramework.Assertions
         /// Determines whether the argument is the specified type
         /// </summary>
         /// <param name="this">The this.</param>
-        /// <param name="type">The type.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]
@@ -85,7 +84,6 @@ namespace EnsureFramework.Assertions
         /// of the argument.
         /// </summary>
         /// <param name="this">The this.</param>
-        /// <param name="type">The type.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]
@@ -103,7 +101,6 @@ namespace EnsureFramework.Assertions
         /// of the specified type.
         /// </summary>
         /// <param name="this">The this.</param>
-        /// <param name="type">The type.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]

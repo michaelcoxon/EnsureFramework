@@ -75,7 +75,7 @@ namespace EnsureFramework.UnitTests.Assertions
         {
             var list = new List<string> { "hello" };
 
-            Ensure.Arg(list, nameof(list)).Matches(l => l.First() == "hello");
+            Ensure.Arg(list).Matches(l => l.First() == "hello");
         }
 
         [Fact]
