@@ -20,16 +20,5 @@ namespace EnsureFramework.UnitTests
             Assert.Equal(arg, assertionBuilder.Argument);
             Assert.Equal(name, assertionBuilder.ArgumentName);
         }
-
-        [Fact]
-        public void EnsureArgumentByExpression_Test()
-        {
-            var arg = Guid.NewGuid();
-
-            var assertionBuilder = Ensure.Arg(() => arg);
-
-            Assert.Equal(arg, assertionBuilder.Argument);
-            Assert.Equal(nameof(arg), assertionBuilder.ArgumentName);
-        }
     }
 }

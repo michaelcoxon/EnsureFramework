@@ -1,10 +1,8 @@
-﻿using EnsureFramework.Assertions;
-
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace EnsureFramework
+namespace EnsureFramework.Assertions
 {
     /// <summary>
     /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(System.Linq.Expressions.Expression{Func{T}})"/> and <see cref="Ensure.Arg{T}(T, string)"/> helpers

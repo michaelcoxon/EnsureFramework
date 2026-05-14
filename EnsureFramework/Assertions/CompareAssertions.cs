@@ -1,9 +1,8 @@
-﻿using EnsureFramework.Assertions;
-
-using System;
+﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
-namespace EnsureFramework
+namespace EnsureFramework.Assertions
 {
     /// <summary>
     /// Ensure assertions for <see cref="IComparable{T}"/>'s
@@ -17,7 +16,7 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsGreaterThanOrEqualTo<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static IArgumentAssertionBuilder<T> IsGreaterThanOrEqualTo<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
             if (@this.Argument.CompareTo(value) < 0)
@@ -34,7 +33,7 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsLessThanOrEqualTo<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static IArgumentAssertionBuilder<T> IsLessThanOrEqualTo<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
             if (@this.Argument.CompareTo(value) > 0)
@@ -51,7 +50,7 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsLessThan<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static IArgumentAssertionBuilder<T> IsLessThan<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
             if (@this.Argument.CompareTo(value) != -1)
@@ -68,7 +67,7 @@ namespace EnsureFramework
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsGreaterThan<T>(this IArgumentAssertionBuilder<T> @this, T value)
+        public static IArgumentAssertionBuilder<T> IsGreaterThan<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
             if (@this.Argument.CompareTo(value) != 1)

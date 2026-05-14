@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using EnsureFramework.Assertions;
+
 using Xunit;
 
 namespace EnsureFramework.UnitTests.Assertions
@@ -117,28 +120,6 @@ namespace EnsureFramework.UnitTests.Assertions
             Assert.Throws<ArgumentException>(() =>
             {
                 Ensure.Arg(str, nameof(str)).IsOneOf("foo", "bar");
-            });
-        }
-
-        [Fact]
-        public void WithPropertyTest()
-        {
-            var anything = new { foo = "bar" };
-
-            Ensure.Arg(anything, nameof(anything))
-                .WithProperty(o => o.foo)
-                .IsEqualTo("bar");
-        }
-
-        [Fact]
-        public void WithPropertyFailTest()
-        {
-            var anything = new { foo = (string?)null };
-
-            Assert.Throws<ArgumentNullException>(() =>
-            {
-                Ensure.Arg(anything, nameof(anything))
-                    .WithProperty(o => o.foo);
             });
         }
     }

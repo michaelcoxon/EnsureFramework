@@ -1,9 +1,8 @@
-﻿using EnsureFramework.Assertions;
-
-using System;
+﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
-namespace EnsureFramework
+namespace EnsureFramework.Assertions
 {
     public static partial class Int32Assertions
     {
@@ -13,7 +12,7 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<int> IsNotNegative(this IArgumentAssertionBuilder<int> @this)
+        public static IArgumentAssertionBuilder<int> IsNotNegative([NotNull] this IArgumentAssertionBuilder<int> @this)
         {
             if (@this.Argument < 0)
             {
@@ -28,7 +27,7 @@ namespace EnsureFramework
         /// <returns></returns>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<int> IsNotZero(this IArgumentAssertionBuilder<int> @this)
+        public static IArgumentAssertionBuilder<int> IsNotZero([NotNull] this IArgumentAssertionBuilder<int> @this)
         {
             if (@this.Argument == 0)
             {

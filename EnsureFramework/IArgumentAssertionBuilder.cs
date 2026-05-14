@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EnsureFramework.Assertions
+namespace EnsureFramework
 {
     /// <summary>
     /// Interface that allows the extension of the <see cref="Ensure"/> class.
@@ -28,40 +28,6 @@ namespace EnsureFramework.Assertions
         /// <summary>
         /// Gets the name of the argument.
         /// </summary>
-        string ArgumentName { get; }
-    }
-
-    /// <summary>
-    /// Interface that allows the extension of the <see cref="Ensure"/> class.
-    /// </summary>
-    public interface INestedArgumentAssertionBuilder<out TParentAssertion, out T> : INestedArgumentAssertionBuilder<TParentAssertion>
-        where TParentAssertion : IArgumentAssertionBuilder
-    {
-        /// <summary>
-        /// Gets the argument.
-        /// </summary>
-        new T Argument { get; }
-    }
-
-    /// <summary>
-    /// Interface that allows the extension of the <see cref="Ensure"/> class.
-    /// </summary>
-    public interface INestedArgumentAssertionBuilder<out TParentAssertion>
-         where TParentAssertion : IArgumentAssertionBuilder
-    {
-        /// <summary>
-        /// Gets the argument.
-        /// </summary>
-        object Argument { get; }
-
-        /// <summary>
-        /// Gets the name of the argument.
-        /// </summary>
-        string ArgumentName { get; }
-
-        /// <summary>
-        /// Pop the context back to the parent assertion
-        /// </summary>
-        TParentAssertion Pop();
+        string? ArgumentName { get; }
     }
 }

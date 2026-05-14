@@ -3,12 +3,13 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
-using EnsureFramework.Assertions;
 
-namespace EnsureFramework
+using EnsureFramework;
+
+namespace EnsureFramework.Assertions
 {
     /// <summary>
-    /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(System.Linq.Expressions.Expression{Func{T}})"/> and <see cref="Ensure.Arg{T}(T, string)"/> helpers
+    /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
     /// </summary>
     public static partial class ObjectAssertions
     {
@@ -72,14 +73,12 @@ namespace EnsureFramework
         /// <exception cref="System.ArgumentException">
         /// </exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> Matches<T>(this IArgumentAssertionBuilder<T> @this, Func<T, bool> predicate, string message = null)
+        public static IArgumentAssertionBuilder<T> Matches<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Func<T?, bool> predicate, string? message = null)
         {
-            if (predicate is null)
-            {
-                throw new ArgumentNullException(nameof(predicate));
-            }
+            ArgumentNullException.ThrowIfNull(predicate);
+
             bool result;
-            Exception innerException = null;
+            Exception? innerException = null;
             try
             {
                 result = predicate(@this.Argument);
@@ -104,31 +103,13 @@ namespace EnsureFramework
         /// <param name="options">The options.</param>
         /// <exception cref="System.ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsOneOf<T>(this IArgumentAssertionBuilder<T> @this, params T[] options)
+        public static IArgumentAssertionBuilder<T> IsOneOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, params T[] options)
         {
             if (!options.Contains(@this.Argument))
             {
                 throw new ArgumentException($"Argument '{@this.ArgumentName}' must be one of ('{string.Join("', '", options)}')", @this.ArgumentName);
             }
             return @this;
-        }
-
-        /// <summary>
-        /// Makes assertions against the property of an object.
-        /// </summary>
-        /// <typeparam name="T">the object type</typeparam>
-        /// <typeparam name="TProperty">The type of the property.</typeparam>
-        /// <param name="this">The object.</param>
-        /// <param name="propertySelector">The property selector.</param>
-        /// <returns></returns>
-        [DebuggerNonUserCode]
-        public static INestedArgumentAssertionBuilder<IArgumentAssertionBuilder<T>, TProperty> WithProperty<T, TProperty>(this IArgumentAssertionBuilder<T> @this, Expression<Func<T, TProperty>> propertySelector)
-        {
-            if (propertySelector is null)
-            {
-                throw new ArgumentNullException(nameof(propertySelector));
-            }
-            return Ensure.Nested(@this, propertySelector.Compile().Invoke(@this.Argument), $"{@this.ArgumentName}.\"{(propertySelector.Body as MemberExpression).Member.Name}\"]");
         }
     }
 }

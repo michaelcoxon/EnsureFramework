@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using EnsureFramework.Assertions;
+
 using Xunit;
 
 namespace EnsureFramework.UnitTests.Assertions
@@ -42,9 +45,7 @@ namespace EnsureFramework.UnitTests.Assertions
                 ["key"] = "value",
             };
 
-            Ensure.Arg(dictionary, "dictionary")
-                .WithKey("key")
-                   .Pop();
+            Ensure.Arg(dictionary["key"]);
         }
 
         [Fact]
@@ -55,9 +56,7 @@ namespace EnsureFramework.UnitTests.Assertions
                 ["key"] = 1,
             };
 
-            Ensure.Arg(dictionary, "dictionary")
-                .WithKey("key")
-                   .Pop();
+            Ensure.Arg(dictionary["key"]);
         }
 
         [Fact]
@@ -68,24 +67,20 @@ namespace EnsureFramework.UnitTests.Assertions
                 ["key"] = 1,
             };
 
-            Ensure.Arg(dictionary, "dictionary")
-                .WithKey("key")
-                   .IsTypeOf(typeof(int))
-                   .Pop();
+            Ensure.Arg(dictionary["key"]).IsTypeOf(typeof(int));
         }
 
         [Fact]
         public void WithKeyFailTest()
         {
-            var dictionary = new Dictionary<string, string>
+            var dictionary = new Dictionary<string, string?>
             {
                 ["key"] = null,
             };
 
             Assert.Throws<ArgumentNullException>(() =>
             {
-                Ensure.Arg(dictionary, "dictionary")
-                    .WithKey("key");
+                Ensure.Arg(dictionary["key"]);
             });
         }
     }
