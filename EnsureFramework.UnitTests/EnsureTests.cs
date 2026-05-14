@@ -10,7 +10,7 @@ namespace EnsureFramework.UnitTests
     public class EnsureTests
     {
         [Fact]
-        public void EnsureArgumentByName_Test()
+        public void EnsureArgument_WithName()
         {
             var arg = Guid.NewGuid();
             var name = Guid.NewGuid().ToString();
@@ -19,6 +19,17 @@ namespace EnsureFramework.UnitTests
             
             Assert.Equal(arg, assertionBuilder.Argument);
             Assert.Equal(name, assertionBuilder.ArgumentName);
+        }
+
+        [Fact]
+        public void EnsureArgument_WithoutName()
+        {
+            var arg = Guid.NewGuid();
+
+            var assertionBuilder = Ensure.Arg(arg);
+
+            Assert.Equal(arg, assertionBuilder.Argument);
+            Assert.Equal(nameof(arg), assertionBuilder.ArgumentName);
         }
     }
 }
