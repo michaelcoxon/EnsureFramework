@@ -8,28 +8,21 @@ You can make sure values are in a specific range or simply make sure that an arg
 It was designed to be readable and fluent based, meaning you can chain ensurables together and the 
 first one that fails will result in the exception.
 
+Ensuring implicitly checks for null so there is no need to have a `.IsNull()` call. So if you want to
+ensure it is not null, you can just `Ensure.Arg(myArg)`.
+
 # 101
 1. Add the namespace 
    ```cs
    namespace EnsureFramework;
    ```
 2. Ensure things!  
-   *argument-string method*
    ```cs
    public void MyMethod(string anArgument)
    {
-       Ensure.Arg(anArgument, nameof(anArgument)).IsNotNullOrEmpty();
+       Ensure.Arg(anArgument).IsNotEmpty();
    }
    ```
-   ... or you can use expressions...  
-   *expression based method*
-   ```cs
-   public void MyMethod(string anArgument)
-   {
-       Ensure.Arg(() => anArgument).IsNotNullOrEmpty();
-   }
-   ```
-
 ---
 
 # Other things
@@ -90,18 +83,14 @@ There are extensions for common types in .NET but not much else outside of that.
 That's cool friend, just create your own by adding extension methods to your project. 
 Here is a simple one that should point you in the right direction:
 ```cs
-public static IArgumentAssertionBuilder<string> IsNotNullOrEmpty(this IArgumentAssertionBuilder<string> @this)
+public static IArgumentAssertionBuilder<User> IsAnAdult(this IArgumentAssertionBuilder<User> @this)
 {
-    if (@this.Argument == null)
+    if (@this.Argument.DateOfBirth >= DateTime.Today.AddYears(-18))
     {
-        throw new ArgumentNullException(@this.ArgumentName);
-    }
-    if (@this.Argument == string.Empty)
-    {
-        throw new ArgumentException(null, @this.ArgumentName);
+        throw new ArgumentException("User is underage", @this.ArgumentName);
     }
     return @this;
 }
 ```
 
-Check out the code and tests (or lack-there-of) for a bit more info - the project is quite simple.
+Check out the code and tests for a bit more info - the project is quite simple.

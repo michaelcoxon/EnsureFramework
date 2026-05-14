@@ -16,7 +16,7 @@ namespace EnsureFramework.UnitTests
             var name = Guid.NewGuid().ToString();
 
             var assertionBuilder = Ensure.Arg(arg, name);
-
+            
             Assert.Equal(arg, assertionBuilder.Argument);
             Assert.Equal(name, assertionBuilder.ArgumentName);
         }
