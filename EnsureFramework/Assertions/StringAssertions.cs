@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
@@ -10,6 +11,8 @@ namespace EnsureFramework.Assertions
     /// </summary>
     public static partial class StringAssertions
     {
+        private readonly static ConcurrentDictionary<(string, RegexOptions?), Regex> _regexCache = new();
+
         /// <summary>
         /// Ensures the <see cref="string" /> argument is not <c>null</c> or empty.
         /// </summary>
@@ -20,7 +23,24 @@ namespace EnsureFramework.Assertions
         {
             if (@this.Argument == string.Empty)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException("IsEmpty", @this.ArgumentName);
+            }
+            return @this;
+        }
+
+        /// <summary>
+        /// Ensures the <see cref="string" /> argument is not <c>null</c> or empty.
+        /// </summary>
+        /// <param name="this">The this.</param>
+        /// <exception cref="System.ArgumentNullException"></exception>
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<string> IsNotEmptyOrWhiteSpace([NotNull] this IArgumentAssertionBuilder<string> @this)
+        {
+            @this.IsNotEmpty();
+
+            if (char.IsWhiteSpace(@this.Argument[0]))
+            {
+                throw new ArgumentException("IsWhiteSpace", @this.ArgumentName);
             }
             return @this;
         }
@@ -35,11 +55,13 @@ namespace EnsureFramework.Assertions
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex)
         {
+            var regexEngine = _regexCache.GetOrAdd((regex, null), (regexTuple) => new Regex(regexTuple.Item1, RegexOptions.Compiled));
+
             bool result;
             Exception? innerException = null;
             try
             {
-                result = Regex.IsMatch(@this.Argument, regex);
+                result = regexEngine.IsMatch(@this.Argument);
             }
             catch (Exception ex)
             {
@@ -64,11 +86,13 @@ namespace EnsureFramework.Assertions
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex, RegexOptions regexOptions)
         {
+            var regexEngine = _regexCache.GetOrAdd((regex, regexOptions), (regexTuple) => new Regex(regexTuple.Item1, regexTuple.Item2!.Value & RegexOptions.Compiled));
+
             bool result;
             Exception? innerException = null;
             try
             {
-                result = Regex.IsMatch(@this.Argument, regex, regexOptions);
+                result = regexEngine.IsMatch(@this.Argument);
             }
             catch (Exception ex)
             {

@@ -8,27 +8,24 @@ namespace EnsureFramework
     /// <summary>
     /// Interface that allows the extension of the <see cref="Ensure"/> class.
     /// </summary>
-    public interface IArgumentAssertionBuilder<out T> : IArgumentAssertionBuilder
+    public interface IArgumentAssertionBuilder<out T>
     {
         /// <summary>
         /// Gets the argument.
         /// </summary>
-        [NotNull] new T Argument { get; }
+        [NotNull] T Argument { get; }  
+        
+        /// <summary>
+        /// Gets the name of the argument.
+        /// </summary>
+        string? ArgumentName { get; }
     }
 
     /// <summary>
     /// Interface that allows the extension of the <see cref="Ensure"/> class.
     /// </summary>
-    public interface IArgumentAssertionBuilder
+    public interface IArgumentAssertionBuilder: IArgumentAssertionBuilder<object>
     {
-        /// <summary>
-        /// Gets the argument.
-        /// </summary>
-        [NotNull] object Argument { get; }
 
-        /// <summary>
-        /// Gets the name of the argument.
-        /// </summary>
-        string? ArgumentName { get; }
     }
 }

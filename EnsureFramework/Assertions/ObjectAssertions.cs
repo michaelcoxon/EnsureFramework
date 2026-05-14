@@ -23,8 +23,7 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="System.ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static TArgumentAssertionBuilder Assert<TArgumentAssertionBuilder>(this TArgumentAssertionBuilder @this, [DoesNotReturnIf(false)] bool assertion, string? message = null)
-            where TArgumentAssertionBuilder : IArgumentAssertionBuilder
+        public static IArgumentAssertionBuilder<T> Assert<T>([NotNull] this IArgumentAssertionBuilder<T> @this, [DoesNotReturnIf(false)] bool assertion, string? message = null)
         {
             if (!assertion)
             {

@@ -23,9 +23,6 @@ namespace EnsureFramework
             public required T Argument { get; set; }
 
             public string? ArgumentName { get; set; }
-
-            [NotNull]
-            object IArgumentAssertionBuilder.Argument => this.Argument;
         }
 
         /// <summary>
