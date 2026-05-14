@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace EnsureFramework
@@ -12,7 +13,7 @@ namespace EnsureFramework
         /// <summary>
         /// Gets the argument.
         /// </summary>
-        new T Argument { get; }
+        [NotNull] new T Argument { get; }
     }
 
     /// <summary>
@@ -23,7 +24,7 @@ namespace EnsureFramework
         /// <summary>
         /// Gets the argument.
         /// </summary>
-        object Argument { get; }
+        [NotNull] object Argument { get; }
 
         /// <summary>
         /// Gets the name of the argument.

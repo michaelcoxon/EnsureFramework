@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 namespace EnsureFramework.Assertions
 {
     /// <summary>
-    /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(System.Linq.Expressions.Expression{Func{T}})"/> and <see cref="Ensure.Arg{T}(T, string)"/> helpers
+    /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
     /// </summary>
     public static partial class TypeAssertions
     {
@@ -17,7 +18,7 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<Type> Is(this IArgumentAssertionBuilder<Type> @this, Type type)
+        public static IArgumentAssertionBuilder<Type> Is([NotNull] this IArgumentAssertionBuilder<Type> @this, Type type)
         {
             if (@this.Argument == type)
             {
@@ -35,7 +36,7 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<Type> IsAssignableFrom(this IArgumentAssertionBuilder<Type> @this, Type type)
+        public static IArgumentAssertionBuilder<Type> IsAssignableFrom([NotNull] this IArgumentAssertionBuilder<Type> @this, Type type)
         {
             if (@this.Argument.GetTypeInfo().IsAssignableFrom(type))
             {
@@ -53,7 +54,7 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<Type> IsAssignableTo(this IArgumentAssertionBuilder<Type> @this, Type type)
+        public static IArgumentAssertionBuilder<Type> IsAssignableTo([NotNull] this IArgumentAssertionBuilder<Type> @this, Type type)
         {
             if (type.GetTypeInfo().IsAssignableFrom(@this.Argument))
             {
@@ -70,7 +71,7 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<Type> Is<T>(this IArgumentAssertionBuilder<Type> @this)
+        public static IArgumentAssertionBuilder<Type> Is<T>([NotNull] this IArgumentAssertionBuilder<Type> @this)
         {
             if (@this.Argument == typeof(T))
             {
@@ -88,7 +89,7 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<Type> IsAssignableFrom<T>(this IArgumentAssertionBuilder<Type> @this)
+        public static IArgumentAssertionBuilder<Type> IsAssignableFrom<T>([NotNull] this IArgumentAssertionBuilder<Type> @this)
         {
             if (@this.Argument.GetTypeInfo().IsAssignableFrom(typeof(T)))
             {
@@ -106,7 +107,7 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException">null</exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<Type> IsAssignableTo<T>(this IArgumentAssertionBuilder<Type> @this)
+        public static IArgumentAssertionBuilder<Type> IsAssignableTo<T>([NotNull] this IArgumentAssertionBuilder<Type> @this)
         {
             if (typeof(T).GetTypeInfo().IsAssignableFrom(@this.Argument))
             {

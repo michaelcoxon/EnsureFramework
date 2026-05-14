@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace EnsureFramework.Assertions
 {
@@ -19,7 +20,7 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<IDictionary<TKey, TValue>> HasKey<TKey, TValue>(this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
+        public static IArgumentAssertionBuilder<IDictionary<TKey, TValue>> HasKey<TKey, TValue>([NotNull] this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
         {
             if (!@this.Argument.ContainsKey(key))
             {

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
 namespace EnsureFramework.Assertions
 {
     /// <summary>
-    /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(System.Linq.Expressions.Expression{Func{T}})"/> and <see cref="Ensure.Arg{T}(T, string)"/> helpers
+    /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
     /// </summary>
     public static partial class StringAssertions
     {
@@ -15,7 +16,7 @@ namespace EnsureFramework.Assertions
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<string> IsNotEmpty(this IArgumentAssertionBuilder<string> @this)
+        public static IArgumentAssertionBuilder<string> IsNotEmpty([NotNull] this IArgumentAssertionBuilder<string> @this)
         {
             if (@this.Argument == string.Empty)
             {
@@ -32,10 +33,10 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<string> Matches(this IArgumentAssertionBuilder<string> @this, string regex)
+        public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex)
         {
             bool result;
-            Exception innerException = null;
+            Exception? innerException = null;
             try
             {
                 result = Regex.IsMatch(@this.Argument, regex);
@@ -61,10 +62,10 @@ namespace EnsureFramework.Assertions
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<string> Matches(this IArgumentAssertionBuilder<string> @this, string regex, RegexOptions regexOptions)
+        public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex, RegexOptions regexOptions)
         {
             bool result;
-            Exception innerException = null;
+            Exception? innerException = null;
             try
             {
                 result = Regex.IsMatch(@this.Argument, regex, regexOptions);

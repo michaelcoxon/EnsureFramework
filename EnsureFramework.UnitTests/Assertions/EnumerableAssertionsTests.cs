@@ -3,31 +3,36 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xunit;
 
-namespace EnsureFramework.UnitTests
+namespace EnsureFramework.UnitTests.Assertions
 {
     public class EnumerableAssertionsTests
     {
+
         [Fact]
         public void IsNotNullOrEmptyTest()
         {
-            Ensure.Arg(new int[] { 1, 2, 3 }, "value").IsNotNullOrEmpty();
+            int[] arg = [1, 2, 3];
+            Ensure.Arg(arg, "value").IsNotNullOrEmpty();
         }
 
         [Fact]
         public void IsNotNullOrEmpty_Empty_Test()
         {
-            Assert.Throws<ArgumentException>(() => Ensure.Arg(new int[] { }, "value").IsNotNullOrEmpty());
+            var arg = new int[] { };
+            Assert.Throws<ArgumentException>(() => Ensure.Arg(arg).IsNotNullOrEmpty());
         }
 
         [Fact]
         public void IsNotNullOrEmpty_Null_Test()
         {
-            Assert.Throws<ArgumentNullException>(() => Ensure.Arg<int[]>(null, "value").IsNotNullOrEmpty());
+            int[]? arg = null;
+            Assert.Throws<ArgumentNullException>(() => Ensure.Arg(arg).IsNotNullOrEmpty());
         }
     }
 }

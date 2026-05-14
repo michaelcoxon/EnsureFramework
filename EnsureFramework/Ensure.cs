@@ -19,11 +19,13 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         private class ArgumentAssertionBuilder<T> : IArgumentAssertionBuilder<T>
         {
-            public T? Argument { get; set; }
+            [NotNull]
+            public required T Argument { get; set; }
 
             public string? ArgumentName { get; set; }
 
-            object? IArgumentAssertionBuilder.Argument => this.Argument;
+            [NotNull]
+            object IArgumentAssertionBuilder.Argument => this.Argument;
         }
 
         /// <summary>

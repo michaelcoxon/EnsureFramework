@@ -42,7 +42,7 @@ namespace EnsureFramework.Assertions
         /// <param name="type">The type.</param>
         /// <exception cref="System.ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsTypeOf<T>(this IArgumentAssertionBuilder<T> @this, Type type)
+        public static IArgumentAssertionBuilder<T> IsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
             return @this.Assert(typeof(T) == type, $"The argument at '{@this.ArgumentName}' must be of type '{type}'");
         }
@@ -54,7 +54,7 @@ namespace EnsureFramework.Assertions
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsTypeOf<T>(this IArgumentAssertionBuilder<T> @this)
+        public static IArgumentAssertionBuilder<T> IsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this)
         {
             if (typeof(T) != @this.Argument.GetType())
             {

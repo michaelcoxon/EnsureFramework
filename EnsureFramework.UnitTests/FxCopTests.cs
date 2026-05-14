@@ -12,7 +12,7 @@ namespace EnsureFramework.UnitTests
 {
     public class FxCopTests
     {
-        public void Method(object obj, string str)
+        public void Method(object? obj, string? str)
         {
             Ensure.Arg(obj, nameof(obj));
             Ensure.Arg(str, nameof(str)).IsNotEmpty();

@@ -98,7 +98,7 @@ namespace EnsureFramework.UnitTests.Assertions
 
             var exception = Assert.Throws<ArgumentException>(() =>
             {
-                Ensure.Arg(list, nameof(list)).Matches(l => l.First() == "hello");
+                Ensure.Arg(list).Matches(l => l.First() == "hello");
             });
 
             Assert.IsType<InvalidOperationException>(exception.InnerException);
