@@ -11,10 +11,10 @@ namespace EnsureFramework
     /// </summary>
     public static partial class StringAssertions
     {
-        private readonly static ConcurrentDictionary<(string, RegexOptions?), Regex> _regexCache = new();
+        private readonly static ConcurrentDictionary<(string regex, RegexOptions options), Regex> _regexCache = new();
 
         /// <summary>
-        /// Ensures the <see cref="string" /> argument is not <c>null</c> or empty.
+        /// Ensures the <see cref="string" /> argument is not empty.
         /// </summary>
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
@@ -23,26 +23,33 @@ namespace EnsureFramework
         {
             if (@this.Argument == string.Empty)
             {
-                throw new ArgumentException("IsEmpty", @this.ArgumentName);
+                throw new ArgumentException($"The string is empty.", @this.ArgumentName);
             }
             return @this;
         }
 
         /// <summary>
-        /// Ensures the <see cref="string" /> argument is not <c>null</c> or empty.
+        /// Ensures the <see cref="string" /> argument is not empty or only whitespace.
         /// </summary>
         /// <param name="this">The this.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> IsNotEmptyOrWhiteSpace([NotNull] this IArgumentAssertionBuilder<string> @this)
         {
-            @this.IsNotEmpty();
-
-            if (char.IsWhiteSpace(@this.Argument[0]))
+            if (@this.Argument == string.Empty)
             {
-                throw new ArgumentException("IsWhiteSpace", @this.ArgumentName);
+                throw new ArgumentException($"The string is empty.", @this.ArgumentName);
             }
-            return @this;
+
+            for (int i = 0; i < @this.Argument.Length; i++)
+            {
+                if (!char.IsWhiteSpace(@this.Argument[i]))
+                {
+                    return @this;
+                }
+            }
+
+            throw new ArgumentException($"The string '{@this.Argument}' is whitespace", @this.ArgumentName);
         }
 
         /// <summary>
@@ -55,7 +62,7 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex)
         {
-            var regexEngine = _regexCache.GetOrAdd((regex, null), (regexTuple) => new Regex(regexTuple.Item1, RegexOptions.Compiled));
+            var regexEngine = _regexCache.GetOrAdd((regex, RegexOptions.Compiled), (regexTuple) => new Regex(regexTuple.regex, regexTuple.options));
             var result = regexEngine.IsMatch(@this.Argument);
 
             if (!result)
@@ -76,7 +83,7 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex, RegexOptions regexOptions)
         {
-            var regexEngine = _regexCache.GetOrAdd((regex, regexOptions), (regexTuple) => new Regex(regexTuple.Item1, regexTuple.Item2!.Value | RegexOptions.Compiled));
+            var regexEngine = _regexCache.GetOrAdd((regex, regexOptions | RegexOptions.Compiled), (regexTuple) => new Regex(regexTuple.regex, regexTuple.options));
             var result = regexEngine.IsMatch(@this.Argument);
 
             if (!result)

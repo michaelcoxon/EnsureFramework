@@ -11,8 +11,7 @@
 You can make sure values are in a specific range or simply make sure that an argument is not null.
 
 It was designed to be readable and fluent based, meaning you can chain ensurables together and the first one that fails will result in the exception.</Description>
-    <Copyright>Copyright 2018</Copyright>
-    <PackageLicenseUrl>https://github.com/michaelcoxon/EnsureFramework/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyright 2018-2026</Copyright>
     <PackageProjectUrl>https://github.com/michaelcoxon/EnsureFramework</PackageProjectUrl>
     <RepositoryUrl>https://github.com/michaelcoxon/EnsureFramework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -21,9 +20,13 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
     <Version>2.0.0-alpha</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <CodeAnalysisRuleSet>../EnsureFramework.ruleset</CodeAnalysisRuleSet>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\LICENSE" Pack="true" PackagePath="\"/>
     <Compile Update="Resources\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
