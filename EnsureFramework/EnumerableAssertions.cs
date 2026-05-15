@@ -5,9 +5,9 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
-using EnsureFramework.Assertions;
+using EnsureFramework;
 
-namespace EnsureFramework.Assertions
+namespace EnsureFramework
 {
     /// <summary>
     /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace EnsureFramework.Assertions
+namespace EnsureFramework
 {
     /// <summary>
     /// <see cref="IArgumentAssertionBuilder"/> assertions for <see cref="IDictionary{TKey, TValue}"/>

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace EnsureFramework.Assertions
+namespace EnsureFramework
 {
     /// <summary>
     /// Ensure assertions for <see cref="IComparable{T}"/>'s

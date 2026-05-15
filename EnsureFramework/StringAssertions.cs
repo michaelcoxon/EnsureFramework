@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
-namespace EnsureFramework.Assertions
+namespace EnsureFramework
 {
     /// <summary>
     /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
@@ -56,21 +56,11 @@ namespace EnsureFramework.Assertions
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex)
         {
             var regexEngine = _regexCache.GetOrAdd((regex, null), (regexTuple) => new Regex(regexTuple.Item1, RegexOptions.Compiled));
+            var result = regexEngine.IsMatch(@this.Argument);
 
-            bool result;
-            Exception? innerException = null;
-            try
-            {
-                result = regexEngine.IsMatch(@this.Argument);
-            }
-            catch (Exception ex)
-            {
-                result = false;
-                innerException = ex;
-            }
             if (!result)
             {
-                throw new ArgumentException($"The string '{@this.Argument}' does not match the regular expression '{regex}'", @this.ArgumentName, innerException);
+                throw new ArgumentException($"The string '{@this.Argument}' does not match the regular expression '{regex}'", @this.ArgumentName);
             }
             return @this;
         }
@@ -86,22 +76,12 @@ namespace EnsureFramework.Assertions
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex, RegexOptions regexOptions)
         {
-            var regexEngine = _regexCache.GetOrAdd((regex, regexOptions), (regexTuple) => new Regex(regexTuple.Item1, regexTuple.Item2!.Value & RegexOptions.Compiled));
+            var regexEngine = _regexCache.GetOrAdd((regex, regexOptions), (regexTuple) => new Regex(regexTuple.Item1, regexTuple.Item2!.Value | RegexOptions.Compiled));
+            var result = regexEngine.IsMatch(@this.Argument);
 
-            bool result;
-            Exception? innerException = null;
-            try
-            {
-                result = regexEngine.IsMatch(@this.Argument);
-            }
-            catch (Exception ex)
-            {
-                result = false;
-                innerException = ex;
-            }
             if (!result)
             {
-                throw new ArgumentException($"The string '{@this.Argument}' does not match the regular expression '{regex}'", @this.ArgumentName, innerException);
+                throw new ArgumentException($"The string '{@this.Argument}' does not match the regular expression '{regex}'", @this.ArgumentName);
             }
             return @this;
         }

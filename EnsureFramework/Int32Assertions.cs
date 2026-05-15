@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace EnsureFramework.Assertions
+namespace EnsureFramework
 {
     /// <summary>
     /// Provides assertion methods for validating 32-bit integer arguments.
