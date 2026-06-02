@@ -31,5 +31,69 @@ namespace EnsureFramework.UnitTests
             Assert.Equal(arg, assertionBuilder.Argument);
             Assert.Equal(nameof(arg), assertionBuilder.ArgumentName);
         }
+
+        [Fact]
+        public void EnsureArgument_WithName_Fail()
+        {
+            Guid? arg = null;
+            var name = Guid.NewGuid().ToString();
+
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                Ensure.Arg(arg, name);
+            });
+        }
+
+        [Fact]
+        public void EnsureArgument_WithoutName_Fail()
+        {
+            Guid? arg = null;
+
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                Ensure.Arg(arg);
+            });
+        }
+
+        [Fact]
+        public void EnsureArgument_IsNull_WithName()
+        {
+            Guid? arg = null;
+            var name = Guid.NewGuid().ToString();
+
+            Ensure.ArgIsNull(arg, name);
+        }
+
+        [Fact]
+        public void EnsureArgument_IsNull_WithoutName()
+        {
+            Guid? arg = null;
+
+            Ensure.ArgIsNull(arg);
+        }
+
+
+        [Fact]
+        public void EnsureArgument_IsNull_WithName_Fail()
+        {
+            var arg = Guid.NewGuid();
+            var name = Guid.NewGuid().ToString();
+
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.ArgIsNull(arg, name);
+            });
+        }
+
+        [Fact]
+        public void EnsureArgument_IsNull_WithoutName_Fail()
+        {
+            var arg = Guid.NewGuid();
+
+            Assert.Throws<ArgumentException>(() =>
+            {
+                Ensure.ArgIsNull(arg);
+            });
+        }
     }
 }
