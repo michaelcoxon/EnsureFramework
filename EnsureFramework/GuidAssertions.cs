@@ -21,7 +21,9 @@ namespace EnsureFramework
         {
             if (@this.Argument == Guid.Empty)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException(
+                    string.Format(Resources.Strings.The_argument_argName_is_not_a_vaild_guid_Format, @this.ArgumentName),
+                    @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }

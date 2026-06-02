@@ -185,4 +185,8 @@
     <value>Argument '{0}' must be one of ('{1}').</value>
     <comment>0 is argName, 1 is comma separated valid values</comment>
   </data>
+  <data name="The_argument_argName_is_not_a_vaild_guid_Format" xml:space="preserve">
+    <value>The argument '{0}' is not a valid GUID.</value>
+    <comment>0 is argName</comment>
+  </data>
 </root>
