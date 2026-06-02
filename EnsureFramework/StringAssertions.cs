@@ -25,7 +25,7 @@ namespace EnsureFramework
         {
             if (@this.Argument == string.Empty)
             {
-                throw new ArgumentException($"The string is empty.", @this.ArgumentName);
+                throw new ArgumentException(Resources.Strings.The_string_is_empty, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -40,7 +40,7 @@ namespace EnsureFramework
         {
             if (@this.Argument == string.Empty)
             {
-                throw new ArgumentException($"The string is empty.", @this.ArgumentName);
+                throw new ArgumentException(Resources.Strings.The_string_is_empty, @this.ArgumentName);
             }
 
             for (int i = 0; i < @this.Argument.Length; i++)
@@ -51,7 +51,7 @@ namespace EnsureFramework
                 }
             }
 
-            throw new ArgumentException($"The string '{@this.Argument}' is whitespace", @this.ArgumentName);
+            throw new ArgumentException(Resources.Strings.The_string_is_whitespace, @this.ArgumentName);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace EnsureFramework
 
             if (!result)
             {
-                throw new ArgumentException($"The string '{@this.Argument}' does not match the regular expression '{regex}'", @this.ArgumentName);
+                throw new ArgumentException(string.Format(Resources.Strings.The_string_does_not_match_the_regex_Format, regex), @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -90,7 +90,7 @@ namespace EnsureFramework
 
             if (!result)
             {
-                throw new ArgumentException($"The string '{@this.Argument}' does not match the regular expression '{regex}'", @this.ArgumentName);
+                throw new ArgumentException(string.Format(Resources.Strings.The_string_does_not_match_the_regex_Format, regex), @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }

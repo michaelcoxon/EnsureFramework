@@ -213,5 +213,32 @@ namespace EnsureFramework.Resources {
                 return ResourceManager.GetString("The_argument_argName_must_inherit_from_type_typeName_Format", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string does not match the regular expression &apos;{0}&apos;..
+        /// </summary>
+        internal static string The_string_does_not_match_the_regex_Format {
+            get {
+                return ResourceManager.GetString("The_string_does_not_match_the_regex_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string is empty..
+        /// </summary>
+        internal static string The_string_is_empty {
+            get {
+                return ResourceManager.GetString("The_string_is_empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The string is whitespace..
+        /// </summary>
+        internal static string The_string_is_whitespace {
+            get {
+                return ResourceManager.GetString("The_string_is_whitespace", resourceCulture);
+            }
+        }
     }
 }

@@ -189,4 +189,14 @@
     <value>The argument '{0}' is not a valid GUID.</value>
     <comment>0 is argName</comment>
   </data>
+  <data name="The_string_is_empty" xml:space="preserve">
+    <value>The string is empty.</value>
+  </data>
+  <data name="The_string_is_whitespace" xml:space="preserve">
+    <value>The string is whitespace.</value>
+  </data>
+  <data name="The_string_does_not_match_the_regex_Format" xml:space="preserve">
+    <value>The string does not match the regular expression '{0}'.</value>
+    <comment>0 is the RegEx</comment>
+  </data>
 </root>
