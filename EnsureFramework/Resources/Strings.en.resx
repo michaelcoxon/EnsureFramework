@@ -120,10 +120,7 @@
   <data name="All_items_do_not_match_the_predicate" xml:space="preserve">
     <value>All items do not match the predicate.</value>
   </data>
-  <data name="ExpressionMustContainAnArgument_Format" xml:space="preserve">
-    <value>Expression '{0}' must contain an argument.</value>
-  </data>
-  <data name="Item_is_not_in_eumerable" xml:space="preserve">
+  <data name="Item_is_not_in_enumerable" xml:space="preserve">
     <value>Item is not in enumerable.</value>
   </data>
   <data name="No_items" xml:space="preserve">
@@ -131,5 +128,29 @@
   </data>
   <data name="No_items_match_the_predicate" xml:space="preserve">
     <value>No items match the predicate.</value>
+  </data>
+  <data name="The_argument_argumentName_is_not_less_than_or_equal_to_value_Format" xml:space="preserve">
+    <value>The argument '{0}' is not less than or equal to '{1}'.</value>
+  </data>
+  <data name="The_argument_argName_is_not_greater_than_or_equal_to_value_Format" xml:space="preserve">
+    <value>The argument '{0}' is not greater than or equal to '{1}'.</value>
+  </data>
+  <data name="The_argument_argName_is_not_greater_than_value_Format" xml:space="preserve">
+    <value>The argument '{0}' is not greater than '{1}'.</value>
+  </data>
+  <data name="The_argument_argName_is_not_equal_to_value_Format" xml:space="preserve">
+    <value>The argument '{0}' is not equal to '{1}'.</value>
+  </data>
+  <data name="The_argument_argName_is_not_less_than_value_Format" xml:space="preserve">
+    <value>The argument '{0}' is not less than '{1}'.</value>
+  </data>
+  <data name="The_argument_argName_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format" xml:space="preserve">
+    <value>The argument '{0}' is not within and including the range '{1}-{2}'.</value>
+  </data>
+  <data name="The_argument_argName_is_not_within_the range_lowerBound_to_upperBound_Format" xml:space="preserve">
+    <value>The argument '{0}' is not within the range '{1}-{2}'.</value>
+  </data>
+  <data name="The_argument argumentName_is_not_less_than_or_equal_to_value_Format" xml:space="preserve">
+    <value>The argument '{0}' is not less than or equal to '{1}'.</value>
   </data>
 </root>

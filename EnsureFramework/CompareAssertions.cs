@@ -17,13 +17,16 @@ namespace EnsureFramework
         /// <param name="this">The this.</param>
         /// <param name="value">The value.</param>
         /// <exception cref="System.ArgumentNullException"></exception>
-        [DebuggerNonUserCode]        
+        [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsGreaterThanOrEqualTo<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
             if (@this.Argument.CompareTo(value) < 0)
             {
-                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is not greater than or equal to '{value}'");
+                throw new ArgumentOutOfRangeException(
+                    @this.ArgumentName,
+                    @this.Argument,
+                    string.Format(Resources.Strings.The_argument_argName_is_not_greater_than_or_equal_to_value_Format, @this.ArgumentName, value));
             }
             return @this.AssertionPassed();
         }
@@ -40,7 +43,10 @@ namespace EnsureFramework
         {
             if (@this.Argument.CompareTo(value) > 0)
             {
-                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is not less than or equal to '{value}'");
+                throw new ArgumentOutOfRangeException(
+                    @this.ArgumentName,
+                    @this.Argument,
+                    string.Format(Resources.Strings.The_argument_argName_is_not_greater_than_or_equal_to_value_Format, @this.ArgumentName, value));
             }
             return @this.AssertionPassed();
         }
@@ -57,7 +63,10 @@ namespace EnsureFramework
         {
             if (@this.Argument.CompareTo(value) != -1)
             {
-                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is not less '{value}'");
+                throw new ArgumentOutOfRangeException(
+                    @this.ArgumentName,
+                    @this.Argument, 
+                    string.Format(Resources.Strings.The_argument_argName_is_not_less_than_value_Format, @this.ArgumentName, value));
             }
             return @this.AssertionPassed();
         }
@@ -74,7 +83,10 @@ namespace EnsureFramework
         {
             if (@this.Argument.CompareTo(value) != 1)
             {
-                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is not greater than '{value}'");
+                throw new ArgumentOutOfRangeException(
+                    @this.ArgumentName, 
+                    @this.Argument, 
+                    string.Format(Resources.Strings.The_argument_argName_is_not_greater_than_value_Format, @this.ArgumentName, value));
             }
             return @this.AssertionPassed();
         }
@@ -91,7 +103,11 @@ namespace EnsureFramework
         {
             if (@this.Argument.CompareTo(value) != 0)
             {
-                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is not equal to '{value}'");
+                throw new ArgumentOutOfRangeException(
+                    @this.ArgumentName,
+                    @this.Argument,
+                    string.Format(Resources.Strings.The_argument_argName_is_not_equal_to_value_Format, @this.ArgumentName, value));
+
             }
             return @this.AssertionPassed();
         }
@@ -111,7 +127,10 @@ namespace EnsureFramework
         {
             if (@this.Argument.CompareTo(lowerBound) <= 0 || @this.Argument.CompareTo(upperBound) >= 0)
             {
-                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is not within and including the range '{lowerBound}-{upperBound}'");
+                throw new ArgumentOutOfRangeException(
+                    @this.ArgumentName, 
+                    @this.Argument,
+                    string.Format(Resources.Strings.The_argument_argName_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format, @this.ArgumentName, lowerBound, upperBound));
             }
             return @this.AssertionPassed();
         }
@@ -131,7 +150,10 @@ namespace EnsureFramework
         {
             if (@this.Argument.CompareTo(lowerBound) < 0 || @this.Argument.CompareTo(upperBound) > 0)
             {
-                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is not within the range '{lowerBound}-{upperBound}'");
+                throw new ArgumentOutOfRangeException(
+                    @this.ArgumentName, 
+                    @this.Argument,
+                    string.Format(Resources.Strings.The_argument_argName_is_not_within_the_range_lowerBound_to_upperBound_Format, @this.ArgumentName, lowerBound, upperBound));
             }
             return @this.AssertionPassed();
         }

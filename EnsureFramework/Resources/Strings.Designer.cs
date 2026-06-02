@@ -10,9 +10,8 @@
 
 namespace EnsureFramework.Resources {
     using System;
-    using System.Reflection;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -20,7 +19,7 @@ namespace EnsureFramework.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Strings {
@@ -40,7 +39,7 @@ namespace EnsureFramework.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EnsureFramework.Resources.Strings", typeof(Strings).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EnsureFramework.Resources.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -71,20 +70,11 @@ namespace EnsureFramework.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expression &apos;{0}&apos; must contain an argument..
-        /// </summary>
-        internal static string ExpressionMustContainAnArgument_Format {
-            get {
-                return ResourceManager.GetString("ExpressionMustContainAnArgument_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Item is not in enumerable..
         /// </summary>
-        internal static string Item_is_not_in_eumerable {
+        internal static string Item_is_not_in_enumerable {
             get {
-                return ResourceManager.GetString("Item_is_not_in_eumerable", resourceCulture);
+                return ResourceManager.GetString("Item_is_not_in_enumerable", resourceCulture);
             }
         }
         
@@ -103,6 +93,61 @@ namespace EnsureFramework.Resources {
         internal static string No_items_match_the_predicate {
             get {
                 return ResourceManager.GetString("No_items_match_the_predicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not equal to &apos;{1}&apos;..
+        /// </summary>
+        internal static string The_argument_argName_is_not_equal_to_value_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_is_not_equal_to_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not greater than or equal to &apos;{1}&apos;..
+        /// </summary>
+        internal static string The_argument_argName_is_not_greater_than_or_equal_to_value_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_is_not_greater_than_or_equal_to_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not greater than &apos;{1}&apos;..
+        /// </summary>
+        internal static string The_argument_argName_is_not_greater_than_value_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_is_not_greater_than_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not less than &apos;{1}&apos;..
+        /// </summary>
+        internal static string The_argument_argName_is_not_less_than_value_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_is_not_less_than_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not within and including the range &apos;{1}-{2}&apos;..
+        /// </summary>
+        internal static string The_argument_argName_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_is_not_within_and_including_the_range_lowerBound_to_upperBou" +
+                        "nd_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not within the range &apos;{1}-{2}&apos;..
+        /// </summary>
+        internal static string The_argument_argName_is_not_within_the_range_lowerBound_to_upperBound_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_is_not_within_the range_lowerBound_to_upperBound_Format", resourceCulture);
             }
         }
     }

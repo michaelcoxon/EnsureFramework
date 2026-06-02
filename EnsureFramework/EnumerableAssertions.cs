@@ -61,7 +61,7 @@ namespace EnsureFramework
         {
             if (!@this.Argument.Contains(item))
             {
-                throw new ArgumentException(Resources.Strings.Item_is_not_in_eumerable, @this.ArgumentName);
+                throw new ArgumentException(Resources.Strings.Item_is_not_in_enumerable, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -84,7 +84,7 @@ namespace EnsureFramework
                 }
             }
 
-            throw new ArgumentException(Resources.Strings.Item_is_not_in_eumerable, @this.ArgumentName);
+            throw new ArgumentException(Resources.Strings.Item_is_not_in_enumerable, @this.ArgumentName);
         }
 
         /// <summary>
