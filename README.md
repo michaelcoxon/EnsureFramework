@@ -8,8 +8,10 @@ You can make sure values are in a specific range or simply make sure that an arg
 It was designed to be readable and fluent based, meaning you can chain ensurables together and the 
 first one that fails will result in the exception.
 
-Ensuring implicitly checks for null so there is no need to have a `.IsNull()` call. So if you want to
+Ensuring implicitly checks for null so there is no need to have a `.IsNotNull()` call. So if you want to
 ensure it is not null, you can just `Ensure.Arg(myArg)`.
+
+If you do want to ensure null, there is no chaining for obvious reasons. You can call `Ensure.ArgIsNull(myArg)`.
 
 # 101
 1. Add the namespace 

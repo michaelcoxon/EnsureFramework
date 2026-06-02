@@ -13,7 +13,7 @@ namespace EnsureFramework
     /// <remarks>These extension methods are intended to be used with argument validation builders to enforce
     /// common constraints on number values. Each method throws an exception if the specified condition is not met,
     /// allowing for fluent and expressive argument validation in application code.</remarks>
-    public static partial class NumberAssertions
+    public static partial class NumberAssertionExtensions
     {
         /// <summary>
         /// Asserts that the number is not negative.

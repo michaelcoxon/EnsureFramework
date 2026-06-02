@@ -11,7 +11,7 @@ namespace EnsureFramework
     /// <summary>
     /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
     /// </summary>
-    public static partial class StringAssertions
+    public static partial class StringAssertionExtensions
     {
         private readonly static ConcurrentDictionary<(string regex, RegexOptions options), Regex> _regexCache = new();
 

@@ -3,13 +3,14 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Assertions;
 
 namespace EnsureFramework
 {
     /// <summary>
     /// Ensure assertions for <see cref="IComparable{T}"/>'s
     /// </summary>
-    public static partial class CompareAssertions
+    public static partial class CompareAssertionExtensions
     {
         /// <summary>
         /// Ensures the argument is greater than or equal to the specified value.
@@ -21,7 +22,7 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsGreaterThanOrEqualTo<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
-            if (@this.Argument.CompareTo(value) < 0)
+            if (!CompareAssertions.IsGreaterThanOrEqualTo(@this.Argument, value))
             {
                 throw new ArgumentOutOfRangeException(
                     @this.ArgumentName,

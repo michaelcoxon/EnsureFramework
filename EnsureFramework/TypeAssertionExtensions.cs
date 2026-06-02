@@ -8,7 +8,7 @@ namespace EnsureFramework
     /// <summary>
     /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
     /// </summary>
-    public static class TypeAssertions
+    public static class TypeAssertionExtensions
     {
         /// <summary>
         /// Determines whether the argument is the specified type

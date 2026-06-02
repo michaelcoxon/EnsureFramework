@@ -10,7 +10,7 @@ namespace EnsureFramework
     /// <summary>
     /// <see cref="IArgumentAssertionBuilder"/> assertions for <see cref="IDictionary{TKey, TValue}"/>
     /// </summary>
-    public static partial class DictionaryAssertions
+    public static partial class DictionaryAssertionExtensions
     {
         /// <summary>
         /// Determines whether the specified key exists in the dictionary.

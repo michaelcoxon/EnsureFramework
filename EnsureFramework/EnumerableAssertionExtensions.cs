@@ -13,7 +13,7 @@ namespace EnsureFramework
     /// <summary>
     /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
     /// </summary>
-    public static partial class EnumerableAssertions
+    public static partial class EnumerableAssertionExtensions
     {
         /// <summary>
         /// Ensures the enumerable argument is not empty.
