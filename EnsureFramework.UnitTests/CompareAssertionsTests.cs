@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xunit;
 
-namespace EnsureFramework.UnitTests.Assertions
+namespace EnsureFramework.UnitTests
 {
     public class CompareAssertionsTests
     {
@@ -15,7 +15,7 @@ namespace EnsureFramework.UnitTests.Assertions
         {
             Ensure.Arg(3).IsGreaterThanOrEqualTo(2);
             Ensure.Arg(3).IsGreaterThanOrEqualTo(3);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsGreaterThanOrEqualTo(4);
             });
@@ -34,7 +34,7 @@ namespace EnsureFramework.UnitTests.Assertions
 
             Ensure.Arg(subject[3]).IsGreaterThanOrEqualTo(2);
             Ensure.Arg(subject[3]).IsGreaterThanOrEqualTo(3);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsGreaterThanOrEqualTo(4);
             });
@@ -45,7 +45,7 @@ namespace EnsureFramework.UnitTests.Assertions
         {
             Ensure.Arg(3).IsLessThanOrEqualTo(4);
             Ensure.Arg(3).IsLessThanOrEqualTo(3);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsLessThanOrEqualTo(2);
             });
@@ -64,7 +64,7 @@ namespace EnsureFramework.UnitTests.Assertions
 
             Ensure.Arg(subject[3]).IsLessThanOrEqualTo(4);
             Ensure.Arg(subject[3]).IsLessThanOrEqualTo(3);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsLessThanOrEqualTo(2);
             });
@@ -74,7 +74,7 @@ namespace EnsureFramework.UnitTests.Assertions
         public void IsLessThanTest()
         {
             Ensure.Arg(3).IsLessThan(4);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsLessThan(3);
             });
@@ -92,7 +92,7 @@ namespace EnsureFramework.UnitTests.Assertions
             };
 
             Ensure.Arg(subject[3]).IsLessThan(4);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsLessThan(3);
             });
@@ -103,7 +103,7 @@ namespace EnsureFramework.UnitTests.Assertions
         public void IsGreaterThanTest()
         {
             Ensure.Arg(3).IsGreaterThan(2);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsGreaterThan(3);
             });
@@ -121,7 +121,7 @@ namespace EnsureFramework.UnitTests.Assertions
             };
 
             Ensure.Arg(subject[3]).IsGreaterThan(2);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsGreaterThan(3);
             });
@@ -131,7 +131,7 @@ namespace EnsureFramework.UnitTests.Assertions
         public void IsEqualToTest()
         {
             Ensure.Arg(3).IsEqualTo(3);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsEqualTo(2);
             });
@@ -149,7 +149,7 @@ namespace EnsureFramework.UnitTests.Assertions
             };
 
             Ensure.Arg(subject[3]).IsEqualTo(3);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsEqualTo(2);
             });
@@ -160,17 +160,17 @@ namespace EnsureFramework.UnitTests.Assertions
         {
             Ensure.Arg(3).IsWithinRange(2, 4);
             Ensure.Arg(3).IsWithinRange(-3, 100);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsWithinRange(4, 4);
             });
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsWithinRange(3, 4);
             });
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsWithinRange(2, 3);
             });
@@ -189,17 +189,17 @@ namespace EnsureFramework.UnitTests.Assertions
 
             Ensure.Arg(subject[3]).IsWithinRange(2, 4);
             Ensure.Arg(subject[3]).IsWithinRange(-3, 100);
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsWithinRange(4, 4);
             });
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsWithinRange(3, 4);
             });
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsWithinRange(2, 3);
             });
@@ -214,7 +214,7 @@ namespace EnsureFramework.UnitTests.Assertions
             Ensure.Arg(3).IsWithinAndIncludingRange(3, 4);
             Ensure.Arg(3).IsWithinAndIncludingRange(2, 3);
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(3).IsWithinAndIncludingRange(4, 4);
             });
@@ -237,7 +237,7 @@ namespace EnsureFramework.UnitTests.Assertions
             Ensure.Arg(subject[3]).IsWithinAndIncludingRange(3, 4);
             Ensure.Arg(subject[3]).IsWithinAndIncludingRange(2, 3);
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 Ensure.Arg(subject[3]).IsWithinAndIncludingRange(4, 4);
             });

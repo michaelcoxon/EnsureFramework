@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
+using EnsureFramework.ArgumentAssertionBuilder;
 using EnsureFramework.Resources;
 
 namespace EnsureFramework
@@ -13,19 +15,21 @@ namespace EnsureFramework
     /// The core assertion entry point
     /// </summary>
     [DebuggerNonUserCode]
-    public sealed class Ensure
+    public static class Ensure
     {
         [DebuggerNonUserCode]
-        private class ArgumentAssertionBuilder<T> : IArgumentAssertionBuilder<T>
+        internal sealed class ArgumentAssertionBuilder<T> : IArgumentAssertionBuilder<T>
         {
-            [NotNull]
+            [DisallowNull]
             public required T Argument { get; set; }
 
             public string? ArgumentName { get; set; }
+
+            public List<string> PassedAssertions { get; } = [];
         }
 
         /// <summary>
-        /// Provides the helpers for validation
+        /// Ensures that the <paramref name="arg"/> is not null.
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <param name="argName">Name of the argument.</param>
@@ -33,20 +37,17 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Arg<T>([NotNull] T? arg, [CallerArgumentExpression(nameof(arg))] string? argName = null)
         {
-            if (arg is null)
-            {
-                throw new ArgumentNullException(argName);
-            }
+            ArgumentNullException.ThrowIfNull(arg, argName);
 
             return new ArgumentAssertionBuilder<T>
             {
                 Argument = arg,
                 ArgumentName = argName,
-            };
+            }.AssertionPassed("NotNull");
         }
 
         /// <summary>
-        /// Provides the helpers for validation
+        /// Ensures that the <paramref name="arg"/> is not null.
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <param name="argName">Name of the argument.</param>
@@ -55,16 +56,14 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> Arg<T>([NotNull] T? arg, [CallerArgumentExpression(nameof(arg))] string? argName = null)
             where T : struct
         {
-            if (!arg.HasValue)
-            {
-                throw new ArgumentNullException(argName);
-            }
+            ArgumentNullException.ThrowIfNull(arg, argName);
 
             return new ArgumentAssertionBuilder<T>
             {
                 Argument = arg.Value,
                 ArgumentName = argName,
-            };
+            }.AssertionPassed("NotNull");
         }
+
     }
 }

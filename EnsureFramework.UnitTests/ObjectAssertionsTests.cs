@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xunit;
 
-namespace EnsureFramework.UnitTests.Assertions
+namespace EnsureFramework.UnitTests
 {
     public class ObjectAssertionsTests
     {
@@ -30,43 +30,37 @@ namespace EnsureFramework.UnitTests.Assertions
         }
 
         [Fact]
-        public void IsTypeOfParamTest()
+        public void IsExactTypeOfParamTest()
         {
             var list = new List<string>();
 
-            Ensure.Arg(list, nameof(list)).IsTypeOf(typeof(List<string>));
+            Ensure.Arg(list, nameof(list)).IsExactTypeOf(typeof(List<string>));
         }
 
         [Fact]
-        public void IsTypeOfParamFailTest()
+        public void IsExactTypeOfParamFailTest()
         {
             var list = new List<string>();
 
             Assert.Throws<ArgumentException>(() =>
             {
-                Ensure.Arg(list, nameof(list)).IsTypeOf(typeof(IEnumerable<string>));
+                Ensure.Arg(list, nameof(list)).IsExactTypeOf(typeof(IEnumerable<string>));
             });
         }
 
         [Fact]
-        public void IsTypeOfGenericTest()
+        public void IsInheritsTypeOfParamExactTest()
         {
             var list = new List<string>();
-
-            Ensure.Arg(list, nameof(list)).IsTypeOf<List<string>>();
+            Ensure.Arg(list, nameof(list)).IsInheritsTypeOf(typeof(List<string>));
         }
 
         [Fact]
-        public void IsTypeOfGenericFailTest()
+        public void IsInheritsTypeOfParamBaseTest()
         {
             var list = new List<string>();
-
-            Assert.Throws<ArgumentException>(() =>
-            {
-                Ensure.Arg(list, nameof(list)).IsTypeOf<IEnumerable<string>>();
-            });
+            Ensure.Arg(list, nameof(list)).IsInheritsTypeOf(typeof(IEnumerable<string>));
         }
-
 
         [Fact]
         public void MatchesTest()

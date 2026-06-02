@@ -17,16 +17,17 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
     <RepositoryType>git</RepositoryType>
     <PackageTags>runtime-contracts,ensure,contracts</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
-    <Version>2.0.0-alpha</Version>
+    <Version>2.0.1-alpha</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <CodeAnalysisRuleSet>../EnsureFramework.ruleset</CodeAnalysisRuleSet>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md" Pack="true" PackagePath="\"/>
-    <None Include="..\LICENSE" Pack="true" PackagePath="\"/>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="\" />
     <Compile Update="Resources\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

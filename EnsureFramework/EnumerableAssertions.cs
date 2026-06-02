@@ -6,6 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 using EnsureFramework;
+using EnsureFramework.ArgumentAssertionBuilder;
 
 namespace EnsureFramework
 {
@@ -24,7 +25,7 @@ namespace EnsureFramework
         {
             foreach (var _ in @this.Argument)
             {
-                return @this;
+                return @this.AssertionPassed();
             }
 
             throw new ArgumentException(null, @this.ArgumentName);
@@ -43,7 +44,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException(null, @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException(Resources.Strings.Item_is_not_in_eumerable, @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace EnsureFramework
             {
                 if (Equals(item, item2))
                 {
-                    return @this;
+                    return @this.AssertionPassed();
                 }
             }
 
@@ -103,7 +104,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException(Resources.Strings.No_items_match_the_predicate, @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace EnsureFramework
             {
                 if (predicate(item))
                 {
-                    return @this;
+                    return @this.AssertionPassed();
                 }
             }
 
@@ -146,7 +147,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException(Resources.Strings.All_items_do_not_match_the_predicate, @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace EnsureFramework
                 }
             }
 
-            return @this;
+            return @this.AssertionPassed();
         }
     }
 }

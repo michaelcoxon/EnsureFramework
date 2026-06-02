@@ -13,7 +13,7 @@ namespace EnsureFramework
         /// <summary>
         /// Gets the argument.
         /// </summary>
-        [NotNull] T Argument { get; }  
+        [DisallowNull] T Argument { get; }  
         
         /// <summary>
         /// Gets the name of the argument.

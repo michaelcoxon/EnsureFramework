@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
+using EnsureFramework.ArgumentAssertionBuilder;
+
 namespace EnsureFramework
 {
     /// <summary>
@@ -26,7 +28,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException($"{@this.ArgumentName}[\"{key}\"] is not in the dictionary", @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
     }
 }

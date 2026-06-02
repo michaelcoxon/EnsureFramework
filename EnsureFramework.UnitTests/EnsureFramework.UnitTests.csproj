@@ -5,7 +5,8 @@
 		<CodeAnalysisRuleSet>../EnsureFramework.ruleset</CodeAnalysisRuleSet>
 		<IsPackable>false</IsPackable>
 		<Nullable>enable</Nullable>
-	</PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />

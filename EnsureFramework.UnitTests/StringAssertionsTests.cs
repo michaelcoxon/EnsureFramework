@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 using Xunit;
 
-namespace EnsureFramework.UnitTests.Assertions
+namespace EnsureFramework.UnitTests
 {
     public class StringAssertionsTests
     {
@@ -30,7 +30,7 @@ namespace EnsureFramework.UnitTests.Assertions
         public void IsNotEmptyOrWhiteSpace_Default()
         {
             var arg = "asdf";
-            Ensure.Arg(arg).IsNotEmptyOrWhiteSpace();
+            var result = Ensure.Arg(arg).IsNotEmptyOrWhiteSpace();
         }
 
         [Fact]

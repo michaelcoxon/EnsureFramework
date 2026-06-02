@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
+using EnsureFramework.ArgumentAssertionBuilder;
+
 namespace EnsureFramework
 {
     /// <summary>
@@ -21,7 +23,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException(null, @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
     }
 }

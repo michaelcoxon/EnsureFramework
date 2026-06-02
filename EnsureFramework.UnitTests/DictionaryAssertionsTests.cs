@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xunit;
 
-namespace EnsureFramework.UnitTests.Assertions
+namespace EnsureFramework.UnitTests
 {
     public class DictionaryAssertionsTests
     {

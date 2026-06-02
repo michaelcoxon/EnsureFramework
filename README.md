@@ -85,7 +85,7 @@ Here is a simple one that should point you in the right direction:
 ```cs
 public static IArgumentAssertionBuilder<User> IsAnAdult(this IArgumentAssertionBuilder<User> @this)
 {
-    if (@this.Argument.DateOfBirth >= DateTime.Today.AddYears(-18))
+    if (@this.Argument.DateOfBirth > DateTime.Today.AddYears(-18))
     {
         throw new ArgumentException("User is underage", @this.ArgumentName);
     }

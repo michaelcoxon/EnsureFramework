@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
+using EnsureFramework.ArgumentAssertionBuilder;
+
 namespace EnsureFramework
 {
     /// <summary>
@@ -24,7 +26,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is a negative number");
             }
-            return @this;
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -39,7 +41,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, $"The argument '{@this.ArgumentName}' is equal to zero");
             }
-            return @this;
+            return @this.AssertionPassed();
         }
     }
 }

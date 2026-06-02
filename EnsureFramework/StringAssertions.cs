@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
+using EnsureFramework.ArgumentAssertionBuilder;
+
 namespace EnsureFramework
 {
     /// <summary>
@@ -25,7 +27,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException($"The string is empty.", @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -45,7 +47,7 @@ namespace EnsureFramework
             {
                 if (!char.IsWhiteSpace(@this.Argument[i]))
                 {
-                    return @this;
+                    return @this.AssertionPassed();
                 }
             }
 
@@ -69,7 +71,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException($"The string '{@this.Argument}' does not match the regular expression '{regex}'", @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -90,7 +92,7 @@ namespace EnsureFramework
             {
                 throw new ArgumentException($"The string '{@this.Argument}' does not match the regular expression '{regex}'", @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
         }
     }
 }

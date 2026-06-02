@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 
 using EnsureFramework;
+using EnsureFramework.ArgumentAssertionBuilder;
 
 namespace EnsureFramework
 {
@@ -25,12 +26,7 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Assert<T>([NotNull] this IArgumentAssertionBuilder<T> @this, [DoesNotReturnIf(false)] bool assertion, string? message = null)
         {
-            if (!assertion)
-            {
-                throw new ArgumentException(message, @this.ArgumentName);
-            }
-
-            return @this;
+            return @this.InternalAssert(assertion, message).AssertionPassed();
         }
 
         /// <summary>
@@ -41,25 +37,22 @@ namespace EnsureFramework
         /// <param name="type">The type.</param>
         /// <exception cref="System.ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
+        public static IArgumentAssertionBuilder<T> IsExactTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            return @this.Assert(typeof(T) == type, $"The argument at '{@this.ArgumentName}' must be of type '{type}'");
+            return @this.InternalAssert(typeof(T) == type, $"The argument at '{@this.ArgumentName}' must be of type '{type}'").AssertionPassed();
         }
 
         /// <summary>
-        /// Ensures the argument is of the type <typeparamref name="T"/>.
+        /// Ensures the argument inherits the type of <paramref name="type" />.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="this">The this.</param>
+        /// <param name="type">The type.</param>
         /// <exception cref="System.ArgumentException"></exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this)
+        public static IArgumentAssertionBuilder<T> IsInheritsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            if (typeof(T) != @this.Argument.GetType())
-            {
-                throw new ArgumentException($"The argument at '{@this.ArgumentName}' must be of type '{typeof(T)}'", @this.ArgumentName);
-            }
-            return @this;
+            return @this.InternalAssert(typeof(T).IsAssignableTo(type), $"The argument at '{@this.ArgumentName}' must inherit from type '{type}'").AssertionPassed();
         }
 
         /// <summary>
@@ -72,7 +65,7 @@ namespace EnsureFramework
         /// <exception cref="System.ArgumentException">
         /// </exception>
         [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> Matches<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Func<T?, bool> predicate, string? message = null)
+        public static IArgumentAssertionBuilder<T> Matches<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Func<T, bool> predicate, string? message = null)
         {
             ArgumentNullException.ThrowIfNull(predicate);
 
@@ -92,7 +85,7 @@ namespace EnsureFramework
                 throw new ArgumentException(message, @this.ArgumentName, innerException);
             }
 
-            return @this;
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -108,7 +101,19 @@ namespace EnsureFramework
             {
                 throw new ArgumentException($"Argument '{@this.ArgumentName}' must be one of ('{string.Join("', '", options)}')", @this.ArgumentName);
             }
-            return @this;
+            return @this.AssertionPassed();
+        }
+
+
+        [DebuggerNonUserCode]
+        private static IArgumentAssertionBuilder<T> InternalAssert<T>([NotNull] this IArgumentAssertionBuilder<T> @this, [DoesNotReturnIf(false)] bool assertion, string? message = null)
+        {
+            if (!assertion)
+            {
+                throw new ArgumentException(message, @this.ArgumentName);
+            }
+
+            return @this.AssertionPassed();
         }
     }
 }

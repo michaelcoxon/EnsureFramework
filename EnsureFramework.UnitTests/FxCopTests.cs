@@ -10,12 +10,15 @@ namespace EnsureFramework.UnitTests
 {
     public class FxCopTests
     {
-        public void Method(object? obj, string? str)
+        internal static void Method(object? obj, string? str)
         {
-            Ensure.Arg(obj, nameof(obj));
-            Ensure.Arg(str, nameof(str)).IsNotEmpty();
-            var strobj = obj.ToString();
-            var strstr = str.ToString();
+            Ensure.Arg(obj);
+            Ensure.Arg(str).IsNotEmpty();
+
+        // we shouldn't get any green squiggles cause Ensure.Arg() should imply that 
+        // nullability has been checked.
+            _ = obj.ToString();
+            _ = str.ToString();
         }
 
         [Fact]
@@ -23,7 +26,7 @@ namespace EnsureFramework.UnitTests
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
-                this.Method(null, null);
+                Method(null, null);
             });
         }
     }
