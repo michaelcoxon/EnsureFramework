@@ -17,17 +17,6 @@ namespace EnsureFramework
     [DebuggerNonUserCode]
     public static class Ensure
     {
-        [DebuggerNonUserCode]
-        internal sealed class ArgumentAssertionBuilder<T> : IArgumentAssertionBuilder<T>
-        {
-            [DisallowNull]
-            public required T Argument { get; set; }
-
-            public string? ArgumentName { get; set; }
-
-            public List<string> PassedAssertions { get; } = [];
-        }
-
         /// <summary>
         /// Ensures that the <paramref name="arg"/> is not null.
         /// </summary>
@@ -38,12 +27,7 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> Arg<T>([NotNull] T? arg, [CallerArgumentExpression(nameof(arg))] string? argName = null)
         {
             ArgumentNullException.ThrowIfNull(arg, argName);
-
-            return new ArgumentAssertionBuilder<T>
-            {
-                Argument = arg,
-                ArgumentName = argName,
-            }.AssertionPassed("NotNull");
+            return new ArgumentAssertionBuilder<T>(arg, argName, ["NotNull"]);
         }
 
         /// <summary>
@@ -57,12 +41,8 @@ namespace EnsureFramework
             where T : struct
         {
             ArgumentNullException.ThrowIfNull(arg, argName);
+            return new ArgumentAssertionBuilder<T>(arg.Value, argName, ["NotNull"]);
 
-            return new ArgumentAssertionBuilder<T>
-            {
-                Argument = arg.Value,
-                ArgumentName = argName,
-            }.AssertionPassed("NotNull");
         }
 
     }

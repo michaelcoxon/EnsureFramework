@@ -13,7 +13,7 @@
     /// </summary>
     /// <remarks>These extension methods enable additional functionality for argument assertion builders, such
     /// as marking assertions as passed. They are intended to be used in conjunction with the
-    /// <see cref="Ensure.ArgumentAssertionBuilder{T}"/> implementation.</remarks>
+    /// <see cref="ArgumentAssertionBuilder{T}"/> implementation.</remarks>
     public static class ArgumentAssertionBuilderExtensions
     {
         /// <summary>
@@ -27,7 +27,7 @@
         /// <returns>The same argument assertion builder instance, enabling method chaining.</returns>
         public static IArgumentAssertionBuilder<T> AssertionPassed<T>(this IArgumentAssertionBuilder<T> @this, [CallerMemberName] string? assertionName = null)
         {
-            if (@this is Ensure.ArgumentAssertionBuilder<T> aab)
+            if (@this is ArgumentAssertionBuilder<T> aab)
             {
                 aab.PassedAssertions.Add(assertionName ?? "<unknown>");
             }
