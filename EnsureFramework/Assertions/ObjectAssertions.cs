@@ -41,12 +41,19 @@ namespace EnsureFramework.Assertions
             try
             {
                 innerException = null;
-                return predicate(source);
+                if (predicate(source))
+                {
+                    return AssertionResult.Ok;
+                }
+                else
+                {
+                    return AssertionResult.Fail("Predicate did not match.");
+                }
             }
             catch (Exception ex)
             {
                 innerException = ex;
-                return false;
+                return AssertionResult.Fail("An exception occurred.");
             }
         }
 
@@ -54,7 +61,7 @@ namespace EnsureFramework.Assertions
         {
             if (!options.Contains(source))
             {
-                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_must_be_one_of_valueList_Format, string.Join("', '", options));
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_must_be_one_of_valueList_Format, string.Join("', '", options)));
             }
             return AssertionResult.Ok;
         }

@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
+using EnsureFramework.Assertions;
+
 namespace EnsureFramework
 {
     /// <summary>
@@ -20,9 +22,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Type> Is([NotNull] this IArgumentAssertionBuilder<Type> @this, Type type)
         {
-            if (@this.Argument != type)
+            var result = TypeAssertions.Is(@this.Argument, type);
+            if (!result.Success)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this;
         }
@@ -38,9 +41,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Type> IsAssignableFrom([NotNull] this IArgumentAssertionBuilder<Type> @this, Type type)
         {
-            if (!@this.Argument.GetTypeInfo().IsAssignableFrom(type))
+            var result = TypeAssertions.IsAssignableFrom(@this.Argument, type);
+            if (!result.Success)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this;
         }
@@ -56,9 +60,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Type> IsAssignableTo([NotNull] this IArgumentAssertionBuilder<Type> @this, Type type)
         {
-            if (!type.GetTypeInfo().IsAssignableFrom(@this.Argument))
+            var result = TypeAssertions.IsAssignableTo(@this.Argument, type);
+            if (!result.Success)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this;
         }
@@ -72,9 +77,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Type> Is<T>([NotNull] this IArgumentAssertionBuilder<Type> @this)
         {
-            if (@this.Argument != typeof(T))
+            var result = TypeAssertions.Is<T>(@this.Argument);
+            if (!result.Success)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this;
         }
@@ -89,9 +95,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Type> IsAssignableFrom<T>([NotNull] this IArgumentAssertionBuilder<Type> @this)
         {
-            if (!@this.Argument.GetTypeInfo().IsAssignableFrom(typeof(T)))
+            var result = TypeAssertions.IsAssignableFrom<T>(@this.Argument);
+            if (!result.Success)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this;
         }
@@ -106,9 +113,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Type> IsAssignableTo<T>([NotNull] this IArgumentAssertionBuilder<Type> @this)
         {
-            if (!typeof(T).GetTypeInfo().IsAssignableFrom(@this.Argument))
+            var result = TypeAssertions.IsAssignableTo<T>(@this.Argument);
+            if (!result.Success)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this;
         }

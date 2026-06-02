@@ -20,27 +20,27 @@ namespace EnsureFramework.Assertions
         {
             if (source == string.Empty)
             {
-                return false;
+                return AssertionResult.Fail(Resources.Strings.The_string_is_empty);
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         public static IAssertionResult IsNotEmptyOrWhiteSpace(string source)
         {
             if (source == string.Empty)
             {
-                return false;
+                return AssertionResult.Fail(Resources.Strings.The_string_is_empty);
             }
 
             for (int i = 0; i < source.Length; i++)
             {
                 if (!char.IsWhiteSpace(source[i]))
                 {
-                    return true;
+                    return AssertionResult.Ok;
                 }
             }
 
-            return false;
+            return AssertionResult.Fail(Resources.Strings.The_string_is_whitespace);
         }
 
         public static IAssertionResult Matches(string source, string regex)
@@ -50,9 +50,9 @@ namespace EnsureFramework.Assertions
 
             if (!result)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_string_does_not_match_the_regex_Format, regex));
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         public static IAssertionResult Matches(string source, string regex, RegexOptions regexOptions)
@@ -62,9 +62,9 @@ namespace EnsureFramework.Assertions
 
             if (!result)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_string_does_not_match_the_regex_Format, regex));
             }
-            return true;
+            return AssertionResult.Ok;
         }
     }
 }

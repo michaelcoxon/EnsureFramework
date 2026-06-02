@@ -139,7 +139,7 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> All<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this, Func<T, bool> predicate)
         {
-            var result = EnumerableAssertions.Any(@this.Argument, predicate);
+            var result = EnumerableAssertions.All(@this.Argument, predicate);
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
@@ -159,7 +159,7 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> All([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this, Func<object, bool> predicate)
         {
-            var result = EnumerableAssertions.Any(@this.Argument, predicate);
+            var result = EnumerableAssertions.All(@this.Argument, predicate);
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);

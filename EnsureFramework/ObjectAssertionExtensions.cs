@@ -87,24 +87,11 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Matches<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Func<T, bool> predicate, string? message = null)
         {
-            ArgumentNullException.ThrowIfNull(predicate);
-
-            bool result;
-            Exception? innerException = null;
-            try
+            var result = ObjectAssertions.Matches(@this.Argument, predicate, out var innerException);
+            if (!result.Success)
             {
-                result = predicate(@this.Argument);
+                throw new ArgumentException(result.Message + $"\n{message}", @this.ArgumentName, innerException);
             }
-            catch (Exception ex)
-            {
-                innerException = ex;
-                result = false;
-            }
-            if (!result)
-            {
-                throw new ArgumentException(message, @this.ArgumentName, innerException);
-            }
-
             return @this.AssertionPassed();
         }
 

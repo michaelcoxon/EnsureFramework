@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Assertions;
 
 namespace EnsureFramework
 {
@@ -13,8 +14,6 @@ namespace EnsureFramework
     /// </summary>
     public static partial class StringAssertionExtensions
     {
-        private readonly static ConcurrentDictionary<(string regex, RegexOptions options), Regex> _regexCache = new();
-
         /// <summary>
         /// Ensures the <see cref="string" /> argument is not empty.
         /// </summary>
@@ -23,9 +22,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> IsNotEmpty([NotNull] this IArgumentAssertionBuilder<string> @this)
         {
-            if (@this.Argument == string.Empty)
+            var result = StringAssertions.IsNotEmpty(@this.Argument);
+            if (!result.Success)
             {
-                throw new ArgumentException(Resources.Strings.The_string_is_empty, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -38,20 +38,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> IsNotEmptyOrWhiteSpace([NotNull] this IArgumentAssertionBuilder<string> @this)
         {
-            if (@this.Argument == string.Empty)
+            var result = StringAssertions.IsNotEmptyOrWhiteSpace(@this.Argument);
+            if (!result.Success)
             {
-                throw new ArgumentException(Resources.Strings.The_string_is_empty, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-
-            for (int i = 0; i < @this.Argument.Length; i++)
-            {
-                if (!char.IsWhiteSpace(@this.Argument[i]))
-                {
-                    return @this.AssertionPassed();
-                }
-            }
-
-            throw new ArgumentException(Resources.Strings.The_string_is_whitespace, @this.ArgumentName);
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -64,12 +56,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex)
         {
-            var regexEngine = _regexCache.GetOrAdd((regex, RegexOptions.Compiled), (regexTuple) => new Regex(regexTuple.regex, regexTuple.options));
-            var result = regexEngine.IsMatch(@this.Argument);
-
-            if (!result)
+            var result = StringAssertions.Matches(@this.Argument, regex);
+            if (!result.Success)
             {
-                throw new ArgumentException(string.Format(Resources.Strings.The_string_does_not_match_the_regex_Format, regex), @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -85,12 +75,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex, RegexOptions regexOptions)
         {
-            var regexEngine = _regexCache.GetOrAdd((regex, regexOptions | RegexOptions.Compiled), (regexTuple) => new Regex(regexTuple.regex, regexTuple.options));
-            var result = regexEngine.IsMatch(@this.Argument);
-
-            if (!result)
+            var result = StringAssertions.Matches(@this.Argument, regex, regexOptions);
+            if (!result.Success)
             {
-                throw new ArgumentException(string.Format(Resources.Strings.The_string_does_not_match_the_regex_Format, regex), @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }

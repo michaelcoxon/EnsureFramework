@@ -22,9 +22,9 @@ namespace EnsureFramework.Assertions
         {
             if (source != type)
             {
-                return false;
+                return AssertionResult.Fail("Not type");
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -37,11 +37,11 @@ namespace EnsureFramework.Assertions
         {
             ArgumentNullException.ThrowIfNull(source);
 
-            if (!source.GetType().IsAssignableFrom(type))
+            if (!source.IsAssignableFrom(type))
             {
-                return false;
+                return AssertionResult.Fail("Not assignable from type");
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -55,11 +55,11 @@ namespace EnsureFramework.Assertions
             ArgumentNullException.ThrowIfNull(source);
             ArgumentNullException.ThrowIfNull(type);
          
-            if (!type.GetType().IsAssignableFrom(source))
+            if (!type.IsAssignableFrom(source))
             {
-                return false;
+                return AssertionResult.Fail("Not assignable to type");
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -75,9 +75,9 @@ namespace EnsureFramework.Assertions
         {
             if (source != typeof(T))
             {
-                return false;
+                return AssertionResult.Fail("Not type");
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -90,11 +90,11 @@ namespace EnsureFramework.Assertions
         {
             ArgumentNullException.ThrowIfNull(source);
 
-            if (!source.GetType().IsAssignableFrom(typeof(T)))
+            if (!source.IsAssignableFrom(typeof(T)))
             {
-                return false;
+                return AssertionResult.Fail("Not assignable from type");
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -109,9 +109,9 @@ namespace EnsureFramework.Assertions
         {
             if (!typeof(T).GetTypeInfo().IsAssignableFrom(source))
             {
-                return false;
+                return AssertionResult.Fail("Not assignable to type");
             }
-            return true;
+            return AssertionResult.Ok;
         }
     }
 }
