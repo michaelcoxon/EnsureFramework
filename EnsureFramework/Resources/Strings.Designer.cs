@@ -70,6 +70,15 @@ namespace EnsureFramework.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}[\&quot;{1}\&quot;] is not in the dictionary..
+        /// </summary>
+        internal static string Dictionary_argName_with_key_keyName_is_not_in_the_dictionary_Format {
+            get {
+                return ResourceManager.GetString("Dictionary_argName_with_key_keyName_is_not_in_the_dictionary_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item is not in enumerable..
         /// </summary>
         internal static string Item_is_not_in_enumerable {

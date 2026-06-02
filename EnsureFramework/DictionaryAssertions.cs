@@ -26,7 +26,9 @@ namespace EnsureFramework
         {
             if (!@this.Argument.ContainsKey(key))
             {
-                throw new ArgumentException($"{@this.ArgumentName}[\"{key}\"] is not in the dictionary", @this.ArgumentName);
+                throw new ArgumentException(
+                    string.Format(Resources.Strings.Dictionary_argName_with_key_keyName_is_not_in_the_dictionary_Format, @this.ArgumentName, key),
+                    @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
