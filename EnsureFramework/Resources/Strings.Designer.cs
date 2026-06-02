@@ -70,24 +70,6 @@ namespace EnsureFramework.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Argument &apos;{0}&apos; must be one of (&apos;{1}&apos;)..
-        /// </summary>
-        internal static string Argument_argName_must_be_one_of_valueList_Format {
-            get {
-                return ResourceManager.GetString("Argument_argName_must_be_one_of_valueList_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0}[\&quot;{1}\&quot;] is not in the dictionary..
-        /// </summary>
-        internal static string Dictionary_argName_with_key_keyName_is_not_in_the_dictionary_Format {
-            get {
-                return ResourceManager.GetString("Dictionary_argName_with_key_keyName_is_not_in_the_dictionary_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Item is not in enumerable..
         /// </summary>
         internal static string Item_is_not_in_enumerable {
@@ -115,102 +97,20 @@ namespace EnsureFramework.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is a negative number..
+        ///   Looks up a localized string similar to The collection does not contain the value..
         /// </summary>
-        internal static string The_argument_argName_is_a_negative_number_Format {
+        internal static string Not_contains {
             get {
-                return ResourceManager.GetString("The_argument_argName_is_a_negative_number_Format", resourceCulture);
+                return ResourceManager.GetString("Not_contains", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is equal to zero..
+        ///   Looks up a localized string similar to The key &apos;{0}&apos; is not in the dictionary..
         /// </summary>
-        internal static string The_argument_argName_is_equal_to_zero_Format {
+        internal static string The_key_keyName_is_not_in_the_dictionary_Format {
             get {
-                return ResourceManager.GetString("The_argument_argName_is_equal_to_zero_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not a valid GUID..
-        /// </summary>
-        internal static string The_argument_argName_is_not_a_vaild_guid_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_is_not_a_vaild_guid_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not equal to &apos;{1}&apos;..
-        /// </summary>
-        internal static string The_argument_argName_is_not_equal_to_value_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_is_not_equal_to_value_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not greater than or equal to &apos;{1}&apos;..
-        /// </summary>
-        internal static string The_argument_argName_is_not_greater_than_or_equal_to_value_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_is_not_greater_than_or_equal_to_value_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not greater than &apos;{1}&apos;..
-        /// </summary>
-        internal static string The_argument_argName_is_not_greater_than_value_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_is_not_greater_than_value_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not less than &apos;{1}&apos;..
-        /// </summary>
-        internal static string The_argument_argName_is_not_less_than_value_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_is_not_less_than_value_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not within and including the range &apos;{1}-{2}&apos;..
-        /// </summary>
-        internal static string The_argument_argName_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_is_not_within_and_including_the_range_lowerBound_to_upperBou" +
-                        "nd_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not within the range &apos;{1}-{2}&apos;..
-        /// </summary>
-        internal static string The_argument_argName_is_not_within_the_range_lowerBound_to_upperBound_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_is_not_within_the range_lowerBound_to_upperBound_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; must be of type &apos;{1}&apos;..
-        /// </summary>
-        internal static string The_argument_argName_must_be_of_type_typeName_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_must_be_of_type_typeName_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The argument &apos;{0}&apos; must inherit from type &apos;{1}&apos;..
-        /// </summary>
-        internal static string The_argument_argName_must_inherit_from_type_typeName_Format {
-            get {
-                return ResourceManager.GetString("The_argument_argName_must_inherit_from_type_typeName_Format", resourceCulture);
+                return ResourceManager.GetString("The_key_keyName_is_not_in_the_dictionary_Format", resourceCulture);
             }
         }
         
@@ -238,6 +138,123 @@ namespace EnsureFramework.Resources {
         internal static string The_string_is_whitespace {
             get {
                 return ResourceManager.GetString("The_string_is_whitespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is a negative number..
+        /// </summary>
+        internal static string The_value_is_a_negative_number {
+            get {
+                return ResourceManager.GetString("The_value_is_a_negative_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is equal to zero..
+        /// </summary>
+        internal static string The_value_is_equal_to_zero {
+            get {
+                return ResourceManager.GetString("The_value_is_equal_to_zero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is not a valid GUID..
+        /// </summary>
+        internal static string The_value_is_not_a_vaild_guid {
+            get {
+                return ResourceManager.GetString("The_value_is_not_a_vaild_guid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is not equal to &apos;{0}&apos;..
+        /// </summary>
+        internal static string The_value_is_not_equal_to_value_Format {
+            get {
+                return ResourceManager.GetString("The_value_is_not_equal_to_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is not greater than or equal to &apos;{0}&apos;..
+        /// </summary>
+        internal static string The_value_is_not_greater_than_or_equal_to_value_Format {
+            get {
+                return ResourceManager.GetString("The_value_is_not_greater_than_or_equal_to_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is not greater than &apos;{0}&apos;..
+        /// </summary>
+        internal static string The_value_is_not_greater_than_value_Format {
+            get {
+                return ResourceManager.GetString("The_value_is_not_greater_than_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is not less than or equal to &apos;{0}&apos;..
+        /// </summary>
+        internal static string The_value_is_not_less_than_or_equal_to_value_Format {
+            get {
+                return ResourceManager.GetString("The_value_is_not_less_than_or_equal_to_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is not less than &apos;{0}&apos;..
+        /// </summary>
+        internal static string The_value_is_not_less_than_value_Format {
+            get {
+                return ResourceManager.GetString("The_value_is_not_less_than_value_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is not within and including the range &apos;{0}-{1}&apos;..
+        /// </summary>
+        internal static string The_value_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format {
+            get {
+                return ResourceManager.GetString("The_value_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value is not within the range &apos;{0}-{1}&apos;..
+        /// </summary>
+        internal static string The_value_is_not_within_the_range_lowerBound_to_upperBound_Format {
+            get {
+                return ResourceManager.GetString("The_value_is_not_within_the range_lowerBound_to_upperBound_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value must be of type &apos;{0}&apos;..
+        /// </summary>
+        internal static string The_value_must_be_of_type_typeName_Format {
+            get {
+                return ResourceManager.GetString("The_value_must_be_of_type_typeName_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value must be one of (&apos;{0}&apos;)..
+        /// </summary>
+        internal static string The_value_must_be_one_of_valueList_Format {
+            get {
+                return ResourceManager.GetString("The_value_must_be_one_of_valueList_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value must inherit from type &apos;{0}&apos;..
+        /// </summary>
+        internal static string The_value_must_inherit_from_type_typeName_Format {
+            get {
+                return ResourceManager.GetString("The_value_must_inherit_from_type_typeName_Format", resourceCulture);
             }
         }
     }

@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Results;
 
 namespace EnsureFramework.Assertions
 {
@@ -15,22 +16,22 @@ namespace EnsureFramework.Assertions
     /// allowing for fluent and expressive argument validation in application code.</remarks>
     public static class NumberAssertions
     {
-        public static bool IsNegative<T>(T source) where T : INumberBase<T>
+        public static IAssertionResult IsNegative<T>(T source) where T : INumberBase<T>
         {
             if (T.IsNegative(source))
             {
-                return true;
+                return AssertionResult.Ok;
             }
-            return false;
+            return AssertionResult.Fail(Resources.Strings.The_value_is_a_negative_number);
         }
 
-        public static bool IsZero<T>(T source) where T : INumberBase<T>
+        public static IAssertionResult IsZero<T>(T source) where T : INumberBase<T>
         {
             if (T.IsZero(source))
             {
-                return true;
+                return AssertionResult.Ok;
             }
-            return false;
+            return AssertionResult.Fail(Resources.Strings.The_value_is_equal_to_zero);
         }
     }
 }

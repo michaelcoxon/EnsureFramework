@@ -7,6 +7,7 @@ using System.Linq;
 
 using EnsureFramework;
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Assertions;
 
 namespace EnsureFramework
 {
@@ -23,12 +24,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> IsNotEmpty([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this)
         {
-            foreach (var _ in @this.Argument)
+            var result = EnumerableAssertions.IsNotEmpty(@this.Argument);
+            if (!result.Success)
             {
-                return @this.AssertionPassed();
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-
-            throw new ArgumentException(null, @this.ArgumentName);
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -40,9 +41,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> IsNotEmpty<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this)
         {
-            if (!@this.Argument.Any())
+            var result = EnumerableAssertions.IsNotEmpty(@this.Argument);
+            if (!result.Success)
             {
-                throw new ArgumentException(null, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -59,9 +61,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> Contains<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this, T item)
         {
-            if (!@this.Argument.Contains(item))
+            var result = EnumerableAssertions.Contains(@this.Argument, item);
+            if (!result.Success)
             {
-                throw new ArgumentException(Resources.Strings.Item_is_not_in_enumerable, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -76,15 +79,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> Contains([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this, object item)
         {
-            foreach (var item2 in @this.Argument)
+            var result = EnumerableAssertions.Contains(@this.Argument, item);
+            if (!result.Success)
             {
-                if (Equals(item, item2))
-                {
-                    return @this.AssertionPassed();
-                }
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-
-            throw new ArgumentException(Resources.Strings.Item_is_not_in_enumerable, @this.ArgumentName);
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -100,9 +100,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> Any<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this, Func<T, bool> predicate)
         {
-            if (!@this.Argument.Any(predicate))
+            var result = EnumerableAssertions.Any(@this.Argument, predicate);
+            if (!result.Success)
             {
-                throw new ArgumentException(Resources.Strings.No_items_match_the_predicate, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -117,17 +118,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> Any([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this, Func<object, bool> predicate)
         {
-            ArgumentNullException.ThrowIfNull(predicate);
-
-            foreach (var item in @this.Argument)
+            var result = EnumerableAssertions.Any(@this.Argument, predicate);
+            if (!result.Success)
             {
-                if (predicate(item))
-                {
-                    return @this.AssertionPassed();
-                }
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-
-            throw new ArgumentException(Resources.Strings.No_items_match_the_predicate, @this.ArgumentName);
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -143,9 +139,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> All<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this, Func<T, bool> predicate)
         {
-            if (!@this.Argument.All(predicate))
+            var result = EnumerableAssertions.Any(@this.Argument, predicate);
+            if (!result.Success)
             {
-                throw new ArgumentException(Resources.Strings.All_items_do_not_match_the_predicate, @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
@@ -162,16 +159,11 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> All([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this, Func<object, bool> predicate)
         {
-            ArgumentNullException.ThrowIfNull(predicate);
-
-            foreach (var item in @this.Argument)
+            var result = EnumerableAssertions.Any(@this.Argument, predicate);
+            if (!result.Success)
             {
-                if (!predicate(item))
-                {
-                    throw new ArgumentException(Resources.Strings.All_items_do_not_match_the_predicate, @this.ArgumentName);
-                }
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-
             return @this.AssertionPassed();
         }
     }

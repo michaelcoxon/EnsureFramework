@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Assertions;
 
 namespace EnsureFramework
 {
@@ -23,12 +24,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsNotNegative<T>([NotNull] this IArgumentAssertionBuilder<T> @this) where T : INumberBase<T>
         {
-            if (T.IsNegative(@this.Argument))
+            var result = NumberAssertions.IsNegative(@this.Argument);
+            if (result.Success)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName,
-                    @this.Argument,
-                    string.Format(Resources.Strings.The_argument_argName_is_a_negative_number_Format, @this.ArgumentName));
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }
@@ -45,14 +44,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsNegative<T>([NotNull] this IArgumentAssertionBuilder<T> @this) where T : INumberBase<T>
         {
-            if (T.IsNegative(@this.Argument))
+            var result = NumberAssertions.IsNegative(@this.Argument);
+            if (result.Success)
             {
                 return @this.AssertionPassed();
             }
-            throw new ArgumentOutOfRangeException(
-                @this.ArgumentName,
-                @this.Argument,
-                string.Format(Resources.Strings.The_argument_argName_is_a_negative_number_Format, @this.ArgumentName));
+            throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
         }
 
         /// <summary>
@@ -63,12 +60,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsNotZero<T>([NotNull] this IArgumentAssertionBuilder<T> @this) where T : INumberBase<T>
         {
-            if (T.IsZero(@this.Argument))
+            var result = NumberAssertions.IsZero(@this.Argument);
+            if (result.Success)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName,
-                    @this.Argument,
-                    string.Format(Resources.Strings.The_argument_argName_is_equal_to_zero_Format, @this.ArgumentName));
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }
@@ -85,15 +80,13 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsZero<T>([NotNull] this IArgumentAssertionBuilder<T> @this) where T : INumberBase<T>
         {
-            if (T.IsZero(@this.Argument))
+            var result = NumberAssertions.IsZero(@this.Argument);
+            if (result.Success)
             {
                 return @this.AssertionPassed();
             }
 
-            throw new ArgumentOutOfRangeException(
-                @this.ArgumentName,
-                @this.Argument,
-                string.Format(Resources.Strings.The_argument_argName_is_equal_to_zero_Format, @this.ArgumentName));
+            throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
 
         }
     }

@@ -20,11 +20,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Guid> IsValidGuid([NotNull] this IArgumentAssertionBuilder<Guid> @this)
         {
-            if (!GuidAssertions.IsValidGuid(@this.Argument))
+            var result = GuidAssertions.IsValidGuid(@this.Argument);
+            if (!result.Success)
             {
-                throw new ArgumentException(
-                    string.Format(Resources.Strings.The_argument_argName_is_not_a_vaild_guid_Format, @this.ArgumentName),
-                    @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }

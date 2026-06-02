@@ -22,12 +22,10 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsGreaterThanOrEqualTo<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
-            if (!CompareAssertions.IsGreaterThanOrEqualTo(@this.Argument, value))
+            var result = CompareAssertions.IsGreaterThanOrEqualTo(@this.Argument, value);
+            if (!result.Success)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName,
-                    @this.Argument,
-                    string.Format(Resources.Strings.The_argument_argName_is_not_greater_than_or_equal_to_value_Format, @this.ArgumentName, value));
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }
@@ -42,12 +40,10 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsLessThanOrEqualTo<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
-            if (@this.Argument.CompareTo(value) > 0)
+            var result = CompareAssertions.IsLessThanOrEqualTo(@this.Argument, value);
+            if (!result.Success)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName,
-                    @this.Argument,
-                    string.Format(Resources.Strings.The_argument_argName_is_not_greater_than_or_equal_to_value_Format, @this.ArgumentName, value));
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }
@@ -62,12 +58,10 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsLessThan<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
-            if (@this.Argument.CompareTo(value) != -1)
+            var result = CompareAssertions.IsLessThan(@this.Argument, value);
+            if (!result.Success)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName,
-                    @this.Argument, 
-                    string.Format(Resources.Strings.The_argument_argName_is_not_less_than_value_Format, @this.ArgumentName, value));
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }
@@ -82,12 +76,10 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsGreaterThan<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
-            if (@this.Argument.CompareTo(value) != 1)
+            var result = CompareAssertions.IsGreaterThan(@this.Argument, value);
+            if (!result.Success)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName, 
-                    @this.Argument, 
-                    string.Format(Resources.Strings.The_argument_argName_is_not_greater_than_value_Format, @this.ArgumentName, value));
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }
@@ -102,13 +94,10 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsEqualTo<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T value)
             where T : IComparable<T>
         {
-            if (@this.Argument.CompareTo(value) != 0)
+            var result = CompareAssertions.IsEqualTo(@this.Argument, value);
+            if (!result.Success)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName,
-                    @this.Argument,
-                    string.Format(Resources.Strings.The_argument_argName_is_not_equal_to_value_Format, @this.ArgumentName, value));
-
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }
@@ -126,12 +115,10 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsWithinRange<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
-            if (@this.Argument.CompareTo(lowerBound) <= 0 || @this.Argument.CompareTo(upperBound) >= 0)
+            var result = CompareAssertions.IsWithinRange(@this.Argument, lowerBound, upperBound);
+            if (!result.Success)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName, 
-                    @this.Argument,
-                    string.Format(Resources.Strings.The_argument_argName_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format, @this.ArgumentName, lowerBound, upperBound));
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }
@@ -149,12 +136,10 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> IsWithinAndIncludingRange<T>([NotNull] this IArgumentAssertionBuilder<T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
+            var result = CompareAssertions.IsWithinAndIncludingRange(@this.Argument, lowerBound, upperBound);
             if (@this.Argument.CompareTo(lowerBound) < 0 || @this.Argument.CompareTo(upperBound) > 0)
             {
-                throw new ArgumentOutOfRangeException(
-                    @this.ArgumentName, 
-                    @this.Argument,
-                    string.Format(Resources.Strings.The_argument_argName_is_not_within_the_range_lowerBound_to_upperBound_Format, @this.ArgumentName, lowerBound, upperBound));
+                throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
             return @this.AssertionPassed();
         }

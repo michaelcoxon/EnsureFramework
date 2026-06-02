@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Assertions;
 
 namespace EnsureFramework
 {
@@ -24,11 +25,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IDictionary<TKey, TValue>> HasKey<TKey, TValue>([NotNull] this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
         {
-            if (!@this.Argument.ContainsKey(key))
+            var result = DictionaryAssertions.HasKey(@this.Argument, key);
+            if (!result.Success)
             {
-                throw new ArgumentException(
-                    string.Format(Resources.Strings.Dictionary_argName_with_key_keyName_is_not_in_the_dictionary_Format, @this.ArgumentName, key),
-                    @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }

@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 
 using EnsureFramework;
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Assertions;
 
 namespace EnsureFramework
 {
@@ -26,7 +27,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Assert<T>([NotNull] this IArgumentAssertionBuilder<T> @this, [DoesNotReturnIf(false)] bool assertion, string? message = null)
         {
-            return @this.InternalAssert(assertion, message).AssertionPassed();
+            if (!assertion)
+            {
+                throw new ArgumentException(message, @this.ArgumentName);
+            }
+
+            return @this.AssertionPassed();
         }
 
         /// <summary>
@@ -39,10 +45,14 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsExactTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            return @this.InternalAssert(
-                typeof(T) == type, 
-                string.Format(Resources.Strings.The_argument_argName_must_be_of_type_typeName_Format, @this.ArgumentName, type))
-                .AssertionPassed();
+            var result = ObjectAssertions.IsExactTypeOf(typeof(T), type);
+
+            if (result.Success)
+            {
+                return @this.AssertionPassed();
+            }
+
+            throw new ArgumentException(result.Message, @this.ArgumentName);
         }
 
         /// <summary>
@@ -55,10 +65,14 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsInheritsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            return @this.InternalAssert(
-                typeof(T).IsAssignableTo(type),
-                string.Format(Resources.Strings.The_argument_argName_must_inherit_from_type_typeName_Format, @this.ArgumentName, type))
-                .AssertionPassed();
+            var result = ObjectAssertions.IsInheritsTypeOf(typeof(T), type);
+
+            if (result.Success)
+            {
+                return @this.AssertionPassed();
+            }
+
+            throw new ArgumentException(result.Message, @this.ArgumentName);
         }
 
         /// <summary>
@@ -103,24 +117,11 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsOneOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, params T[] options)
         {
-            if (!options.Contains(@this.Argument))
+            var result = ObjectAssertions.IsOneOf(@this.Argument, options);
+            if (!result.Success)
             {
-                throw new ArgumentException(
-                    string.Format(Resources.Strings.Argument_argName_must_be_one_of_valueList_Format, @this.ArgumentName, string.Join("', '", options)),
-                    @this.ArgumentName);
+                throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
-        }
-
-
-        [DebuggerNonUserCode]
-        private static IArgumentAssertionBuilder<T> InternalAssert<T>([NotNull] this IArgumentAssertionBuilder<T> @this, [DoesNotReturnIf(false)] bool assertion, string? message = null)
-        {
-            if (!assertion)
-            {
-                throw new ArgumentException(message, @this.ArgumentName);
-            }
-
             return @this.AssertionPassed();
         }
     }

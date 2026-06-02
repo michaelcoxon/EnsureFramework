@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Results;
 
 namespace EnsureFramework.Assertions
 {
@@ -19,15 +20,15 @@ namespace EnsureFramework.Assertions
         /// <param name="value">The value to compare to the current value.</param>
         /// <returns><see langword="true"/> if the current value is greater than or equal to <paramref name="value"/>; otherwise,
         /// <see langword="false"/>.</returns>
-        public static bool IsGreaterThanOrEqualTo<T>(T source, T value)
+        public static IAssertionResult IsGreaterThanOrEqualTo<T>(T source, T value)
             where T : IComparable<T>
         {
             ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) < 0)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_greater_than_or_equal_to_value_Format, value));
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -38,15 +39,15 @@ namespace EnsureFramework.Assertions
         /// <param name="value">The value to compare with the current object.</param>
         /// <returns><see langword="true"/> if the current object is less than or equal to <paramref name="value"/>; otherwise,
         /// <see langword="false"/>.</returns>
-        public static bool IsLessThanOrEqualTo<T>(T source, T value)
+        public static IAssertionResult IsLessThanOrEqualTo<T>(T source, T value)
             where T : IComparable<T>
         {
             ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) > 0)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_greater_than_or_equal_to_value_Format, value));
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -57,15 +58,15 @@ namespace EnsureFramework.Assertions
         /// <param name="value">The value to compare against the current object.</param>
         /// <returns><see langword="true"/> if the current object is less than <paramref name="value"/>; otherwise, <see
         /// langword="false"/>.</returns>
-        public static bool IsLessThan<T>(T source, T value)
+        public static IAssertionResult IsLessThan<T>(T source, T value)
             where T : IComparable<T>
         {
             ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) != -1)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_less_than_value_Format, value));
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -76,15 +77,15 @@ namespace EnsureFramework.Assertions
         /// <param name="value">The value to compare against the current object.</param>
         /// <returns><see langword="true"/> if the current object is greater than <paramref name="value"/>; otherwise, <see
         /// langword="false"/>.</returns>
-        public static bool IsGreaterThan<T>(T source, T value)
+        public static IAssertionResult IsGreaterThan<T>(T source, T value)
             where T : IComparable<T>
         {
             ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) != 1)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_greater_than_value_Format, value));
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -98,15 +99,15 @@ namespace EnsureFramework.Assertions
         /// <param name="value">The value to compare with the current object.</param>
         /// <returns><see langword="true"/> if the current object is equal to <paramref name="value"/>; otherwise, <see
         /// langword="false"/>.</returns>
-        public static bool IsEqualTo<T>(T source, T value)
+        public static IAssertionResult IsEqualTo<T>(T source, T value)
             where T : IComparable<T>
         {
             ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) != 0)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_equal_to_value_Format, value));
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -121,15 +122,15 @@ namespace EnsureFramework.Assertions
         /// <param name="upperBound">The exclusive upper bound of the range. The value must be less than this bound to be considered within
         /// range.</param>
         /// <returns>true if the value is greater than the lower bound and less than the upper bound; otherwise, false.</returns>
-        public static bool IsWithinRange<T>(T source, T lowerBound, T upperBound)
+        public static IAssertionResult IsWithinRange<T>(T source, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
             ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(lowerBound) <= 0 || source.CompareTo(upperBound) >= 0)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format, lowerBound, upperBound));
             }
-            return true;
+            return AssertionResult.Ok;
         }
 
         /// <summary>
@@ -144,15 +145,15 @@ namespace EnsureFramework.Assertions
         /// <param name="lowerBound">The inclusive lower bound of the range.</param>
         /// <param name="upperBound">The inclusive upper bound of the range.</param>
         /// <returns>true if the value is within the specified range, including the lower and upper bounds; otherwise, false.</returns>
-        public static bool IsWithinAndIncludingRange<T>(T source, T lowerBound, T upperBound)
+        public static IAssertionResult IsWithinAndIncludingRange<T>(T source, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
             ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(lowerBound) < 0 || source.CompareTo(upperBound) > 0)
             {
-                return false;
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_within_the_range_lowerBound_to_upperBound_Format, lowerBound, upperBound));
             }
-            return true;
+            return AssertionResult.Ok;
         }
     }
 }

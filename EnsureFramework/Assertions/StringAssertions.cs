@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Results;
 
 namespace EnsureFramework.Assertions
 {
@@ -15,7 +16,7 @@ namespace EnsureFramework.Assertions
     {
         private readonly static ConcurrentDictionary<(string regex, RegexOptions options), Regex> _regexCache = new();
 
-        public static bool IsNotEmpty(string source)
+        public static IAssertionResult IsNotEmpty(string source)
         {
             if (source == string.Empty)
             {
@@ -24,7 +25,7 @@ namespace EnsureFramework.Assertions
             return true;
         }
 
-        public static bool IsNotEmptyOrWhiteSpace(string source)
+        public static IAssertionResult IsNotEmptyOrWhiteSpace(string source)
         {
             if (source == string.Empty)
             {
@@ -42,7 +43,7 @@ namespace EnsureFramework.Assertions
             return false;
         }
 
-        public static bool Matches(string source, string regex)
+        public static IAssertionResult Matches(string source, string regex)
         {
             var regexEngine = _regexCache.GetOrAdd((regex, RegexOptions.Compiled), (regexTuple) => new Regex(regexTuple.regex, regexTuple.options));
             var result = regexEngine.IsMatch(source);
@@ -54,7 +55,7 @@ namespace EnsureFramework.Assertions
             return true;
         }
 
-        public static bool Matches(string source, string regex, RegexOptions regexOptions)
+        public static IAssertionResult Matches(string source, string regex, RegexOptions regexOptions)
         {
             var regexEngine = _regexCache.GetOrAdd((regex, regexOptions | RegexOptions.Compiled), (regexTuple) => new Regex(regexTuple.regex, regexTuple.options));
             var result = regexEngine.IsMatch(source);
