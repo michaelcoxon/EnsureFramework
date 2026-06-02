@@ -70,6 +70,15 @@ namespace EnsureFramework.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Argument &apos;{0}&apos; must be one of (&apos;{1}&apos;)..
+        /// </summary>
+        internal static string Argument_argName_must_be_one_of_valueList_Format {
+            get {
+                return ResourceManager.GetString("Argument_argName_must_be_one_of_valueList_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}[\&quot;{1}\&quot;] is not in the dictionary..
         /// </summary>
         internal static string Dictionary_argName_with_key_keyName_is_not_in_the_dictionary_Format {
@@ -175,6 +184,24 @@ namespace EnsureFramework.Resources {
         internal static string The_argument_argName_is_not_within_the_range_lowerBound_to_upperBound_Format {
             get {
                 return ResourceManager.GetString("The_argument_argName_is_not_within_the range_lowerBound_to_upperBound_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; must be of type &apos;{1}&apos;..
+        /// </summary>
+        internal static string The_argument_argName_must_be_of_type_typeName_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_must_be_of_type_typeName_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; must inherit from type &apos;{1}&apos;..
+        /// </summary>
+        internal static string The_argument_argName_must_inherit_from_type_typeName_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_must_inherit_from_type_typeName_Format", resourceCulture);
             }
         }
     }

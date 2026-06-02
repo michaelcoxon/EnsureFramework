@@ -162,4 +162,13 @@
   <data name="The_argument_argName_is_equal_to_zero_Format" xml:space="preserve">
     <value>The argument '{0}' is equal to zero.</value>
   </data>
+  <data name="The_argument_argName_must_be_of_type_typeName_Format" xml:space="preserve">
+    <value>The argument '{0}' must be of type '{1}'.</value>
+  </data>
+  <data name="The_argument_argName_must_inherit_from_type_typeName_Format" xml:space="preserve">
+    <value>The argument '{0}' must inherit from type '{1}'.</value>
+  </data>
+  <data name="Argument_argName_must_be_one_of_valueList_Format" xml:space="preserve">
+    <value>Argument '{0}' must be one of ('{1}').</value>
+  </data>
 </root>

@@ -39,7 +39,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsExactTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            return @this.InternalAssert(typeof(T) == type, $"The argument at '{@this.ArgumentName}' must be of type '{type}'").AssertionPassed();
+            return @this.InternalAssert(
+                typeof(T) == type, 
+                string.Format(Resources.Strings.The_argument_argName_must_be_of_type_typeName_Format, @this.ArgumentName, type))
+                .AssertionPassed();
         }
 
         /// <summary>
@@ -52,7 +55,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsInheritsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            return @this.InternalAssert(typeof(T).IsAssignableTo(type), $"The argument at '{@this.ArgumentName}' must inherit from type '{type}'").AssertionPassed();
+            return @this.InternalAssert(
+                typeof(T).IsAssignableTo(type),
+                string.Format(Resources.Strings.The_argument_argName_must_inherit_from_type_typeName_Format, @this.ArgumentName, type))
+                .AssertionPassed();
         }
 
         /// <summary>
@@ -99,7 +105,9 @@ namespace EnsureFramework
         {
             if (!options.Contains(@this.Argument))
             {
-                throw new ArgumentException($"Argument '{@this.ArgumentName}' must be one of ('{string.Join("', '", options)}')", @this.ArgumentName);
+                throw new ArgumentException(
+                    string.Format(Resources.Strings.Argument_argName_must_be_one_of_valueList_Format, @this.ArgumentName, string.Join("', '", options)),
+                    @this.ArgumentName);
             }
             return @this.AssertionPassed();
         }
