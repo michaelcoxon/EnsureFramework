@@ -56,7 +56,6 @@ namespace EnsureFramework
         /// </summary>
         /// <remarks>Use this method to enforce that an argument is null in scenarios where null is
         /// required, such as for parameter validation in APIs that expect null values.</remarks>
-        /// <typeparam name="T">The type of the argument to check for null.</typeparam>
         /// <param name="arg">The argument to validate as null.</param>
         /// <param name="argName">The name of the argument to include in the exception message. This value is typically provided automatically
         /// by the compiler.</param>

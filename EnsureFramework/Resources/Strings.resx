@@ -129,7 +129,7 @@
   <data name="No_items_match_the_predicate" xml:space="preserve">
     <value>No items match the predicate.</value>
   </data>
-  <data name="The_argument_argumentName_is_not_less_than_or_equal_to_value_Format" xml:space="preserve">
+  <data name="The_argument_argName_is_not_less_than_or_equal_to_value_Format" xml:space="preserve">
     <value>The argument '{0}' is not less than or equal to '{1}'.</value>
     <comment>0 is argName, 1 is the compare value</comment>
   </data>
@@ -157,7 +157,8 @@
     <value>The argument '{0}' is not within the range '{1}-{2}'.</value>
     <comment>0 is argName, 1 is the lowerBound, 2 is the upperBound</comment>
   </data>
-  <data name="The_argument argumentName_is_not_less_than_or_equal_to_value_Format" xml:space="preserve">
+  <data name="The_argument argName_is_not_less_than_or_equal_to_value_Format" xml:space="preserve">
     <value>The argument '{0}' is not less than or equal to '{1}'.</value>
+    <comment>0 is argName, 1 is the compare value</comment>
   </data>
 </root>
