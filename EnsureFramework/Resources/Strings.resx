@@ -165,4 +165,12 @@
     <value>{0}[\"{1}\"] is not in the dictionary.</value>
     <comment>0 is argName, 1 is the key name</comment>
   </data>
+  <data name="The_argument_argName_is_a_negative_number_Format" xml:space="preserve">
+    <value>The argument '{0}' is a negative number.</value>
+    <comment>0 is argName</comment>
+  </data>
+  <data name="The_argument_argName_is_equal_to_zero_Format" xml:space="preserve">
+    <value>The argument '{0}' is equal to zero.</value>
+    <comment>0 is argName</comment>
+  </data>
 </root>

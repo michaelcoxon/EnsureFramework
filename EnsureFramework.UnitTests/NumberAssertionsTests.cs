@@ -8,7 +8,7 @@ using Xunit;
 
 namespace EnsureFramework.UnitTests
 {
-    public class Int32AssertionsTests
+    public class NumberAssertionsTests
     {
         [Fact]
         public void IsNotNegative_Positive_Test()

@@ -106,6 +106,24 @@ namespace EnsureFramework.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is a negative number..
+        /// </summary>
+        internal static string The_argument_argName_is_a_negative_number_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_is_a_negative_number_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument &apos;{0}&apos; is equal to zero..
+        /// </summary>
+        internal static string The_argument_argName_is_equal_to_zero_Format {
+            get {
+                return ResourceManager.GetString("The_argument_argName_is_equal_to_zero_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The argument &apos;{0}&apos; is not equal to &apos;{1}&apos;..
         /// </summary>
         internal static string The_argument_argName_is_not_equal_to_value_Format {
