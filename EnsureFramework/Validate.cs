@@ -25,7 +25,7 @@
         string? Name { get; }
         List<IAssertionResult> AssertionResults { get; }
         bool IsError { get; }
-        IEnumerable<string> Messages { get; }
+        IEnumerable<string> ErrorMessages { get; }
     }
 
     public sealed class ValidationResult<T> : IValidationResult<T>
@@ -34,7 +34,7 @@
         public string? Name { get; set; }
         public List<IAssertionResult> AssertionResults { get; } = [];
         public bool IsError => this.AssertionResults.Any(v => !v.Success);
-        public IEnumerable<string> Messages => this.AssertionResults.Where(v => !v.Success).Select(v => v.Message!);
+        public IEnumerable<string> ErrorMessages => this.AssertionResults.Where(v => !v.Success).Select(v => v.Message!);
     }
 
     public static class ObjectValidationExtensions
