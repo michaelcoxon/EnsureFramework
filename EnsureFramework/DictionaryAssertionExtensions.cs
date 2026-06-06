@@ -25,12 +25,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IDictionary<TKey, TValue>> HasKey<TKey, TValue>([NotNull] this IArgumentAssertionBuilder<IDictionary<TKey, TValue>> @this, TKey key)
         {
-            var result = DictionaryAssertions.HasKey(@this.Argument, key);
+            var result = @this.PushResult(DictionaryAssertions.HasKey(@this.Argument, key));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
     }
 }

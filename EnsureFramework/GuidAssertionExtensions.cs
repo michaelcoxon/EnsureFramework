@@ -20,12 +20,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Guid> IsValidGuid([NotNull] this IArgumentAssertionBuilder<Guid> @this)
         {
-            var result = GuidAssertions.IsValidGuid(@this.Argument);
+            var result = @this.PushResult(GuidAssertions.IsValidGuid(@this.Argument));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
     }
 }

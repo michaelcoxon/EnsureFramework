@@ -22,12 +22,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> IsNotEmpty([NotNull] this IArgumentAssertionBuilder<string> @this)
         {
-            var result = StringAssertions.IsNotEmpty(@this.Argument);
+            var result = @this.PushResult(StringAssertions.IsNotEmpty(@this.Argument));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -38,12 +38,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> IsNotEmptyOrWhiteSpace([NotNull] this IArgumentAssertionBuilder<string> @this)
         {
-            var result = StringAssertions.IsNotEmptyOrWhiteSpace(@this.Argument);
+            var result = @this.PushResult(StringAssertions.IsNotEmptyOrWhiteSpace(@this.Argument));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -56,12 +56,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex)
         {
-            var result = StringAssertions.Matches(@this.Argument, regex);
+            var result = @this.PushResult(StringAssertions.Matches(@this.Argument, regex));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -75,12 +75,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<string> Matches([NotNull] this IArgumentAssertionBuilder<string> @this, string regex, RegexOptions regexOptions)
         {
-            var result = StringAssertions.Matches(@this.Argument, regex, regexOptions);
+            var result = @this.PushResult(StringAssertions.Matches(@this.Argument, regex, regexOptions));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
     }
 }

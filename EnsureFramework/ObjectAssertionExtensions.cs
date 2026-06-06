@@ -15,26 +15,6 @@ namespace EnsureFramework
     /// </summary>
     public static partial class ObjectAssertionExtensions
     {
-
-        /// <summary>
-        /// Asserts that the assertion is true.
-        /// </summary>
-        /// <param name="this"></param>
-        /// <param name="assertion">The assertion</param>
-        /// <param name="message">The message.</param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentException"></exception>
-        [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> Assert<T>([NotNull] this IArgumentAssertionBuilder<T> @this, [DoesNotReturnIf(false)] bool assertion, string? message = null)
-        {
-            if (!assertion)
-            {
-                throw new ArgumentException(message, @this.ArgumentName);
-            }
-
-            return @this.AssertionPassed();
-        }
-
         /// <summary>
         /// Ensures the argument is the exact type of <paramref name="type" />.
         /// </summary>
@@ -45,11 +25,11 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsExactTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            var result = ObjectAssertions.IsExactTypeOf(typeof(T), type);
+            var result = @this.PushResult(ObjectAssertions.IsExactTypeOf(typeof(T), type));
 
             if (result.Success)
             {
-                return @this.AssertionPassed();
+                return @this;
             }
 
             throw new ArgumentException(result.Message, @this.ArgumentName);
@@ -65,11 +45,11 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsInheritsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            var result = ObjectAssertions.IsInheritsTypeOf(typeof(T), type);
+            var result = @this.PushResult(ObjectAssertions.IsInheritsTypeOf(typeof(T), type));
 
             if (result.Success)
             {
-                return @this.AssertionPassed();
+                return @this;
             }
 
             throw new ArgumentException(result.Message, @this.ArgumentName);
@@ -87,12 +67,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Matches<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Func<T, bool> predicate, string? message = null)
         {
-            var result = ObjectAssertions.Matches(@this.Argument, predicate, out var innerException);
+            var result = @this.PushResult(ObjectAssertions.Matches(@this.Argument, predicate, out var innerException));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message + $"\n{message}", @this.ArgumentName, innerException);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -104,12 +84,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsOneOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, params T[] options)
         {
-            var result = ObjectAssertions.IsOneOf(@this.Argument, options);
+            var result = @this.PushResult(ObjectAssertions.IsOneOf(@this.Argument, options));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
     }
 }

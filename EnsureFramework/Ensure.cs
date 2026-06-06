@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 using EnsureFramework.ArgumentAssertionBuilder;
 using EnsureFramework.Resources;
+using EnsureFramework.Results;
 
 namespace EnsureFramework
 {
@@ -29,7 +30,7 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> Arg<T>([NotNull] T? arg, [CallerArgumentExpression(nameof(arg))] string? argName = null)
         {
             ArgumentNullException.ThrowIfNull(arg, argName);
-            return new ArgumentAssertionBuilder<T>(arg, argName, ["NotNull"]);
+            return new ArgumentAssertionBuilder<T>(arg, argName, [("NotNull", AssertionResult.Fail("Value is null."))]);
         }
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace EnsureFramework
             where T : struct
         {
             ArgumentNullException.ThrowIfNull(arg, argName);
-            return new ArgumentAssertionBuilder<T>(arg.Value, argName, ["NotNull"]);
+            return new ArgumentAssertionBuilder<T>(arg.Value, argName, [("NotNull", AssertionResult.Fail("Value is null."))]);
         }
 
         /// <summary>

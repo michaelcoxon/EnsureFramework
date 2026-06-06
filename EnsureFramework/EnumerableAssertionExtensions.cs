@@ -24,12 +24,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> IsNotEmpty([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this)
         {
-            var result = EnumerableAssertions.IsNotEmpty(@this.Argument);
+            var result = @this.PushResult(EnumerableAssertions.IsNotEmpty(@this.Argument));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -41,12 +41,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> IsNotEmpty<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this)
         {
-            var result = EnumerableAssertions.IsNotEmpty(@this.Argument);
+            var result = @this.PushResult(EnumerableAssertions.IsNotEmpty(@this.Argument));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -61,12 +61,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> Contains<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this, T item)
         {
-            var result = EnumerableAssertions.Contains(@this.Argument, item);
+            var result = @this.PushResult(EnumerableAssertions.Contains(@this.Argument, item));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -79,12 +79,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> Contains([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this, object item)
         {
-            var result = EnumerableAssertions.Contains(@this.Argument, item);
+            var result = @this.PushResult(EnumerableAssertions.Contains(@this.Argument, item));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -100,12 +100,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> Any<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this, Func<T, bool> predicate)
         {
-            var result = EnumerableAssertions.Any(@this.Argument, predicate);
+            var result = @this.PushResult(EnumerableAssertions.Any(@this.Argument, predicate));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -118,12 +118,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> Any([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this, Func<object, bool> predicate)
         {
-            var result = EnumerableAssertions.Any(@this.Argument, predicate);
+            var result = @this.PushResult(EnumerableAssertions.Any(@this.Argument, predicate));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -139,12 +139,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable<T>> All<T>([NotNull] this IArgumentAssertionBuilder<IEnumerable<T>> @this, Func<T, bool> predicate)
         {
-            var result = EnumerableAssertions.All(@this.Argument, predicate);
+            var result = @this.PushResult(EnumerableAssertions.All(@this.Argument, predicate));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -159,12 +159,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<IEnumerable> All([NotNull] this IArgumentAssertionBuilder<IEnumerable> @this, Func<object, bool> predicate)
         {
-            var result = EnumerableAssertions.All(@this.Argument, predicate);
+            var result = @this.PushResult(EnumerableAssertions.All(@this.Argument, predicate));
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
     }
 }

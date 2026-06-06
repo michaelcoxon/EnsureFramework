@@ -8,6 +8,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
+    using EnsureFramework.Results;
+
     [DebuggerNonUserCode]
-    internal sealed record ArgumentAssertionBuilder<T>([DisallowNull] T Argument, string? ArgumentName, List<string> PassedAssertions) : IArgumentAssertionBuilder<T>;
+    internal sealed record ArgumentAssertionBuilder<T>([DisallowNull] T Argument, string? ArgumentName, List<(string, IAssertionResult)> Assertions) : IArgumentAssertionBuilder<T>;
 }

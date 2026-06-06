@@ -7,6 +7,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
+    using EnsureFramework.Results;
+
     /// <summary>
     /// Provides extension methods for the <see cref="IArgumentAssertionBuilder{T}"/> interface to support custom assertion
     /// tracking, generally used for debugging purposes.
@@ -23,15 +25,16 @@
         /// specific assertion has succeeded. It does not perform any validation itself.</remarks>
         /// <typeparam name="T">The type of the argument being asserted.</typeparam>
         /// <param name="this">The argument assertion builder to update.</param>
+        /// <param name="result"></param>
         /// <param name="assertionName">The name of the assertion to mark as passed. If not specified, the caller member name is used.</param>
         /// <returns>The same argument assertion builder instance, enabling method chaining.</returns>
-        public static IArgumentAssertionBuilder<T> AssertionPassed<T>(this IArgumentAssertionBuilder<T> @this, [CallerMemberName] string? assertionName = null)
+        public static IAssertionResult PushResult<T>(this IArgumentAssertionBuilder<T> @this, IAssertionResult result, [CallerMemberName] string? assertionName = null)
         {
             if (@this is ArgumentAssertionBuilder<T> aab)
             {
-                aab.PassedAssertions.Add(assertionName ?? "<unknown>");
+                aab.Assertions.Add((assertionName ?? "<unknown>", result));
             }
-            return @this;
+            return result;
         }
     }
 }

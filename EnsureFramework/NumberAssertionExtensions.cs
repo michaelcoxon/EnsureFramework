@@ -24,12 +24,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsNotNegative<T>([NotNull] this IArgumentAssertionBuilder<T> @this) where T : INumberBase<T>
         {
-            var result = NumberAssertions.IsNegative(@this.Argument);
+            var result = @this.PushResult(NumberAssertions.IsNegative(@this.Argument));
             if (result.Success)
             {
                 throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -44,10 +44,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsNegative<T>([NotNull] this IArgumentAssertionBuilder<T> @this) where T : INumberBase<T>
         {
-            var result = NumberAssertions.IsNegative(@this.Argument);
+            var result = @this.PushResult(NumberAssertions.IsNegative(@this.Argument));
             if (result.Success)
             {
-                return @this.AssertionPassed();
+                return @this;
             }
             throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
         }
@@ -60,12 +60,12 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsNotZero<T>([NotNull] this IArgumentAssertionBuilder<T> @this) where T : INumberBase<T>
         {
-            var result = NumberAssertions.IsZero(@this.Argument);
+            var result = @this.PushResult(NumberAssertions.IsZero(@this.Argument));
             if (result.Success)
             {
                 throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);
             }
-            return @this.AssertionPassed();
+            return @this;
         }
 
         /// <summary>
@@ -80,10 +80,10 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsZero<T>([NotNull] this IArgumentAssertionBuilder<T> @this) where T : INumberBase<T>
         {
-            var result = NumberAssertions.IsZero(@this.Argument);
+            var result = @this.PushResult(NumberAssertions.IsZero(@this.Argument));
             if (result.Success)
             {
-                return @this.AssertionPassed();
+                return @this;
             }
 
             throw new ArgumentOutOfRangeException(@this.ArgumentName, @this.Argument, result.Message);

@@ -11,25 +11,6 @@ namespace EnsureFramework.UnitTests
     public class ObjectAssertionsTests
     {
         [Fact]
-        public void AssertTest()
-        {
-            var anything = new { foo = "bar" };
-
-            Ensure.Arg(anything, nameof(anything)).Assert(true);
-        }
-
-        [Fact]
-        public void AssertFailTest()
-        {
-            var anything = new { foo = "bar" };
-
-            Assert.Throws<ArgumentException>(() =>
-            {
-                Ensure.Arg(anything, nameof(anything)).Assert(false);
-            });
-        }
-
-        [Fact]
         public void IsExactTypeOfParamTest()
         {
             var list = new List<string>();
