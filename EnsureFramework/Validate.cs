@@ -32,6 +32,8 @@
     {
         public T? Value { get; set; }
         public string? Name { get; set; }
+
+        // TODO: should add the validator that was run to the result
         public List<IAssertionResult> AssertionResults { get; } = [];
         public bool IsError => this.AssertionResults.Any(v => !v.Success);
         public IEnumerable<string> ErrorMessages => this.AssertionResults.Where(v => !v.Success).Select(v => v.Message!);
