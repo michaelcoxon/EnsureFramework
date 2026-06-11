@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 using EnsureFramework.ArgumentAssertionBuilder;
+using EnsureFramework.Assertions;
 using EnsureFramework.Results;
 
 namespace EnsureFramework
@@ -25,8 +26,14 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> Arg<T>([NotNull] T? arg, [CallerArgumentExpression(nameof(arg))] string? argName = null)
         {
-            ArgumentNullException.ThrowIfNull(arg, argName);
-            return new ArgumentAssertionBuilder<T>(arg, argName, [("NotNull", AssertionResult.Fail("Value is null."))]);
+            var result = ObjectAssertions.IsNotNull(arg);
+            if (!result.Success)
+            {
+                throw new ArgumentNullException(argName, result.Message);
+            }
+#pragma warning disable CS8604 // this will not be null as the assertion.Success proves it
+            return new ArgumentAssertionBuilder<T>(arg, argName, [("NotNull", result)]);
+#pragma warning restore CS8604
         }
 
         /// <summary>
@@ -44,8 +51,12 @@ namespace EnsureFramework
         public static IArgumentAssertionBuilder<T> Arg<T>([NotNull] T? arg, [CallerArgumentExpression(nameof(arg))] string? argName = null)
             where T : struct
         {
-            ArgumentNullException.ThrowIfNull(arg, argName);
-            return new ArgumentAssertionBuilder<T>(arg.Value, argName, [("NotNull", AssertionResult.Fail("Value is null."))]);
+            var result = ObjectAssertions.IsNotNull(arg);
+            if (!result.Success)
+            {
+                throw new ArgumentNullException(argName, result.Message);
+            }
+            return new ArgumentAssertionBuilder<T>(arg!.Value, argName, [("NotNull", result)]);
         }
 
         /// <summary>
@@ -57,7 +68,7 @@ namespace EnsureFramework
         /// <param name="argName">The name of the argument to include in the exception message. This value is typically provided automatically
         /// by the compiler.</param>
         /// <exception cref="ArgumentException">Thrown if the argument is not null.</exception>
-        [DebuggerNonUserCode]        
+        [DebuggerNonUserCode]
         public static void ArgIsNull(object? arg, [CallerArgumentExpression(nameof(arg))] string? argName = null)
         {
             if (arg is not null)

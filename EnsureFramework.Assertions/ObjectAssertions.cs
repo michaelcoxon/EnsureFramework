@@ -8,7 +8,7 @@ namespace EnsureFramework.Assertions
     /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
     /// </summary>
     public static class ObjectAssertions
-    {
+    {        
         public static IAssertionResult IsNotNull<T>(T @this)
         {
             if (@this is null)
