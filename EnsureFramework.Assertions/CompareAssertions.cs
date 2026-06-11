@@ -22,7 +22,6 @@ namespace EnsureFramework.Assertions
         public static IAssertionResult IsGreaterThanOrEqualTo<T>(T source, T value)
             where T : IComparable<T>
         {
-            ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) < 0)
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_greater_than_or_equal_to_value_Format, value));
@@ -41,7 +40,6 @@ namespace EnsureFramework.Assertions
         public static IAssertionResult IsLessThanOrEqualTo<T>(T source, T value)
             where T : IComparable<T>
         {
-            ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) > 0)
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_greater_than_or_equal_to_value_Format, value));
@@ -60,7 +58,6 @@ namespace EnsureFramework.Assertions
         public static IAssertionResult IsLessThan<T>(T source, T value)
             where T : IComparable<T>
         {
-            ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) != -1)
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_less_than_value_Format, value));
@@ -79,7 +76,6 @@ namespace EnsureFramework.Assertions
         public static IAssertionResult IsGreaterThan<T>(T source, T value)
             where T : IComparable<T>
         {
-            ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) != 1)
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_greater_than_value_Format, value));
@@ -101,7 +97,6 @@ namespace EnsureFramework.Assertions
         public static IAssertionResult IsEqualTo<T>(T source, T value)
             where T : IComparable<T>
         {
-            ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(value) != 0)
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_equal_to_value_Format, value));
@@ -124,7 +119,6 @@ namespace EnsureFramework.Assertions
         public static IAssertionResult IsWithinRange<T>(T source, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
-            ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(lowerBound) <= 0 || source.CompareTo(upperBound) >= 0)
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_within_and_including_the_range_lowerBound_to_upperBound_Format, lowerBound, upperBound));
@@ -147,7 +141,6 @@ namespace EnsureFramework.Assertions
         public static IAssertionResult IsWithinAndIncludingRange<T>(T source, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
-            ArgumentNullException.ThrowIfNull(source);
             if (source.CompareTo(lowerBound) < 0 || source.CompareTo(upperBound) > 0)
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_value_is_not_within_the_range_lowerBound_to_upperBound_Format, lowerBound, upperBound));

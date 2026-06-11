@@ -20,7 +20,6 @@ namespace EnsureFramework.Assertions
         /// <returns>true if the sequence contains at least one element; otherwise, false.</returns>
         public static IAssertionResult IsNotEmpty(IEnumerable source)
         {
-            ArgumentNullException.ThrowIfNull(source);
             foreach (var _ in source)
             {
                 return AssertionResult.Ok;
@@ -71,7 +70,6 @@ namespace EnsureFramework.Assertions
         /// <returns>true if the item is found in the sequence; otherwise, false.</returns>
         public static IAssertionResult Contains(IEnumerable source, object item)
         {
-            ArgumentNullException.ThrowIfNull(source);
             foreach (var item2 in source)
             {
                 if (Equals(item, item2))
@@ -110,9 +108,6 @@ namespace EnsureFramework.Assertions
         /// <returns>true if any element in the sequence satisfies the condition specified by the predicate; otherwise, false.</returns>
         public static IAssertionResult Any(IEnumerable source, Func<object, bool> predicate)
         {
-            ArgumentNullException.ThrowIfNull(source);
-            ArgumentNullException.ThrowIfNull(predicate);
-
             foreach (var item in source)
             {
                 if (predicate(item))
@@ -154,9 +149,6 @@ namespace EnsureFramework.Assertions
         /// empty; otherwise, false.</returns>
         public static IAssertionResult All(IEnumerable source, Func<object, bool> predicate)
         {
-            ArgumentNullException.ThrowIfNull(source);
-            ArgumentNullException.ThrowIfNull(predicate);
-
             foreach (var item in source)
             {
                 if (!predicate(item))

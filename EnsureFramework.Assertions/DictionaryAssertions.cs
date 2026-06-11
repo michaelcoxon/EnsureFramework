@@ -21,9 +21,8 @@ namespace EnsureFramework.Assertions
         /// <param name="source">The dictionary to search for the specified key. Cannot be null.</param>
         /// <param name="key">The key to locate in the dictionary.</param>
         /// <returns>true if the dictionary contains an element with the specified key; otherwise, false.</returns>
-        public static IAssertionResult HasKey<TKey, TValue>( IDictionary<TKey, TValue> source, TKey key)
+        public static IAssertionResult HasKey<TKey, TValue>(IDictionary<TKey, TValue> source, TKey key)
         {
-            ArgumentNullException.ThrowIfNull(source);
             if (!source.ContainsKey(key))
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_key_keyName_is_not_in_the_dictionary_Format, key));

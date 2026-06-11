@@ -27,9 +27,6 @@ namespace EnsureFramework.Assertions
 
         public static IAssertionResult Matches<T>(T source, Func<T, bool> predicate, out Exception? innerException)
         {
-            ArgumentNullException.ThrowIfNull(source);
-            ArgumentNullException.ThrowIfNull(predicate);
-
             try
             {
                 innerException = null;
