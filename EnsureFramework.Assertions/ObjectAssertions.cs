@@ -1,4 +1,6 @@
-﻿using EnsureFramework.Results;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using EnsureFramework.Results;
 
 namespace EnsureFramework.Assertions
 {
@@ -7,6 +9,24 @@ namespace EnsureFramework.Assertions
     /// </summary>
     public static class ObjectAssertions
     {
+        public static IAssertionResult IsNotNull<T>(T @this)
+        {
+            if (@this is null)
+            {
+                return AssertionResult.Fail("Value should not be null.");
+            }
+            return AssertionResult.Ok;
+        }
+
+        public static IAssertionResult IsNull<T>(T @this)
+        {
+            if (@this is not null)
+            {
+                return AssertionResult.Fail("Value should be null.");
+            }
+            return AssertionResult.Ok;
+        }
+
         public static IAssertionResult IsExactTypeOf(Type sourceType, Type type)
         {
             if (sourceType == type)

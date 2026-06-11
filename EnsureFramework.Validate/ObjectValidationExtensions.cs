@@ -10,28 +10,16 @@
     {
         public static IValidationResult<T> IsNotNull<T>([NotNull] this IValidationResult<T> @this)
         {
-            if (@this.Value is null)
-            {
-                @this.AssertionResults.Add(AssertionResult.Fail("Value should not be null."));
-            }
-            else
-            {
-                @this.AssertionResults.Add(AssertionResult.Ok);
-            }
+            @this.AssertionResults.Add(ObjectAssertions.IsNotNull(@this.Value));
             return @this;
+
         }
 
         public static IValidationResult<T> IsNull<T>([NotNull] this IValidationResult<T> @this)
         {
-            if (@this.Value is not null)
-            {
-                @this.AssertionResults.Add(AssertionResult.Fail("Value should be null."));
-            }
-            else
-            {
-                @this.AssertionResults.Add(AssertionResult.Ok);
-            }
+            @this.AssertionResults.Add(ObjectAssertions.IsNull(@this.Value));
             return @this;
+
         }
 
         public static IValidationResult<T> IsExactTypeOf<T>([NotNull] this IValidationResult<T> @this, Type type)
