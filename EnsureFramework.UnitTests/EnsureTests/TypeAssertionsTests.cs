@@ -1,4 +1,4 @@
-﻿namespace EnsureFramework.UnitTests
+﻿namespace EnsureFramework.UnitTests.EnsureTests
 {
     using System;
     using System.Collections;

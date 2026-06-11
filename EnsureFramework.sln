@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.452
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11709.299 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EAB5DB9E-BAE9-42B2-B136-4073B45B4706}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +17,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnsureFramework", "EnsureFr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnsureFramework.UnitTests", "EnsureFramework.UnitTests\EnsureFramework.UnitTests.csproj", "{0C395ECA-D7D2-4355-9D96-AF5D995CE936}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureFramework.Assertions", "EnsureFramework.Assertions\EnsureFramework.Assertions.csproj", "{1BF21979-AC74-40E8-8BCD-2721F1318314}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureFramework.Core", "EnsureFramework.Core\EnsureFramework.Core.csproj", "{00407627-59A1-4B65-AAF9-CC45B7258B18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureFramework.Ensure", "EnsureFramework.Ensure\EnsureFramework.Ensure.csproj", "{E2F8F7F2-9EB0-4682-9688-B399CBA7F139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureFramework.Validate", "EnsureFramework.Validate\EnsureFramework.Validate.csproj", "{26A90E0A-CEEA-47DC-8E4C-BFE88E5F013E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F08DD316-C090-4137-AA91-AA761B3ACB9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,12 +41,31 @@ Global
 		{0C395ECA-D7D2-4355-9D96-AF5D995CE936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C395ECA-D7D2-4355-9D96-AF5D995CE936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C395ECA-D7D2-4355-9D96-AF5D995CE936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF21979-AC74-40E8-8BCD-2721F1318314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF21979-AC74-40E8-8BCD-2721F1318314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF21979-AC74-40E8-8BCD-2721F1318314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF21979-AC74-40E8-8BCD-2721F1318314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00407627-59A1-4B65-AAF9-CC45B7258B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00407627-59A1-4B65-AAF9-CC45B7258B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00407627-59A1-4B65-AAF9-CC45B7258B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00407627-59A1-4B65-AAF9-CC45B7258B18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2F8F7F2-9EB0-4682-9688-B399CBA7F139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2F8F7F2-9EB0-4682-9688-B399CBA7F139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2F8F7F2-9EB0-4682-9688-B399CBA7F139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2F8F7F2-9EB0-4682-9688-B399CBA7F139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A90E0A-CEEA-47DC-8E4C-BFE88E5F013E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A90E0A-CEEA-47DC-8E4C-BFE88E5F013E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A90E0A-CEEA-47DC-8E4C-BFE88E5F013E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A90E0A-CEEA-47DC-8E4C-BFE88E5F013E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C395ECA-D7D2-4355-9D96-AF5D995CE936} = {F08DD316-C090-4137-AA91-AA761B3ACB9B}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F10C9DF8-3055-4275-8E0A-AD9EFF0746B9}
 		RESX_AutoCreateNewLanguageFiles = False
+		SolutionGuid = {F10C9DF8-3055-4275-8E0A-AD9EFF0746B9}
 	EndGlobalSection
 EndGlobal

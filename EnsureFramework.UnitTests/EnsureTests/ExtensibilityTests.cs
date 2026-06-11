@@ -1,4 +1,6 @@
-﻿namespace EnsureFramework.UnitTests
+﻿using EnsureFramework.UnitTests.EnsureTests;
+
+namespace EnsureFramework.UnitTests.EnsureTests
 {
     using System;
     using System.Collections.Generic;
@@ -9,7 +11,7 @@
 
     using Xunit;
 
-    using static EnsureFramework.UnitTests.ExtensibilityTests;
+    using static EnsureFramework.UnitTests.EnsureTests.ExtensibilityTests;
 
     public class ExtensibilityTests
     {

@@ -28,18 +28,11 @@ It was designed to be readable and fluent based, meaning you can chain ensurable
   <ItemGroup>
     <None Include="..\README.md" Pack="true" PackagePath="\" />
     <None Include="..\LICENSE" Pack="true" PackagePath="\" />
-    <Compile Update="Resources\Strings.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Strings.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\EnsureFramework.Ensure\EnsureFramework.Ensure.csproj" />
+    <ProjectReference Include="..\EnsureFramework.Validate\EnsureFramework.Validate.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xunit;
 
-namespace EnsureFramework.UnitTests
+namespace EnsureFramework.UnitTests.EnsureTests
 {
     public class EnsureTests
     {
