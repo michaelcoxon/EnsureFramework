@@ -14,7 +14,7 @@
         /// Creates an assertion result that indicates a successful outcome.
         /// </summary>
         /// <returns>An <see cref="IAssertionResult"/> representing a successful assertion.</returns>
-        public static IAssertionResult Ok = new AssertionResult(true);
+        public readonly static IAssertionResult Ok = new AssertionResult(true);
 
         /// <summary>
         /// Creates a failed assertion result with the specified failure message.

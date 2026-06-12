@@ -8,8 +8,13 @@ using EnsureFramework.Results;
 namespace EnsureFramework.Assertions
 {
     /// <summary>
-    /// Extensions for <see cref="IArgumentAssertionBuilder"/> that provide assertions in the <see cref="Ensure.Arg{T}(T, string)"/> helpers
+    /// Provides assertion methods for comparing and evaluating type relationships at runtime.
     /// </summary>
+    /// <remarks>The TypeAssertions class offers a set of static methods to verify type equality and
+    /// assignability, supporting both generic and non-generic scenarios. These methods are useful for validating type
+    /// constraints, performing runtime checks, and writing unit tests that require precise type assertions. All methods
+    /// return an IAssertionResult indicating the outcome of the assertion. This class is thread-safe as it contains
+    /// only stateless static methods.</remarks>
     public static class TypeAssertions
     {
         /// <summary>
