@@ -18,11 +18,14 @@ namespace EnsureFramework.Assertions
         /// </summary>
         /// <param name="source">The sequence to check for elements. Cannot be null.</param>
         /// <returns>true if the sequence contains at least one element; otherwise, false.</returns>
-        public static IAssertionResult IsNotEmpty(IEnumerable source)
+        public static IAssertionResult IsNotEmpty(IEnumerable? source)
         {
-            foreach (var _ in source)
+            if (source is not null)
             {
-                return AssertionResult.Ok;
+                foreach (var _ in source)
+                {
+                    return AssertionResult.Ok;
+                }
             }
 
             return AssertionResult.Fail(Resources.Strings.No_items);
@@ -34,9 +37,9 @@ namespace EnsureFramework.Assertions
         /// <typeparam name="T">The type of the elements in the sequence.</typeparam>
         /// <param name="source">The sequence to check for elements. Cannot be null.</param>
         /// <returns><see langword="true"/> if the sequence contains at least one element; otherwise, <see langword="false"/>.</returns>
-        public static IAssertionResult IsNotEmpty<T>(IEnumerable<T> source)
+        public static IAssertionResult IsNotEmpty<T>(IEnumerable<T>? source)
         {
-            if (!source.Any())
+            if (source is null || !source.Any())
             {
                 return AssertionResult.Fail(Resources.Strings.No_items);
             }
@@ -50,9 +53,9 @@ namespace EnsureFramework.Assertions
         /// <param name="source">The sequence in which to locate the specified element. Cannot be null.</param>
         /// <param name="item">The element to locate in the sequence.</param>
         /// <returns>true if the sequence contains the specified element; otherwise, false.</returns>
-        public static IAssertionResult Contains<T>(IEnumerable<T> source, T item)
+        public static IAssertionResult Contains<T>(IEnumerable<T>? source, T item)
         {
-            if (!source.Contains(item))
+            if (source is null || !source.Contains(item))
             {
                 return AssertionResult.Fail(Resources.Strings.Item_is_not_in_enumerable);
             }
@@ -68,16 +71,18 @@ namespace EnsureFramework.Assertions
         /// <param name="source">The non-generic sequence to search. Cannot be null.</param>
         /// <param name="item">The object to locate in the sequence. The search uses the default equality comparison.</param>
         /// <returns>true if the item is found in the sequence; otherwise, false.</returns>
-        public static IAssertionResult Contains(IEnumerable source, object item)
+        public static IAssertionResult Contains(IEnumerable? source, object item)
         {
-            foreach (var item2 in source)
+            if (source is not null)
             {
-                if (Equals(item, item2))
+                foreach (var item2 in source)
                 {
-                    return AssertionResult.Ok;
+                    if (Equals(item, item2))
+                    {
+                        return AssertionResult.Ok;
+                    }
                 }
             }
-
             return AssertionResult.Fail(Resources.Strings.Item_is_not_in_enumerable);
         }
 
@@ -88,9 +93,9 @@ namespace EnsureFramework.Assertions
         /// <param name="source">The sequence of elements to apply the predicate to. Cannot be null.</param>
         /// <param name="predicate">A function to test each element for a condition. Cannot be null.</param>
         /// <returns>true if any elements in the source sequence satisfy the condition in the predicate; otherwise, false.</returns>
-        public static IAssertionResult Any<T>(IEnumerable<T> source, Func<T, bool> predicate)
+        public static IAssertionResult Any<T>(IEnumerable<T>? source, Func<T, bool> predicate)
         {
-            if (!source.Any(predicate))
+            if (source is null || !source.Any(predicate))
             {
                 return AssertionResult.Fail(Resources.Strings.No_items_match_the_predicate);
             }
@@ -106,16 +111,18 @@ namespace EnsureFramework.Assertions
         /// <param name="source">The non-generic sequence to apply the predicate to. Cannot be null.</param>
         /// <param name="predicate">A function to test each element for a condition. Cannot be null.</param>
         /// <returns>true if any element in the sequence satisfies the condition specified by the predicate; otherwise, false.</returns>
-        public static IAssertionResult Any(IEnumerable source, Func<object, bool> predicate)
+        public static IAssertionResult Any(IEnumerable? source, Func<object, bool> predicate)
         {
-            foreach (var item in source)
+            if (source is not null)
             {
-                if (predicate(item))
+                foreach (var item in source)
                 {
-                    return AssertionResult.Ok;
+                    if (predicate(item))
+                    {
+                        return AssertionResult.Ok;
+                    }
                 }
             }
-
             return AssertionResult.Fail(Resources.Strings.No_items_match_the_predicate);
         }
 
@@ -129,9 +136,9 @@ namespace EnsureFramework.Assertions
         /// <param name="predicate">A function to test each element for a condition. Cannot be null.</param>
         /// <returns>true if every element of the source sequence passes the test in the specified predicate, or if the sequence
         /// is empty; otherwise, false.</returns>
-        public static IAssertionResult All<T>(IEnumerable<T> source, Func<T, bool> predicate)
+        public static IAssertionResult All<T>(IEnumerable<T>? source, Func<T, bool> predicate)
         {
-            if (!source.All(predicate))
+            if (source is null || !source.All(predicate))
             {
                 return AssertionResult.Fail(Resources.Strings.All_items_do_not_match_the_predicate);
             }
@@ -147,16 +154,18 @@ namespace EnsureFramework.Assertions
         /// <param name="predicate">A function to test each element for a condition. Cannot be null.</param>
         /// <returns>true if every element of the sequence passes the test in the specified predicate, or if the sequence is
         /// empty; otherwise, false.</returns>
-        public static IAssertionResult All(IEnumerable source, Func<object, bool> predicate)
+        public static IAssertionResult All(IEnumerable? source, Func<object, bool> predicate)
         {
-            foreach (var item in source)
+            if (source is not null)
             {
-                if (!predicate(item))
+                foreach (var item in source)
                 {
-                    return AssertionResult.Fail(Resources.Strings.All_items_do_not_match_the_predicate);
+                    if (!predicate(item))
+                    {
+                        return AssertionResult.Fail(Resources.Strings.All_items_do_not_match_the_predicate);
+                    }
                 }
             }
-
             return AssertionResult.Ok;
         }
     }

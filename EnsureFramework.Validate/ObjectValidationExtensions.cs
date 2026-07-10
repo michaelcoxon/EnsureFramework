@@ -91,6 +91,7 @@
         /// <returns>The same validation result instance, allowing for method chaining.</returns>
         public static IValidationResult<T> Matches<T>(this IValidationResult<T> @this, Func<T?, bool> predicate, string? message = null)
         {
+            ArgumentNullException.ThrowIfNull(@this.Value);
             // currently eating the exception here but its message will be captured by the assertion
             // TODO: consider exceptions
             @this.AssertionResults.Add(ObjectAssertions.Matches(@this.Value, predicate, message, out _));
@@ -109,6 +110,7 @@
         /// <returns>The original validation result with the new assertion added.</returns>
         public static IValidationResult<T> IsOneOf<T>(this IValidationResult<T> @this, params T[] options)
         {
+            ArgumentNullException.ThrowIfNull(@this.Value);
             @this.AssertionResults.Add(ObjectAssertions.IsOneOf(@this.Value, options));
             return @this;
         }
