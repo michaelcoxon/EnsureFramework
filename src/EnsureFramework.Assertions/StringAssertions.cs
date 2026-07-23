@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
 
 using EnsureFramework.Results;
@@ -44,6 +45,8 @@ namespace EnsureFramework.Assertions
         /// character; otherwise, a failure result.</returns>
         public static IAssertionResult IsNotEmptyOrWhiteSpace(string source)
         {
+            ArgumentNullException.ThrowIfNull(source);
+
             if (source == string.Empty)
             {
                 return AssertionResult.Fail(Resources.Strings.The_string_is_empty);
@@ -101,6 +104,8 @@ namespace EnsureFramework.Assertions
         /// Returns a failure result if the string does not match.</returns>
         public static IAssertionResult Matches(string source, Regex regex)
         {
+            ArgumentNullException.ThrowIfNull(regex);
+
             var result = regex.IsMatch(source);
 
             if (!result)

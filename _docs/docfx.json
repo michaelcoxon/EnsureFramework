@@ -4,7 +4,7 @@
       "src": [
         {
           "files": [
-            "**.csproj"
+            "**/*.csproj"
           ],
           "cwd": ".."
         }
@@ -13,14 +13,14 @@
       "disableGitFeatures": false,
       "disableDefaultFilter": false,
       "properties": {
-        "TargetFramework": "netcoreapp2.0"
+        "TargetFramework": "net10"
       }
     },
     {
       "src": [
         {
           "files": [
-            "**.csproj"
+            "**/*.csproj"
           ],
           "cwd": ".."
         }
@@ -36,7 +36,7 @@
       "src": [
         {
           "files": [
-            "**.csproj"
+            "**/*.csproj"
           ],
           "cwd": ".."
         }

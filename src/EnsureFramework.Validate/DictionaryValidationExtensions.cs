@@ -26,6 +26,8 @@ namespace EnsureFramework
         /// <returns>The original validation result with the additional assertion result included.</returns>
         public static IValidationResult<IDictionary<TKey, TValue>> HasKey<TKey, TValue>(this IValidationResult<IDictionary<TKey, TValue>> @this, TKey key)
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(DictionaryAssertions.HasKey(@this.Value, key));
             return @this;
         }

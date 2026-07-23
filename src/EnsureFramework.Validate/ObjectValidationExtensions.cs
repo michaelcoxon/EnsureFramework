@@ -28,9 +28,10 @@
         /// <returns>The same validation result instance with the not-null assertion appended.</returns>
         public static IValidationResult<T> IsNotNull<T>(this IValidationResult<T> @this)
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(ObjectAssertions.IsNotNull(@this.Value));
             return @this;
-
         }
 
         /// <summary>
@@ -43,9 +44,10 @@
         /// <returns>The same validation result instance with the null-check assertion appended.</returns>
         public static IValidationResult<T> IsNull<T>(this IValidationResult<T> @this)
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(ObjectAssertions.IsNull(@this.Value));
             return @this;
-
         }
 
         /// <summary>
@@ -59,6 +61,8 @@
         /// <returns>The same validation result instance with the type assertion added.</returns>
         public static IValidationResult<T> IsExactTypeOf<T>(this IValidationResult<T> @this, Type type)
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(ObjectAssertions.IsExactTypeOf(typeof(T), type));
             return @this;
         }
@@ -72,6 +76,8 @@
         /// <returns>The same validation result instance with the inheritance assertion added.</returns>
         public static IValidationResult<T> IsInheritsTypeOf<T>(this IValidationResult<T> @this, Type type)
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(ObjectAssertions.IsInheritsTypeOf(typeof(T), type));
             return @this;
         }
@@ -91,6 +97,7 @@
         /// <returns>The same validation result instance, allowing for method chaining.</returns>
         public static IValidationResult<T> Matches<T>(this IValidationResult<T> @this, Func<T?, bool> predicate, string? message = null)
         {
+            ArgumentNullException.ThrowIfNull(@this);
             ArgumentNullException.ThrowIfNull(@this.Value);
             // currently eating the exception here but its message will be captured by the assertion
             // TODO: consider exceptions
@@ -110,7 +117,9 @@
         /// <returns>The original validation result with the new assertion added.</returns>
         public static IValidationResult<T> IsOneOf<T>(this IValidationResult<T> @this, params T[] options)
         {
+            ArgumentNullException.ThrowIfNull(@this);
             ArgumentNullException.ThrowIfNull(@this.Value);
+
             @this.AssertionResults.Add(ObjectAssertions.IsOneOf(@this.Value, options));
             return @this;
         }

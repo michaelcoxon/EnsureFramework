@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
 using EnsureFramework.Results;
 
 namespace EnsureFramework.Assertions
@@ -113,6 +117,8 @@ namespace EnsureFramework.Assertions
         /// <returns>true if any element in the sequence satisfies the condition specified by the predicate; otherwise, false.</returns>
         public static IAssertionResult Any(IEnumerable? source, Func<object, bool> predicate)
         {
+            ArgumentNullException.ThrowIfNull(predicate);
+
             if (source is not null)
             {
                 foreach (var item in source)
@@ -156,6 +162,8 @@ namespace EnsureFramework.Assertions
         /// empty; otherwise, false.</returns>
         public static IAssertionResult All(IEnumerable? source, Func<object, bool> predicate)
         {
+            ArgumentNullException.ThrowIfNull(predicate);
+
             if (source is not null)
             {
                 foreach (var item in source)

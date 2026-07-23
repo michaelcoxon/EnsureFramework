@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.AccessControl;
 using System.Text;
 
 using EnsureFramework.Results;
@@ -56,6 +58,9 @@ namespace EnsureFramework.Assertions
         /// a failure result.</returns>
         public static IAssertionResult IsExactTypeOf(Type sourceType, Type type)
         {
+            ArgumentNullException.ThrowIfNull(sourceType);
+            ArgumentNullException.ThrowIfNull(type);
+
             if (sourceType == type)
             {
                 return AssertionResult.Ok;
@@ -72,6 +77,9 @@ namespace EnsureFramework.Assertions
         /// Returns a successful result if the condition is met; otherwise, a failed result with an appropriate message.</returns>
         public static IAssertionResult IsInheritsTypeOf(Type sourceType, Type type)
         {
+            ArgumentNullException.ThrowIfNull(sourceType);
+            ArgumentNullException.ThrowIfNull(type);
+
             if (sourceType.IsAssignableTo(type))
             {
                 return AssertionResult.Ok;
@@ -96,6 +104,8 @@ namespace EnsureFramework.Assertions
         /// if the predicate returns false or throws an exception.</returns>
         public static IAssertionResult Matches<T>(T source, Func<T, bool> predicate, string? message, out Exception? innerException)
         {
+            ArgumentNullException.ThrowIfNull(predicate);
+
             try
             {
                 innerException = null;
@@ -134,6 +144,23 @@ namespace EnsureFramework.Assertions
         public static IAssertionResult IsOneOf<T>(T source, params T[] options)
         {
             if (!options.Contains(source))
+            {
+                return AssertionResult.Fail(string.Format(Resources.Strings.The_value_must_be_one_of_valueList_Format, string.Join("', '", options)));
+            }
+            return AssertionResult.Ok;
+        }
+
+        /// <summary>
+        /// Verifies that a value is equal to one of the specified options using the provided equality comparer.
+        /// </summary>
+        /// <typeparam name="T">The type of the value to verify and the options.</typeparam>
+        /// <param name="source">The value to verify.</param>
+        /// <param name="equalityComparer">The equality comparer to use for comparing values.</param>
+        /// <param name="options">The collection of valid options.</param>
+        /// <returns>An assertion result indicating success if the value is one of the options, or failure otherwise.</returns>
+        public static IAssertionResult IsOneOf<T>(T source, IEqualityComparer<T> equalityComparer, params T[] options)
+        {
+            if (!options.Contains(source, equalityComparer))
             {
                 return AssertionResult.Fail(string.Format(Resources.Strings.The_value_must_be_one_of_valueList_Format, string.Join("', '", options)));
             }

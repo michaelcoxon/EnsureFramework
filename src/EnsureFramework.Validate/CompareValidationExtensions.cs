@@ -30,6 +30,8 @@ namespace EnsureFramework
         public static IValidationResult<T> IsGreaterThanOrEqualTo<T>(this IValidationResult<T> @this, T value)
             where T : IComparable<T>
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(CompareAssertions.IsGreaterThanOrEqualTo(@this.Value, value));
             return @this;
         }
@@ -44,6 +46,8 @@ namespace EnsureFramework
         public static IValidationResult<T> IsLessThanOrEqualTo<T>(this IValidationResult<T> @this, T value)
             where T : IComparable<T>
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(CompareAssertions.IsLessThanOrEqualTo(@this.Value, value));
             return @this;
         }
@@ -60,6 +64,8 @@ namespace EnsureFramework
         public static IValidationResult<T> IsLessThan<T>(this IValidationResult<T> @this, T value)
             where T : IComparable<T>
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(CompareAssertions.IsLessThan(@this.Value, value));
             return @this;
         }
@@ -74,6 +80,8 @@ namespace EnsureFramework
         public static IValidationResult<T> IsGreaterThan<T>(this IValidationResult<T> @this, T value)
             where T : IComparable<T>
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(CompareAssertions.IsGreaterThan(@this.Value, value));
             return @this;
         }
@@ -88,6 +96,8 @@ namespace EnsureFramework
         public static IValidationResult<T> IsEqualTo<T>(this IValidationResult<T> @this, T value)
             where T : IComparable<T>
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(CompareAssertions.IsEqualTo(@this.Value, value));
             return @this;
         }
@@ -106,6 +116,8 @@ namespace EnsureFramework
         public static IValidationResult<T> IsWithinRange<T>(this IValidationResult<T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(CompareAssertions.IsWithinRange(@this.Value, lowerBound, upperBound));
             return @this;
         }
@@ -124,6 +136,8 @@ namespace EnsureFramework
         public static IValidationResult<T> IsWithinAndIncludingRange<T>(this IValidationResult<T> @this, T lowerBound, T upperBound)
             where T : IComparable<T>
         {
+            ArgumentNullException.ThrowIfNull(@this);
+
             @this.AssertionResults.Add(CompareAssertions.IsWithinAndIncludingRange(@this.Value, lowerBound, upperBound));
             return @this;
         }

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EnsureFramework.Ensure\EnsureFramework.Ensure.csproj" />
+    <ProjectReference Include="..\EnsureFramework.Validate\EnsureFramework.Validate.csproj" />
+  </ItemGroup>
+
+</Project>
