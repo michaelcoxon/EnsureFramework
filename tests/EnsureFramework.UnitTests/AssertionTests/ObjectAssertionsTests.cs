@@ -8,7 +8,7 @@
 
     using Xunit;
 
-    public class ObjectAssertionTests
+    public class ObjectAssertionsTests
     {
         [Fact]
         public void IsNotNull_Success()
