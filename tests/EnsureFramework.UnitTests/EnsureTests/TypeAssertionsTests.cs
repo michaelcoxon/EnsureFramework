@@ -17,14 +17,18 @@
         public void Is_Default()
         {
             var arg = typeof(List<string>);
+#pragma warning disable CA2263 // Prefer generic overload when type is known
             Ensure.Arg(arg).Is(typeof(List<string>));
+#pragma warning restore CA2263 // Prefer generic overload when type is known
         }
 
         [Fact]
         public void Is_Default_Fail()
         {
             var arg = typeof(List<string>);
+#pragma warning disable CA2263 // Prefer generic overload when type is known
             Assert.Throws<ArgumentException>(() => Ensure.Arg(arg).Is(typeof(IDisposable)));
+#pragma warning restore CA2263 // Prefer generic overload when type is known
         }
 
         [Fact]
@@ -46,14 +50,18 @@
         public void IsAssignableFrom_Default()
         {
             var arg = typeof(IEnumerable);
+#pragma warning disable CA2263 // Prefer generic overload when type is known
             Ensure.Arg(arg).IsAssignableFrom(typeof(List<string>));
+#pragma warning restore CA2263 // Prefer generic overload when type is known
         }
 
         [Fact]
         public void IsAssignableFrom_Default_Fail()
         {
             var arg = typeof(IEnumerable);
+#pragma warning disable CA2263 // Prefer generic overload when type is known
             Assert.Throws<ArgumentException>(() => Ensure.Arg(arg).IsAssignableFrom(typeof(IDisposable)));
+#pragma warning restore CA2263 // Prefer generic overload when type is known
         }
 
         [Fact]
@@ -75,14 +83,18 @@
         public void IsAssignableTo_Default()
         {
             var arg = typeof(List<string>);
+#pragma warning disable CA2263 // Prefer generic overload when type is known
             Ensure.Arg(arg).IsAssignableTo(typeof(IEnumerable));
+#pragma warning restore CA2263 // Prefer generic overload when type is known
         }
 
         [Fact]
         public void IsAssignableTo_Default_Fail()
         {
             var arg = typeof(List<string>);
+#pragma warning disable CA2263 // Prefer generic overload when type is known
             Assert.Throws<ArgumentException>(() => Ensure.Arg(arg).IsAssignableTo(typeof(IDisposable)));
+#pragma warning restore CA2263 // Prefer generic overload when type is known
         }
 
         [Fact]
