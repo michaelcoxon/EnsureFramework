@@ -17,6 +17,18 @@ namespace EnsureFramework
     public static class EnumerableValidationExtensions
     {
         /// <summary>
+        /// Validates that the enumerable is not null and not empty.
+        /// </summary>
+        /// <param name="this">The validation result containing the enumerable to validate.</param>
+        /// <returns>A validation result containing the enumerable and the not-null and not-empty assertion results.</returns>
+        public static IValidationResult<IEnumerable> IsNotNullOrEmpty([NotNull] this IValidationResult<IEnumerable> @this)
+        {
+            var newThis = @this.IsNotNull();
+            newThis.AssertionResults.Add(EnumerableAssertions.IsNotEmpty(newThis.Value));
+            return newThis;
+        }
+
+        /// <summary>
         /// Validates that the enumerable is not empty.
         /// </summary>
         /// <param name="this">The validation result.</param>

@@ -16,46 +16,6 @@ namespace EnsureFramework
     public static partial class ObjectAssertionExtensions
     {
         /// <summary>
-        /// Ensures the argument is the exact type of <paramref name="type" />.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="this">The this.</param>
-        /// <param name="type">The type.</param>
-        /// <exception cref="System.ArgumentException"></exception>
-        [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsExactTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
-        {
-            var result = @this.PushResult(ObjectAssertions.IsExactTypeOf(typeof(T), type));
-
-            if (result.Success)
-            {
-                return @this;
-            }
-
-            throw new ArgumentException(result.Message, @this.ArgumentName);
-        }
-
-        /// <summary>
-        /// Ensures the argument inherits the type of <paramref name="type" />.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="this">The this.</param>
-        /// <param name="type">The type.</param>
-        /// <exception cref="System.ArgumentException"></exception>
-        [DebuggerNonUserCode]
-        public static IArgumentAssertionBuilder<T> IsInheritsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
-        {
-            var result = @this.PushResult(ObjectAssertions.IsInheritsTypeOf(typeof(T), type));
-
-            if (result.Success)
-            {
-                return @this;
-            }
-
-            throw new ArgumentException(result.Message, @this.ArgumentName);
-        }
-
-        /// <summary>
         /// Asserts on the value of <paramref name="predicate" /> to whether the assertion is valid.
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -90,6 +50,46 @@ namespace EnsureFramework
                 throw new ArgumentException(result.Message, @this.ArgumentName);
             }
             return @this;
+        }
+
+        /// <summary>
+        /// Ensures the argument is the exact type of <paramref name="type" />.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="this">The this.</param>
+        /// <param name="type">The type.</param>
+        /// <exception cref="System.ArgumentException"></exception>
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<T> IsExactTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
+        {
+            var result = @this.PushResult(TypeAssertions.Is<T>(type));
+
+            if (result.Success)
+            {
+                return @this;
+            }
+
+            throw new ArgumentException(result.Message, @this.ArgumentName);
+        }
+
+        /// <summary>
+        /// Ensures the argument inherits the type of <paramref name="type" />.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="this">The this.</param>
+        /// <param name="type">The type.</param>
+        /// <exception cref="System.ArgumentException"></exception>
+        [DebuggerNonUserCode]
+        public static IArgumentAssertionBuilder<T> InheritsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
+        {
+            var result = @this.PushResult(TypeAssertions.IsAssignableFrom<T>(type));
+
+            if (result.Success)
+            {
+                return @this;
+            }
+
+            throw new ArgumentException(result.Message, @this.ArgumentName);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace EnsureFramework
 {
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.CompilerServices;
 
     using EnsureFramework.Results;
@@ -23,7 +24,7 @@
         /// is optional.</param>
         /// <returns>An object that represents the validation result for the specified value, allowing further validation
         /// operations.</returns>
-        public static IValidationResult<T> That<T>(T? source, [CallerArgumentExpression(nameof(source))] string? sourceName = null)
+        public static IValidationResult<T> That<T>(T source, [CallerArgumentExpression(nameof(source))] string? sourceName = null)
         {
             return new ValidationResult<T>
             {

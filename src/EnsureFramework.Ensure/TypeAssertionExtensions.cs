@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
+using EnsureFramework.ArgumentAssertionBuilder;
 using EnsureFramework.Assertions;
 
 namespace EnsureFramework
@@ -60,7 +61,7 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Type> IsAssignableTo([NotNull] this IArgumentAssertionBuilder<Type> @this, Type type)
         {
-            var result = TypeAssertions.IsAssignableTo(@this.Argument, type);
+            var result = TypeAssertions.IsAssignableFrom(type, @this.Argument);
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);
@@ -105,7 +106,7 @@ namespace EnsureFramework
 
         /// <summary>
         /// Determines whether an instance of the argument can be assigned to an instance
-        /// of the specified type.
+        /// of the specified type <typeparamref name="T"/>.
         /// </summary>
         /// <param name="this">The this.</param>
         /// <returns></returns>
@@ -113,7 +114,8 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<Type> IsAssignableTo<T>([NotNull] this IArgumentAssertionBuilder<Type> @this)
         {
-            var result = TypeAssertions.IsAssignableTo<T>(@this.Argument);
+            var baseType = typeof(T);
+            var result = TypeAssertions.IsAssignableFrom(baseType, @this.Argument);
             if (!result.Success)
             {
                 throw new ArgumentException(result.Message, @this.ArgumentName);

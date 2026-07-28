@@ -35,14 +35,14 @@ namespace EnsureFramework.UnitTests.EnsureTests
         public void IsInheritsTypeOfParamExactTest()
         {
             var list = new List<string>();
-            Ensure.Arg(list, nameof(list)).IsInheritsTypeOf(typeof(List<string>));
+            Ensure.Arg(list, nameof(list)).InheritsTypeOf(typeof(List<string>));
         }
 
         [Fact]
         public void IsInheritsTypeOfParamBaseTest()
         {
             var list = new List<string>();
-            Ensure.Arg(list, nameof(list)).IsInheritsTypeOf(typeof(IEnumerable<string>));
+            Ensure.Arg(list, nameof(list)).InheritsTypeOf(typeof(IEnumerable<string>));
         }
 
         [Fact]

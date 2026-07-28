@@ -15,7 +15,7 @@
     public sealed record ValidationResult<T> : IValidationResult<T>
     {
         /// <inheritdoc/>
-        public required T? Value { get; init; }
+        public required T Value { get; init; }
 
         /// <inheritdoc/>
         public required string? Name { get; init; }

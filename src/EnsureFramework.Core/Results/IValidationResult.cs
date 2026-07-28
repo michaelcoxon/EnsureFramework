@@ -17,7 +17,7 @@
         /// <summary>
         /// Gets the current value held by the <see cref="IValidationResult{T}"/>, or null if no value is present.
         /// </summary>
-        T? Value { get; }
+        T Value { get; }
 
         /// <summary>
         /// Gets the name associated with the <see cref="IValidationResult{T}"/>.

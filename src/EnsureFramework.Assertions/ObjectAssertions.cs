@@ -23,7 +23,7 @@ namespace EnsureFramework.Assertions
         /// <typeparam name="T">The type of the value to check for nullity.</typeparam>
         /// <param name="this">The value to be checked for null.</param>
         /// <returns>An assertion result that is successful if the value is not null; otherwise, a failed assertion result.</returns>
-        public static IAssertionResult IsNotNull<T>(T @this)
+        public static IAssertionResult IsNotNull<T>(T? @this)
         {
             if (@this is null)
             {
@@ -40,51 +40,13 @@ namespace EnsureFramework.Assertions
         /// <typeparam name="T">The type of the value to check for null.</typeparam>
         /// <param name="this">The value to evaluate for nullity.</param>
         /// <returns>An assertion result that is successful if the value is null; otherwise, a failed assertion result.</returns>
-        public static IAssertionResult IsNull<T>(T @this)
+        public static IAssertionResult IsNull<T>(T? @this)
         {
             if (@this is not null)
             {
                 return AssertionResult.Fail("Value should be null.");
             }
             return AssertionResult.Ok;
-        }
-
-        /// <summary>
-        /// Determines whether the specified source type is exactly the same as the specified target type.
-        /// </summary>
-        /// <param name="sourceType">The type to compare against the target type. Cannot be null.</param>
-        /// <param name="type">The target type to compare to. Cannot be null.</param>
-        /// <returns>An assertion result indicating success if the source type is exactly the same as the target type; otherwise,
-        /// a failure result.</returns>
-        public static IAssertionResult IsExactTypeOf(Type sourceType, Type type)
-        {
-            ArgumentNullException.ThrowIfNull(sourceType);
-            ArgumentNullException.ThrowIfNull(type);
-
-            if (sourceType == type)
-            {
-                return AssertionResult.Ok;
-            }
-            return AssertionResult.Fail(string.Format(Resources.Strings.The_value_must_be_of_type_typeName_Format, type));
-        }
-
-        /// <summary>
-        /// Determines whether the specified source type inherits from or implements the specified type.
-        /// </summary>
-        /// <param name="sourceType">The type to test for inheritance or interface implementation. Cannot be null.</param>
-        /// <param name="type">The base type or interface to check against. Cannot be null.</param>
-        /// <returns>An assertion result indicating whether the source type inherits from or implements the specified type.
-        /// Returns a successful result if the condition is met; otherwise, a failed result with an appropriate message.</returns>
-        public static IAssertionResult IsInheritsTypeOf(Type sourceType, Type type)
-        {
-            ArgumentNullException.ThrowIfNull(sourceType);
-            ArgumentNullException.ThrowIfNull(type);
-
-            if (sourceType.IsAssignableTo(type))
-            {
-                return AssertionResult.Ok;
-            }
-            return AssertionResult.Fail(string.Format(Resources.Strings.The_value_must_inherit_from_type_typeName_Format, type));
         }
 
         /// <summary>
