@@ -66,7 +66,6 @@ namespace EnsureFramework.UnitTests.AssertionTests
             Assert.False(EnumerableAssertions.Any(arg, i => Equals(i, 2)).Success);
         }
 
-
         [Fact]
         public void Contains_Generic()
         {
@@ -94,7 +93,6 @@ namespace EnsureFramework.UnitTests.AssertionTests
             IEnumerable arg = Array.Empty<int>();
             Assert.False(EnumerableAssertions.Contains(arg, 2).Success);
         }
-
 
         [Fact]
         public void All_Generic()
