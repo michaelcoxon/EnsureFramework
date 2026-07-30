@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using EnsureFramework;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.EnsureTests
+﻿namespace EnsureFramework.UnitTests.EnsureTests
 {
-    public class NumberAssertionsTests
+    using System;
+
+    using EnsureFramework;
+
+    using Xunit;
+
+    public class EnsureNumberTests
     {
         [Fact]
         public void IsNotNegative_Positive_Test()
@@ -25,19 +21,19 @@ namespace EnsureFramework.UnitTests.EnsureTests
         }
 
         [Fact]
-        public void IsNotNegative_Negative_Test()
+        public void IsNotNegative_Negative_Throws()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Ensure.Arg(-1, "value").IsNotNegative());
         }
 
         [Fact]
-        public void IsNegative_Positive_Test()
+        public void IsNegative_Positive_Throws()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Ensure.Arg(1, "value").IsNegative());
         }
 
         [Fact]
-        public void IsNegative_Zero_Test()
+        public void IsNegative_Zero_Throws()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Ensure.Arg(0, "value").IsNegative());
         }
@@ -55,7 +51,7 @@ namespace EnsureFramework.UnitTests.EnsureTests
         }
 
         [Fact]
-        public void IsNotZero_Zero_Test()
+        public void IsNotZero_Zero_Throws()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Ensure.Arg(0, "value").IsNotZero());
         }
@@ -67,7 +63,7 @@ namespace EnsureFramework.UnitTests.EnsureTests
         }
 
         [Fact]
-        public void IsZero_Positive_Test()
+        public void IsZero_Positive_Throws()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Ensure.Arg(1, "value").IsZero());
         }
@@ -79,7 +75,7 @@ namespace EnsureFramework.UnitTests.EnsureTests
         }
 
         [Fact]
-        public void IsZero_Negative_Test()
+        public void IsZero_Negative_Throws()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Ensure.Arg(-1, "value").IsZero());
         }

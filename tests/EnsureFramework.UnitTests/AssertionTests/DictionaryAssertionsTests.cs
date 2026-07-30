@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using EnsureFramework;
-using EnsureFramework.Assertions;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.AssertionTests
+﻿namespace EnsureFramework.UnitTests.AssertionTests
 {
+    using System.Collections.Generic;
+
+    using EnsureFramework.Assertions;
+
+    using Xunit;
+
     public class DictionaryAssertionsTests
     {
         [Fact]

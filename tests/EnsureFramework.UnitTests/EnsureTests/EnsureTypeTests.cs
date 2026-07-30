@@ -3,15 +3,12 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using EnsureFramework;
 
     using Xunit;
 
-    public class TypeAssertionsTests
+    public class EnsureTypeTests
     {
         [Fact]
         public void Is_Default()

@@ -62,7 +62,7 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> IsExactTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            var result = @this.PushResult(TypeAssertions.Is<T>(type));
+            var result = @this.PushResult(TypeAssertions.IsExactType(type, typeof(T)));
 
             if (result.Success)
             {
@@ -82,7 +82,7 @@ namespace EnsureFramework
         [DebuggerNonUserCode]
         public static IArgumentAssertionBuilder<T> InheritsTypeOf<T>([NotNull] this IArgumentAssertionBuilder<T> @this, Type type)
         {
-            var result = @this.PushResult(TypeAssertions.IsAssignableFrom<T>(type));
+            var result = @this.PushResult(TypeAssertions.IsAssignableFrom(type, typeof(T)));
 
             if (result.Success)
             {

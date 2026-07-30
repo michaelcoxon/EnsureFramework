@@ -1,11 +1,9 @@
-﻿using System;
-
-using EnsureFramework.Assertions;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.AssertionTests
+﻿namespace EnsureFramework.UnitTests.AssertionTests
 {
+    using EnsureFramework.Assertions;
+
+    using Xunit;
+
     public class CompareAssertionsTests
     {
         [Fact]

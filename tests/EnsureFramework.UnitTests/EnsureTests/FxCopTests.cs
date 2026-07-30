@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using EnsureFramework;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.EnsureTests
+﻿namespace EnsureFramework.UnitTests.EnsureTests
 {
+    using System;
+
+    using EnsureFramework;
+
+    using Xunit;
+
     public class FxCopTests
     {
         internal static void Method(object? obj, string? str)
@@ -17,8 +13,8 @@ namespace EnsureFramework.UnitTests.EnsureTests
             Ensure.Arg(obj);
             Ensure.Arg(str).IsNotEmpty();
 
-        // we shouldn't get any green squiggles cause Ensure.Arg() should imply that 
-        // nullability has been checked.
+            // we shouldn't get any green squiggles cause Ensure.Arg() should imply that 
+            // nullability has been checked.
             _ = obj.ToString();
             _ = str.ToString();
         }

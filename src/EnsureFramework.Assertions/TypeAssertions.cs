@@ -18,16 +18,16 @@ namespace EnsureFramework.Assertions
     public static class TypeAssertions
     {
         /// <summary>
-        /// Determines whether the specified baseType baseType is equal to the specified baseType.
+        /// Verifies that two types are identical.
         /// </summary>
-        /// <param name="source">The baseType to compare.</param>
-        /// <param name="type">The baseType to compare against.</param>
-        /// <returns>true if the baseType baseType is equal to the specified baseType; otherwise, false.</returns>
-        public static IAssertionResult Is(Type source, Type type)
+        /// <param name="source">The type to verify.</param>
+        /// <param name="type">The expected type.</param>
+        /// <returns>An assertion result indicating success if the types are identical, or failure otherwise.</returns>
+        public static IAssertionResult IsExactType(Type source, Type type)
         {
             if (source != type)
             {
-                return AssertionResult.Fail("Not baseType");
+                return AssertionResult.Fail("Not same type");
             }
             return AssertionResult.Ok;
         }
@@ -48,31 +48,6 @@ namespace EnsureFramework.Assertions
                 return AssertionResult.Fail("Not assignable from baseType");
             }
             return AssertionResult.Ok;
-        }
-
-        /// <summary>
-        /// Determines whether the specified baseType is exactly the specified generic baseType parameter.
-        /// </summary>
-        /// <remarks>This method performs a strict baseType comparison and does not consider inheritance or
-        /// interface implementation. Use this method when you need to check for an exact baseType match rather than
-        /// assignability.</remarks>
-        /// <typeparam name="T">The baseType to compare against the specified baseType.</typeparam>
-        /// <param name="source">The baseType to evaluate for equality with the generic baseType parameter. Cannot be null.</param>
-        /// <returns>true if baseType is exactly the same baseType as T; otherwise, false.</returns>
-        public static IAssertionResult Is<T>(Type source)
-        {
-            return Is(source, typeof(T));
-        }
-
-        /// <summary>
-        /// Determines whether the specified baseType baseType can be assigned from the baseType parameter T.
-        /// </summary>
-        /// <typeparam name="T">The baseType to compare with the baseType baseType.</typeparam>
-        /// <param name="baseType">The baseType to test for assignment compatibility with baseType parameter T. Cannot be null.</param>
-        /// <returns>true if the baseType baseType is assignable from baseType parameter T; otherwise, false.</returns>
-        public static IAssertionResult IsAssignableFrom<T>(Type baseType)
-        {
-            return IsAssignableFrom(baseType, typeof(T));
         }
     }
 }

@@ -26,7 +26,7 @@
         {
             ArgumentNullException.ThrowIfNull(@this);
 
-            @this.AssertionResults.Add(TypeAssertions.Is<T>(type));
+            @this.AssertionResults.Add(TypeAssertions.IsExactType(type, typeof(T)));
             return @this;
         }
 
@@ -41,7 +41,7 @@
         {
             ArgumentNullException.ThrowIfNull(@this);
 
-            @this.AssertionResults.Add(TypeAssertions.IsAssignableFrom<T>(type));
+            @this.AssertionResults.Add(TypeAssertions.IsAssignableFrom(type, typeof(T)));
             return @this;
         }
     }

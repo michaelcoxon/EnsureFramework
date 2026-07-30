@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
+    using System.Linq;
 
     using EnsureFramework.Assertions;
 
@@ -11,46 +11,86 @@
     public class ObjectAssertionsTests
     {
         [Fact]
-        public void IsNotNull_Success()
+        public void MatchesTest()
         {
-            var subject = "asdf";
-            var actual = ObjectAssertions.IsNotNull(subject);
-            Assert.True(actual.Success);
+            var list = new List<string> { "hello" };
+            Assert.True(ObjectAssertions.Matches(list, l => l.First() == "hello", null, out var ex).Success);
+            Assert.Null(ex);
         }
 
         [Fact]
-        public void IsNull_Success()
+        public void MatchesFailTest()
         {
-            var subject = (string?)null;
-            var actual = ObjectAssertions.IsNull(subject);
-            Assert.True(actual.Success);
+            var list = new List<string> { "hello" };
+            Assert.False(ObjectAssertions.Matches(list, l => l.First() == "Hello", null, out var ex).Success);
+            Assert.Null(ex);
         }
 
         [Fact]
-        public void IsOneOf_null_Success()
+        public void MatchesFailWithInnerExceptionTest()
         {
-            var options = new [] { null, "value" };
-            var subject = (string?)null;
-            var actual = ObjectAssertions.IsOneOf(subject, options);
-            Assert.True(actual.Success);
+            var list = new List<string>();
+            Assert.False(ObjectAssertions.Matches(list, l => l.First() == "hello", null, out var ex).Success);
+            Assert.NotNull(ex);
         }
 
         [Fact]
-        public void IsOneOf_value_Success()
+        public void IsOneOfTest()
         {
-            var options = new [] { null, "value" };
-            var subject = "value";
-            var actual = ObjectAssertions.IsOneOf(subject, options);
-            Assert.True(actual.Success);
+            var str = "hello";
+            Assert.True(ObjectAssertions.IsOneOf(str, "foo", "bar", "hello").Success);
         }
 
         [Fact]
-        public void IsOneOf_NullOrEmpty_Success()
+        public void IsOneOfFailTest()
         {
-            var options = new[] { null, "" };
-            var subject = string.Empty;
-            var actual = ObjectAssertions.IsOneOf(subject, options);
-            Assert.True(actual.Success);
+            var str = "hello";
+            Assert.False(ObjectAssertions.IsOneOf(str, "foo", "bar").Success);
+        }
+
+        [Fact]
+        public void IsOneOf_Comparer_CurrentCulture_Test()
+        {
+            var str = "hello";
+            Assert.True(ObjectAssertions.IsOneOf(str, StringComparer.CurrentCulture, "foo", "bar", "hello").Success);
+        }
+
+        [Fact]
+        public void IsOneOf_Comparer_CurrentCulture_FailTest()
+        {
+            var str = "hello";
+            Assert.False(ObjectAssertions.IsOneOf(str, StringComparer.CurrentCulture, "Foo", "Bar", "Hello").Success);
+        }
+
+        [Fact]
+        public void IsOneOf_Comparer_CurrentCultureIgnoreCase_Test()
+        {
+            var str = "hello";
+            Assert.True(ObjectAssertions.IsOneOf(str, StringComparer.CurrentCultureIgnoreCase, "Foo", "Bar", "Hello").Success);
+        }
+
+        [Fact]
+        public void IsNotNullTest()
+        {
+            Assert.True(ObjectAssertions.IsNotNull("foo").Success);
+        }
+
+        [Fact]
+        public void IsNotNullFailTest()
+        {
+            Assert.False(ObjectAssertions.IsNotNull((object?)null).Success);
+        }
+
+        [Fact]
+        public void IsNullTest()
+        {
+            Assert.True(ObjectAssertions.IsNull((object?)null).Success);
+        }
+
+        [Fact]
+        public void IsNullFailTest()
+        {
+            Assert.False(ObjectAssertions.IsNull("foo").Success);
         }
     }
 }

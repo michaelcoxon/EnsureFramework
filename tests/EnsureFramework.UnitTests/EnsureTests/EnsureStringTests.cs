@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-using EnsureFramework;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.EnsureTests
+﻿namespace EnsureFramework.UnitTests.EnsureTests
 {
-    public class StringAssertionsTests
+    using System;
+    using System.Text.RegularExpressions;
+
+    using EnsureFramework;
+
+    using Xunit;
+
+    public class EnsureStringTests
     {
         [Fact]
         public void IsNotEmpty_Default()

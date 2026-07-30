@@ -1,9 +1,9 @@
-﻿using System;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.EnsureTests
+﻿namespace EnsureFramework.UnitTests.EnsureTests
 {
+    using System;
+
+    using Xunit;
+
     public class EnsureComparisonTests
     {
         [Fact]

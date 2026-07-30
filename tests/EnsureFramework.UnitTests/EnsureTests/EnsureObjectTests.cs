@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using EnsureFramework;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.EnsureTests
+﻿namespace EnsureFramework.UnitTests.EnsureTests
 {
-    public class ObjectAssertionsTests
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using EnsureFramework;
+
+    using Xunit;
+
+    public class EnsureObjectTests
     {
         [Fact]
         public void IsExactTypeOfParamTest()

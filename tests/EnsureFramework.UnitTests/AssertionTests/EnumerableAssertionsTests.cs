@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-using EnsureFramework.Assertions;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.AssertionTests
+﻿namespace EnsureFramework.UnitTests.AssertionTests
 {
+    using System;
+    using System.Collections;
+
+    using EnsureFramework.Assertions;
+
+    using Xunit;
+
     public class EnumerableAssertionsTests
     {
         [Fact]

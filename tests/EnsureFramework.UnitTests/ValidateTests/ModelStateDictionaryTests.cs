@@ -34,7 +34,7 @@
             var msd = new ModelStateDictionary();
 
             Validate.That(model.String).IsNotNull().ApplyTo(msd);
-            Validate.That(model.Number).IsGreaterThan(1).ApplyTo(msd);
+            Validate.That(model.Number).IsGreaterThan(1).IsLessThan(2).ApplyTo(msd);
 
             Assert.False(msd.IsValid);
         }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.EnsureTests
+﻿namespace EnsureFramework.UnitTests.EnsureTests
 {
+    using System;
+
+    using Xunit;
+
     public class EnsureTests
     {
         [Fact]
@@ -17,7 +13,7 @@ namespace EnsureFramework.UnitTests.EnsureTests
             var name = Guid.NewGuid().ToString();
 
             var assertionBuilder = Ensure.Arg(arg, name);
-            
+
             Assert.Equal(arg, assertionBuilder.Argument);
             Assert.Equal(name, assertionBuilder.ArgumentName);
         }

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xunit;
-
-namespace EnsureFramework.UnitTests.EnsureTests
+﻿namespace EnsureFramework.UnitTests.EnsureTests
 {
+    using System;
+    using System.Collections.Generic;
+
+    using Xunit;
+
     public class EnsureDictionaryTests
     {
-        private readonly static Dictionary<string, string> dictionary = new()
+        private static readonly Dictionary<string, string> dictionary = new()
         {
             ["key"] = "value",
         };
