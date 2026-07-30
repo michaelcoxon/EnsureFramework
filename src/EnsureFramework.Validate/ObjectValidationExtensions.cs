@@ -26,7 +26,7 @@
         /// <typeparam name="T">The type of the value being validated.</typeparam>
         /// <param name="this">The validation result to which the not-null assertion will be added. Cannot be null.</param>
         /// <returns>The same validation result instance with the not-null assertion appended.</returns>
-        public static IValidationResult<T> IsNotNull<T>(this IValidationResult<T> @this)
+        public static IValidationResult<T?> IsNotNull<T>(this IValidationResult<T?> @this)
         {
             ArgumentNullException.ThrowIfNull(@this);
 
@@ -42,7 +42,7 @@
         /// <typeparam name="T">The type of the value being validated.</typeparam>
         /// <param name="this">The validation result to which the null-check assertion is added. Cannot be null.</param>
         /// <returns>The same validation result instance with the null-check assertion appended.</returns>
-        public static IValidationResult<T> IsNull<T>(this IValidationResult<T> @this)
+        public static IValidationResult<T?> IsNull<T>(this IValidationResult<T?> @this)
         {
             ArgumentNullException.ThrowIfNull(@this);
 

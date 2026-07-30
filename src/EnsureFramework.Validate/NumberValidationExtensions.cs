@@ -17,19 +17,6 @@ namespace EnsureFramework
     public static partial class NumberValidationExtensions
     {
         /// <summary>
-        /// Asserts that the number is not negative.
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        [DebuggerNonUserCode]
-        public static IValidationResult<T> IsNotNegative<T>([NotNull] this IValidationResult<T> @this) where T : INumberBase<T>
-        {
-            ArgumentNullException.ThrowIfNull(@this);
-            @this.AssertionResults.Add(NumberAssertions.IsNegative(@this.Value));
-            return @this;
-        }
-
-        /// <summary>
         /// Asserts that the argument is a negative number.
         /// </summary>
         /// <remarks>Use this method to ensure that a numeric argument is negative before proceeding with
@@ -43,19 +30,6 @@ namespace EnsureFramework
         {
             ArgumentNullException.ThrowIfNull(@this);
             @this.AssertionResults.Add(NumberAssertions.IsNegative(@this.Value));
-            return @this;
-        }
-
-        /// <summary>
-        /// Asserts that the number is not zero.
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        [DebuggerNonUserCode]
-        public static IValidationResult<T> IsNotZero<T>([NotNull] this IValidationResult<T> @this) where T : INumberBase<T>
-        {
-            ArgumentNullException.ThrowIfNull(@this);
-            @this.AssertionResults.Add(NumberAssertions.IsZero(@this.Value));
             return @this;
         }
 

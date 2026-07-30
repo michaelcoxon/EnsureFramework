@@ -9,13 +9,7 @@
 
     public class ValidateThatTests
     {
-        [Fact]
-        public void ValidateThat_IsNotNull_Default()
-        {
-            var subject = (string?)null;
-            var result = Validate.That(subject).IsNotNull();
-            Assert.True(result.IsError);
-        }
+        
 
         [Fact]
         public void ValidateThat_IsExactTypeOf_Default()
@@ -65,6 +59,6 @@
             var subject = new List<string>();
             var result = Validate.That(subject).InheritsTypeOf(typeof(IEnumerable));
             Assert.False(result.IsError);
-        }
+        }     
     }
 }

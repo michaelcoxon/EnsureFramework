@@ -21,7 +21,7 @@ namespace EnsureFramework
         /// </summary>
         /// <param name="this">The validation result containing the enumerable to validate.</param>
         /// <returns>A validation result containing the enumerable and the not-null and not-empty assertion results.</returns>
-        public static IValidationResult<IEnumerable> IsNotNullOrEmpty([NotNull] this IValidationResult<IEnumerable> @this)
+        public static IValidationResult<IEnumerable?> IsNotNullOrEmpty([NotNull] this IValidationResult<IEnumerable?> @this)
         {
             var newThis = @this.IsNotNull();
             newThis.AssertionResults.Add(EnumerableAssertions.IsNotEmpty(newThis.Value));
@@ -34,18 +34,6 @@ namespace EnsureFramework
         /// <param name="this">The validation result.</param>
         /// <returns>The validation result for method chaining.</returns>
         public static IValidationResult<IEnumerable> IsNotEmpty([NotNull] this IValidationResult<IEnumerable> @this)
-        {
-            @this.AssertionResults.Add(EnumerableAssertions.IsNotEmpty(@this.Value));
-            return @this;
-        }
-
-        /// <summary>
-        /// Validates that the enumerable is not empty.
-        /// </summary>
-        /// <typeparam name="T">The type of elements in the enumerable.</typeparam>
-        /// <param name="this">The validation result containing the enumerable to validate.</param>
-        /// <returns>The validation result for chaining.</returns>
-        public static IValidationResult<IEnumerable<T>> IsNotEmpty<T>([NotNull] this IValidationResult<IEnumerable<T>> @this)
         {
             @this.AssertionResults.Add(EnumerableAssertions.IsNotEmpty(@this.Value));
             return @this;

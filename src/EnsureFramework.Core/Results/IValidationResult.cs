@@ -12,7 +12,7 @@
     /// whether validation succeeded, to enumerate assertion outcomes, and to retrieve error details. The order of
     /// assertion results matches the order in which assertions were evaluated.</remarks>
     /// <typeparam name="T">The type of the value being validated.</typeparam>
-    public interface IValidationResult<T>
+    public interface IValidationResult<out T>
     {
         /// <summary>
         /// Gets the current value held by the <see cref="IValidationResult{T}"/>, or null if no value is present.

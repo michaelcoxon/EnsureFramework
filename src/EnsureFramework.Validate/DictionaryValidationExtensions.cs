@@ -11,7 +11,7 @@ namespace EnsureFramework
     /// <summary>
     /// Provides extension methods for validating dictionary instances.
     /// </summary>
-    public static partial class DictionaryValidationExtensions
+    public static class DictionaryValidationExtensions
     {
         /// <summary>
         /// Adds a validation assertion that checks whether the dictionary contains the specified key.
