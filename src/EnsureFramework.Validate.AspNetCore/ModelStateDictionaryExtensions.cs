@@ -44,16 +44,7 @@
         /// <returns>The original validation result for method chaining.</returns>
         public static IValidationResult<T> ApplyTo<T>(this IValidationResult<T> @this, ModelStateDictionary modelState)
         {
-            ArgumentNullException.ThrowIfNull(@this);
-            ArgumentNullException.ThrowIfNull(modelState);
-
-            if (@this.IsError)
-            {
-                foreach (var error in @this.AssertionResults.Where(r => !r.Success))
-                {
-                    modelState.AddModelError(GetKeyForModelStateDictionary(@this.Name), error.Message);
-                }
-            }
+            modelState.Apply(@this);
             return @this;
         }
 
