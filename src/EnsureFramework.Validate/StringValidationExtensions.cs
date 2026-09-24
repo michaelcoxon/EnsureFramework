@@ -8,12 +8,12 @@
     using EnsureFramework.Results;
 
     /// <summary>
-    /// Provides extension methods for IValidationResult{string} to perform common string validations and record
+    /// Provides extension methods for IValidationResult&lt;string&gt; to perform common string validations and record
     /// assertion results.
     /// </summary>
-    /// <remarks>Each method validates the IValidationResult{string} argument, adds the corresponding
+    /// <remarks>Each method validates the IValidationResult&lt;string&gt; argument, adds the corresponding
     /// assertion result from StringAssertions to the AssertionResults collection, and returns the same
-    /// <see cref=""/> IValidationResult{string} to enable fluent chaining. Methods throw ArgumentNullException when the
+    /// IValidationResult&lt;string&gt; to enable fluent chaining. Methods throw ArgumentNullException when the
     /// IValidationResult argument is null.</remarks>
     public static class StringValidationExtensions
     {
