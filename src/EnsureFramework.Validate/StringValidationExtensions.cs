@@ -18,7 +18,7 @@
     public static class StringValidationExtensions
     {
         /// <summary>
-        /// Adds an assertion that the validation result's string Value is not empty.
+        /// Adds an assertion that the value is not empty.
         /// </summary>
         /// <remarks>Throws ArgumentNullException if the validation result is null. Appends the assertion
         /// result produced by StringAssertions.IsNotEmpty for the current Value.</remarks>
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// Adds an assertion that the validation result's string Value is not null, empty, or composed only of
+        /// Adds an assertion that the value is not null, empty, or composed only of
         /// white-space characters.
         /// </summary>
         /// <remarks>Throws ArgumentNullException if the validation result is null.</remarks>
@@ -48,7 +48,7 @@
         }
 
         /// <summary>
-        /// Adds a regular-expression assertion for the validation result's string value.
+        /// Adds a regular-expression assertion for the value.
         /// </summary>
         /// <remarks>Throws ArgumentNullException if the validation result is null. The assertion result
         /// produced by StringAssertions.Matches is added to the validation result's AssertionResults collection;
@@ -65,7 +65,7 @@
         }
 
         /// <summary>
-        /// Adds a regular-expression match assertion for the current validation result's value.
+        /// Adds a regular-expression assertion for the value.
         /// </summary>
         /// <remarks>Throws ArgumentNullException if the validation result is null.</remarks>
         /// <param name="this">The validation result whose Value is tested and to which the assertion is added.</param>
